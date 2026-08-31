@@ -224,16 +224,18 @@
   .product-card .btn{width:100%;text-align:center;}
 
   .starter-card{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:20px;
-    flex-wrap:wrap;
     background:transparent;
     border:1px dashed var(--taupe);
     border-radius:14px;
     padding:20px 26px;
     margin-bottom:56px;
+  }
+  .starter-card .row{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+    flex-wrap:wrap;
   }
   .starter-card .info{max-width:520px;}
   .starter-card .label{
@@ -274,6 +276,13 @@
     font-weight:700;
   }
   .starter-card .btn:hover{background:var(--wine-dark);color:var(--cream);}
+  .starter-card .fine-note{
+    font-size:13.5px;
+    color:var(--wine-mid);
+    margin-top:14px;
+    padding-top:14px;
+    border-top:1px dashed var(--cream-soft);
+  }
 
   .checkout-options{
     background:var(--cream);
@@ -375,15 +384,16 @@
   }
   .video-modal-close{
     position:absolute;
-    top:-46px;right:0;
-    width:36px;height:36px;
+    top:14px;right:14px;
+    width:38px;height:38px;
     border-radius:50%;
     border:none;
-    background:rgba(243,238,224,0.92);
+    background:rgba(0,0,0,0.55);
     cursor:pointer;
     display:flex;align-items:center;justify-content:center;
+    z-index:10;
   }
-  .video-modal-close svg{width:18px;height:18px;stroke:var(--wine-dark);stroke-width:2.4;}
+  .video-modal-close svg{width:18px;height:18px;stroke:#FFFFFF;stroke-width:2.4;}
 
   /* ---------- FOOTER ---------- */
   footer{
@@ -509,15 +519,18 @@
     </div>
 
     <div class="starter-card">
-      <div class="info">
-        <span class="label">Lower-Commitment Starter</span>
-        <h4>Vivix+ Alone</h4>
-        <p>Most people start here, then add the stack once they feel it working.</p>
+      <div class="row">
+        <div class="info">
+          <span class="label">Lower-Commitment Starter</span>
+          <h4>Vivix+ Alone</h4>
+          <p>Most people start here, then add the stack once they feel it working.</p>
+        </div>
+        <div class="cta">
+          <span class="price">$96</span>
+          <a class="btn" href="https://us.shaklee.com/en_US/ferguson/Nutrition/Targeted-Solutions/Aging-Well/Vivix%2B%E2%84%A2/p/22106" target="_blank" rel="noopener">Shop Vivix+</a>
+        </div>
       </div>
-      <div class="cta">
-        <span class="price">$96</span>
-        <a class="btn" href="https://us.shaklee.com/en_US/ferguson/Nutrition/Targeted-Solutions/Aging-Well/Vivix%2B%E2%84%A2/p/22106" target="_blank" rel="noopener">Shop Vivix+</a>
-      </div>
+      <p class="fine-note">$96 is the member price, per bottle. Free membership and free shipping unlock once your order totals $150+, so order 2 to get both.</p>
     </div>
 
     <div class="checkout-options">
