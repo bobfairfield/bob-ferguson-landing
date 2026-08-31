@@ -223,6 +223,68 @@
   .product-card p.desc{font-size:14.5px;color:var(--wine-mid);margin-bottom:24px;}
   .product-card .btn{width:100%;text-align:center;}
 
+  .stay-in-touch{
+    max-width:480px;
+    margin:36px auto 0;
+    background:var(--cream-alt);
+    border:1px solid var(--cream-soft);
+    border-radius:16px;
+    padding:8px 28px 20px;
+  }
+  .ctc-inline-wrap{
+    font-family:var(--sans);
+  }
+  .ctc-inline-wrap :is(h1,h2,h3,h4){
+    font-family:var(--serif) !important;
+    color:var(--wine-dark) !important;
+    font-weight:400 !important;
+  }
+  .ctc-inline-wrap p{color:var(--mauve) !important;}
+  .ctc-inline-wrap input[type="text"],
+  .ctc-inline-wrap input[type="email"]{
+    border:1.5px solid var(--taupe) !important;
+    border-radius:8px !important;
+    font-family:var(--sans) !important;
+  }
+  .ctc-inline-wrap button,
+  .ctc-inline-wrap input[type="submit"]{
+    background:var(--wine-dark) !important;
+    border-radius:999px !important;
+    font-family:var(--sans) !important;
+    font-weight:700 !important;
+    border:none !important;
+  }
+  .testimonial-card{
+    max-width:640px;
+    margin:8px auto 0;
+    text-align:center;
+    padding:28px 10px 0;
+    border-top:1px dashed var(--taupe);
+  }
+  .testimonial-card .quote{
+    font-family:var(--serif);
+    font-style:italic;
+    font-size:19px;
+    color:var(--wine-dark);
+    line-height:1.5;
+    margin-bottom:10px;
+  }
+  .testimonial-card .attribution{
+    font-size:13px;
+    color:var(--mauve);
+  }
+  .guarantee-line{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    text-align:center;
+    font-size:14px;
+    font-weight:600;
+    color:var(--sage-deep);
+    margin:0 0 32px;
+  }
+  .guarantee-line svg{width:18px;height:18px;flex-shrink:0;}
   .starter-card{
     background:transparent;
     border:1px dashed var(--taupe);
@@ -491,7 +553,7 @@
 <section class="order" id="order">
   <div class="wrap">
     <div class="head">
-      <div class="eyebrow">Two Ways To Start</div>
+      <div class="eyebrow">Three Ways To Start</div>
       <h2>Pick the one that matches what you want to change</h2>
       <p>Free lifetime membership and 15% discount unlocked by checking out as a Member with either stack.</p>
       <div class="science-callout" onclick="openVideoModal('science-behind-vivix.mp4')">
@@ -517,6 +579,8 @@
         <a class="btn btn-wine" href="https://us.shaklee.com/en_US/ferguson/Nutrition/Bundle-%26-Boost/Cellular-Reset-Stack/p/89892" target="_blank" rel="noopener">Order the Cellular Reset Stack</a>
       </div>
     </div>
+
+    <p class="guarantee-line"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l7 3v6c0 5-3.5 8.5-7 10-3.5-1.5-7-5-7-10V5z"/></svg>Every order is backed by Shaklee's 100% money-back guarantee, even if the bottle's empty.</p>
 
     <div class="starter-card">
       <div class="row">
@@ -551,6 +615,17 @@
           <h4>Become an Ambassador</h4>
           <p>Want to share this and build something alongside your own routine? Ambassadors get member savings plus the tools and support to build your own Shaklee business. Reach out below to get started.</p>
         </div>
+      </div>
+    </div>
+
+    <div class="testimonial-card">
+      <p class="quote">&ldquo;My biggest improvement was in my workouts, more reps, heavier weights, more energy.&rdquo;</p>
+      <p class="attribution">Suzanne Chaney &middot; taking the Bio-Age Reset Stack</p>
+    </div>
+
+    <div class="stay-in-touch">
+      <div class="ctc-inline-wrap">
+        <div class="ctct-inline-form" data-form-id="2177e183-8cc7-4a66-8004-e8db62a272cd"></div>
       </div>
     </div>
   </div>
@@ -590,6 +665,11 @@
     <p class="legal">These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease. &copy;2026 Shaklee Corporation.</p>
   </div>
 </footer>
+
+<!-- Begin Constant Contact Active Forms -->
+<script> var _ctct_m = "38e95b3ad7a8d750bde7e98ca2988623"; </script>
+<script id="signupScript" src="//static.ctctcdn.com/js/signup-form-widget/current/signup-form-widget.min.js" async defer></script>
+<!-- End Constant Contact Active Forms -->
 
 </body>
 
