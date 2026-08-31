@@ -169,7 +169,31 @@
   .order .head{max-width:640px;margin:0 auto 12px;text-align:center;}
   .order .head .eyebrow{color:var(--sage-deep);}
   .order .head h2{font-size:clamp(28px,3.6vw,36px);color:var(--wine-dark);margin:14px 0 12px;}
-  .order .head p{color:var(--sage-deep);font-size:16px;max-width:520px;margin:0 auto 48px;}
+  .order .head p{color:var(--sage-deep);font-size:16px;max-width:520px;margin:0 auto 24px;}
+  .science-callout{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    background:var(--cream);
+    border:1px solid var(--taupe);
+    border-radius:999px;
+    padding:10px 20px 10px 14px;
+    margin-bottom:24px;
+    cursor:pointer;
+  }
+  .science-callout .play-dot{
+    width:26px;height:26px;
+    border-radius:50%;
+    background:var(--wine-dark);
+    display:flex;align-items:center;justify-content:center;
+    flex-shrink:0;
+  }
+  .science-callout .play-dot svg{width:10px;height:10px;fill:var(--cream);}
+  .science-callout span{
+    font-size:14.5px;
+    font-weight:700;
+    color:var(--wine-dark);
+  }
 
   .product-grid{
     display:grid;
@@ -199,13 +223,57 @@
   .product-card p.desc{font-size:14.5px;color:var(--wine-mid);margin-bottom:24px;}
   .product-card .btn{width:100%;text-align:center;}
 
-  .vivix-note{
-    text-align:center;
-    font-size:14px;
-    color:var(--sage-deep);
+  .starter-card{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+    flex-wrap:wrap;
+    background:transparent;
+    border:1px dashed var(--taupe);
+    border-radius:14px;
+    padding:20px 26px;
     margin-bottom:56px;
   }
-  .vivix-note a{border-bottom:1px solid var(--sage-deep);font-weight:600;}
+  .starter-card .info{max-width:520px;}
+  .starter-card .label{
+    font-size:11.5px;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--mauve);
+    font-weight:700;
+    margin-bottom:4px;
+    display:block;
+  }
+  .starter-card h4{
+    font-family:var(--serif);
+    font-size:19px;
+    color:var(--wine-dark);
+    font-weight:400;
+    margin-bottom:4px;
+  }
+  .starter-card p{font-size:13.5px;color:var(--mauve);}
+  .starter-card .cta{
+    display:flex;
+    align-items:center;
+    gap:16px;
+    flex-shrink:0;
+  }
+  .starter-card .price{
+    font-family:var(--serif);
+    font-size:22px;
+    color:var(--wine-dark);
+  }
+  .starter-card .btn{
+    padding:11px 22px;
+    font-size:14px;
+    border:1.5px solid var(--wine-dark);
+    color:var(--wine-dark);
+    background:transparent;
+    border-radius:999px;
+    font-weight:700;
+  }
+  .starter-card .btn:hover{background:var(--wine-dark);color:var(--cream);}
 
   .checkout-options{
     background:var(--cream);
@@ -299,13 +367,11 @@
   .video-modal-frame{
     position:relative;
     width:100%;
-    padding-top:56.25%;
   }
-  .video-modal-frame iframe{
-    position:absolute;
-    top:0;left:0;
-    width:100%;height:100%;
-    border:0;
+  .video-modal-frame video{
+    width:100%;
+    display:block;
+    max-height:80vh;
   }
   .video-modal-close{
     position:absolute;
@@ -418,6 +484,10 @@
       <div class="eyebrow">Two Ways To Start</div>
       <h2>Pick the one that matches what you want to change</h2>
       <p>Free lifetime membership and 15% discount unlocked by checking out as a Member with either stack.</p>
+      <div class="science-callout" onclick="openVideoModal('science-behind-vivix.mp4')">
+        <span class="play-dot"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+        <span>Watch: The Science Behind Vivix+ (2 min)</span>
+      </div>
     </div>
 
     <div class="product-grid">
@@ -438,7 +508,17 @@
       </div>
     </div>
 
-    <p class="vivix-note">Just want Vivix+ on its own? <a href="https://us.shaklee.com/en_US/ferguson/Nutrition/Targeted-Solutions/Aging-Well/Vivix%2B%E2%84%A2/p/22106" target="_blank" rel="noopener">Shop Vivix+</a></p>
+    <div class="starter-card">
+      <div class="info">
+        <span class="label">Lower-Commitment Starter</span>
+        <h4>Vivix+ Alone</h4>
+        <p>Most people start here, then add the stack once they feel it working.</p>
+      </div>
+      <div class="cta">
+        <span class="price">$96</span>
+        <a class="btn" href="https://us.shaklee.com/en_US/ferguson/Nutrition/Targeted-Solutions/Aging-Well/Vivix%2B%E2%84%A2/p/22106" target="_blank" rel="noopener">Shop Vivix+</a>
+      </div>
+    </div>
 
     <div class="checkout-options">
       <h3>How you check out is up to you</h3>
@@ -477,7 +557,7 @@
 <!-- OPPORTUNITY -->
 <section class="opportunity">
   <div class="wrap">
-    <p>Curious what it looks like to share this with others, not just use it yourself? <a onclick="openVideoModal()">Watch the 3-minute video &rarr;</a></p>
+    <p>Curious what it looks like to share this with others, not just use it yourself? <a onclick="openVideoModal('opportunity-video.mp4')">Watch the 3-minute video &rarr;</a></p>
   </div>
 </section>
 
@@ -506,20 +586,24 @@
       <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
     </button>
     <div class="video-modal-frame">
-      <iframe id="opportunityVideoFrame" src="" title="Shaklee Opportunity Video" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+      <video id="opportunityVideo" controls playsinline></video>
     </div>
   </div>
 </div>
 
 <script>
-var YOUTUBE_VIDEO_ID = '-yITdrMWy3I';
-function openVideoModal(){
+function openVideoModal(src){
+  var vid = document.getElementById('opportunityVideo');
+  vid.src = src;
   document.getElementById('videoModalOverlay').classList.add('open');
-  document.getElementById('opportunityVideoFrame').src = 'https://www.youtube-nocookie.com/embed/' + YOUTUBE_VIDEO_ID + '?autoplay=1&rel=0';
+  vid.play();
 }
 function closeVideoModal(){
   var overlay = document.getElementById('videoModalOverlay');
-  document.getElementById('opportunityVideoFrame').src = '';
+  var vid = document.getElementById('opportunityVideo');
+  vid.pause();
+  vid.removeAttribute('src');
+  vid.load();
   overlay.classList.remove('open');
 }
 document.getElementById('videoModalOverlay').addEventListener('click', function(e){
