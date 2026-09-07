@@ -667,6 +667,34 @@
     padding:0;
   }
 
+  /* ---------- KIT PREVIEW (business card example) ---------- */
+  .kit-preview{
+    margin:28px auto 0;
+    max-width:400px;
+    background:#FFFFFF;
+    border-radius:14px;
+    overflow:hidden;
+    box-shadow:0 4px 16px rgba(30,51,39,0.08);
+    padding:18px 18px 20px;
+  }
+  .kit-preview-label{
+    font-size:16px;
+    color:var(--wine-mid);
+    margin:0 0 14px;
+    max-width:100%;
+  }
+  .kit-preview img{
+    width:100%;
+    height:auto;
+    border-radius:8px;
+    display:block;
+  }
+  .kit-preview-caption{
+    font-size:14px;
+    color:var(--wine-mid);
+    margin:10px 0 0;
+  }
+
   /* ---------- 60-DAY STUDY STATS ---------- */
   .study-stats{margin:32px 0 8px;}
   .study-stats-head{margin-bottom:20px;}
@@ -1259,6 +1287,11 @@
       <button class="video-play-btn" id="opportunityPlayBtn" onclick="playInlineVideo('opportunityInlineVideo','opportunityPlayBtn')" aria-label="Play video">
         <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
       </button>
+    </div>
+    <div class="kit-preview">
+      <p class="kit-preview-label">Every leader gets their own personalized kit, starting with a card like this one:</p>
+      <img src="https://cdn.jsdelivr.net/gh/bobfairfield/bob-ferguson-landing@main/sample-card-front.jpg" alt="Sample Bob Ferguson Longevity business card" loading="lazy">
+      <p class="kit-preview-caption">Yours, with your own name, contact info, and photo.</p>
     </div>
   </div>
 </section>
