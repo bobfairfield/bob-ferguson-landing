@@ -1024,7 +1024,22 @@
     transform:translateY(-1px);
   }
   .testimonial-order-cta svg{width:15px;height:15px;stroke:var(--wine-dark);}
+
+  /* BFL-VIDEO-LINKS: share buttons and arrival highlight */
+  .video-share{text-align:center;margin:12px 0 4px;}
+  .video-share-btn{display:inline-flex;align-items:center;gap:8px;background:transparent;border:1.5px solid var(--sage);color:var(--sage-deep);font-family:var(--sans);font-size:15px;font-weight:700;letter-spacing:.02em;padding:8px 18px;border-radius:999px;cursor:pointer;transition:background .2s,color .2s;}
+  .video-share-btn:hover{background:var(--sage-deep);color:#fff;border-color:var(--sage-deep);}
+  .video-share-btn svg{width:16px;height:16px;flex:none;}
+  .video-share-btn.is-done{background:var(--sage-deep);color:#fff;border-color:var(--sage-deep);}
+  .bfl-focus{box-shadow:0 0 0 4px var(--gold-light),0 0 0 9px rgba(198,151,79,.28);transition:box-shadow 1.2s ease;border-radius:12px;}
+  .bfl-focus.bfl-focus-out{box-shadow:0 0 0 0 rgba(198,151,79,0);}
 </style>
+<!-- Privacy-friendly analytics by Plausible -->
+<script async src="https://plausible.io/js/pa-a3jZtwKU4Lx7RIBy_e41c.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init()
+</script>
 </head>
 <body>
 
@@ -1040,6 +1055,7 @@
         <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
       </button>
     </div>
+    <div class="video-share"><button type="button" class="video-share-btn" data-video="vivix"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12v7a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7"/><path d="M16 6l-4-4-4 4"/><path d="M12 2v14"/></svg><span>Share this video</span></button></div>
 
     <p class="sub">Vivix+<sup>&trade;</sup> boosts NAD+ and defends against the damage that accelerates aging, at the same time. That combination is what a recent double-blind, placebo-controlled trial measured, and here's what it found.</p>
 
@@ -1069,6 +1085,7 @@
         <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
       </button>
     </div>
+    <div class="video-share"><button type="button" class="video-share-btn" data-video="joe-story"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12v7a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7"/><path d="M16 6l-4-4-4 4"/><path d="M12 2v14"/></svg><span>Share this video</span></button></div>
     <a class="testimonial-order-cta" href="https://us.shaklee.com/en_US/ferguson/Nutrition/Targeted-Solutions/Aging-Well/Vivix%2B%E2%84%A2/p/22106" target="_blank" rel="noopener">Buy Vivix+<sup>&trade;</sup></a>
 
 
@@ -1087,6 +1104,7 @@
         <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
       </button>
     </div>
+    <div class="video-share"><button type="button" class="video-share-btn" data-video="science"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12v7a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7"/><path d="M16 6l-4-4-4 4"/><path d="M12 2v14"/></svg><span>Share this video</span></button></div>
 
     <div class="deep-dive-card" id="deepDiveCard" onclick="expandAndPlayDeepDive('deepDiveCard','fullScienceVideo')">
       <div class="deep-dive-thumb" id="fullScienceVideo" style="background-image:url('https://img.youtube.com/vi/LOYkCBmv33w/hqdefault.jpg')"><div class="deep-dive-play-badge"><div class="deep-dive-play-circle"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div></div>
@@ -1095,6 +1113,7 @@
         <span>What&rsquo;s actually happening inside your cells? Dr. Erin Barrett explains, 19 min</span>
       </div>
     </div>
+    <div class="video-share"><button type="button" class="video-share-btn" data-video="erin-barrett"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12v7a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7"/><path d="M16 6l-4-4-4 4"/><path d="M12 2v14"/></svg><span>Share this video</span></button></div>
 
     <div class="study-stats">
       <div class="study-stats-head">
@@ -1292,6 +1311,7 @@
         <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
       </button>
     </div>
+    <div class="video-share"><button type="button" class="video-share-btn" data-video="opportunity"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12v7a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7"/><path d="M16 6l-4-4-4 4"/><path d="M12 2v14"/></svg><span>Share this video</span></button></div>
   </div>
 </section>
 
@@ -1370,7 +1390,7 @@ function expandAndPlayDeepDive(cardId, thumbId){
   if(card.classList.contains('is-expanded')) return;
   card.classList.add('is-expanded');
   thumb.style.backgroundImage = 'none';
-  thumb.innerHTML = '<iframe src="https://www.youtube.com/embed/LOYkCBmv33w?autoplay=1&rel=0&modestbranding=1&iv_load_policy=3&playsinline=1" style="width:100%;height:100%;border:0;" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>';
+  thumb.innerHTML = '<iframe src="https://www.youtube.com/embed/LOYkCBmv33w?autoplay=1&rel=0&modestbranding=1&iv_load_policy=3&playsinline=1&enablejsapi=1" id="erinYouTube" style="width:100%;height:100%;border:0;" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>';
 }
 </script>
 
@@ -1409,5 +1429,145 @@ function playInlineVideo(videoId, btnId){
     btn.classList.add('is-hidden');
   }
 }
+</script>
+
+<!-- BFL-VIDEO-LINKS: shareable video links + Plausible events -->
+<script>
+(function(){
+  var VIDEOS = {
+    'vivix':        {name:'Vivix Intro',  video:'heroVideo'},
+    'joe-story':    {name:'Joe Story',    video:'testimonialVideo'},
+    'science':      {name:'Science',      video:'scienceVideo'},
+    'erin-barrett': {name:'Erin Barrett', card:'deepDiveCard'},
+    'opportunity':  {name:'Opportunity',  video:'opportunityInlineVideo'}
+  };
+  function track(name){ try{ window.plausible && window.plausible(name); }catch(e){} }
+  window.bflTrack = track;
+
+  function targetFor(slug){
+    var v = VIDEOS[slug]; if(!v) return null;
+    if(v.card) return document.getElementById(v.card);
+    var el = document.getElementById(v.video);
+    return el ? (el.closest('.hero-video-frame') || el) : null;
+  }
+
+  /* Arrival from a shared video link: ?v=slug (or #slug) */
+  function requestedSlug(){
+    var m = location.search.match(/[?&]v=([a-z0-9-]+)/i);
+    var s = m ? m[1] : location.hash.replace('#','');
+    s = (s||'').toLowerCase();
+    return VIDEOS[s] ? s : null;
+  }
+  var arrival = requestedSlug(), userScrolled = false;
+  function focusArrival(){
+    if(!arrival || userScrolled) return;
+    var el = targetFor(arrival); if(!el) return;
+    var r = el.getBoundingClientRect();
+    var top = window.pageYOffset + r.top - Math.max(16, (window.innerHeight - r.height) / 2);
+    window.scrollTo(0, Math.max(0, top));
+  }
+  if(arrival){
+    track('Link: ' + VIDEOS[arrival].name);
+    if('scrollRestoration' in history) history.scrollRestoration = 'manual';
+    ['wheel','touchmove','keydown'].forEach(function(ev){
+      window.addEventListener(ev, function(){ userScrolled = true; }, {passive:true, once:true});
+    });
+    var start = function(){
+      focusArrival();
+      var el = targetFor(arrival);
+      if(el){
+        el.classList.add('bfl-focus');
+        setTimeout(function(){ el.classList.add('bfl-focus-out'); }, 3500);
+        setTimeout(function(){ el.classList.remove('bfl-focus','bfl-focus-out'); }, 5000);
+      }
+    };
+    if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start); else start();
+    window.addEventListener('load', function(){ setTimeout(focusArrival, 50); });
+  }
+
+  /* Play and finish events for the four page videos */
+  Object.keys(VIDEOS).forEach(function(slug){
+    var v = VIDEOS[slug]; if(!v.video) return;
+    var el = document.getElementById(v.video); if(!el) return;
+    var played = false, finished = false;
+    el.addEventListener('play', function(){ if(!played){ played = true; track('Play: ' + v.name); } });
+    el.addEventListener('timeupdate', function(){
+      if(!finished && el.duration && el.currentTime / el.duration >= 0.9){ finished = true; track('Finish: ' + v.name); }
+    });
+  });
+
+  /* Erin Barrett (YouTube): play on card tap, finish via the YouTube player API */
+  var erinPlayed = false;
+  var card = document.getElementById('deepDiveCard');
+  if(card) card.addEventListener('click', function(){
+    if(erinPlayed) return; erinPlayed = true; track('Play: Erin Barrett');
+    setTimeout(watchErin, 300);
+  });
+  function watchErin(){
+    var frame = document.getElementById('erinYouTube'); if(!frame) return;
+    var go = function(){
+      var done = false;
+      var p = new YT.Player(frame, {events:{onStateChange:function(){
+        var t = setInterval(function(){
+          try{
+            var d = p.getDuration(), c = p.getCurrentTime();
+            if(!done && d && c / d >= 0.9){ done = true; track('Finish: Erin Barrett'); }
+            if(done || p.getPlayerState() !== 1) clearInterval(t);
+          }catch(e){ clearInterval(t); }
+        }, 5000);
+      }}});
+    };
+    if(window.YT && window.YT.Player) return go();
+    var prev = window.onYouTubeIframeAPIReady;
+    window.onYouTubeIframeAPIReady = function(){ if(prev) prev(); go(); };
+    var s = document.createElement('script'); s.src = 'https://www.youtube.com/iframe_api'; document.head.appendChild(s);
+  }
+
+  /* Share buttons: phone share sheet, or copy the link on a computer */
+  /* Pages that carry the preview pages (meta bfl-video-pages) share /slug/ links with a
+     custom preview; any page without them falls back to ?v=slug, which always works. */
+  var hasPreviewPages = /(^|\.)bobfergusonlongevity\.com$/i.test(location.hostname) ||
+                        !!document.querySelector('meta[name="bfl-video-pages"]');
+  function linkFor(slug){
+    var base = location.origin + location.pathname.replace(/[^\/]*$/, '');
+    return hasPreviewPages ? base + slug + '/' : base + '?v=' + slug;
+  }
+  function copyText(text){
+    if(navigator.clipboard && window.isSecureContext) return navigator.clipboard.writeText(text);
+    return new Promise(function(ok, fail){
+      var ta = document.createElement('textarea'); ta.value = text; ta.setAttribute('readonly','');
+      ta.style.position = 'fixed'; ta.style.opacity = '0'; document.body.appendChild(ta); ta.select();
+      try{ document.execCommand('copy') ? ok() : fail(); }catch(e){ fail(e); }
+      document.body.removeChild(ta);
+    });
+  }
+  function flash(btn, msg){
+    var label = btn.querySelector('span'), old = btn.getAttribute('data-label') || label.textContent;
+    btn.setAttribute('data-label', old); label.textContent = msg; btn.classList.add('is-done');
+    clearTimeout(btn._t); btn._t = setTimeout(function(){ label.textContent = old; btn.classList.remove('is-done'); }, 2500);
+  }
+  document.querySelectorAll('.video-share-btn').forEach(function(btn){
+    btn.addEventListener('click', function(e){
+      e.stopPropagation();
+      var slug = btn.getAttribute('data-video'), url = linkFor(slug);
+      track('Share: ' + VIDEOS[slug].name);
+      var phone = window.matchMedia && window.matchMedia('(pointer:coarse)').matches;
+      if(phone && navigator.share){
+        navigator.share({url: url}).catch(function(){});
+      } else {
+        copyText(url).then(function(){ flash(btn, 'Link copied'); }, function(){ flash(btn, url); });
+      }
+    });
+  });
+
+  /* Clicks that lead toward a purchase or a conversation */
+  document.addEventListener('click', function(e){
+    var a = e.target.closest && e.target.closest('a[href]'); if(!a) return;
+    var href = a.getAttribute('href') || '';
+    if(/shaklee\.com/i.test(href)) track('Click: Shop');
+    else if(/calendly\.com|calendar\.app\.google|calendar\.google\.com/i.test(href)) track('Click: Book a Call');
+    else if(/^mailto:/i.test(href)) track('Click: Email');
+  }, true);
+})();
 </script>
 </html>
