@@ -60,7 +60,17 @@ blockquote{margin:24px 0;padding:0 0 0 18px;border-left:3px solid var(--gold);fo
 .sources li{margin-bottom:6px;}
 .short-sources p{font-size:14px;line-height:1.5;margin:0;}
 footer{border-top:1px solid rgba(79,16,38,.12);margin-top:30px;padding:20px 0 40px;font-size:14px;color:var(--taupe);line-height:1.5;}
-.download{font-size:15px;margin:10px 0 0;}
+.download{font-size:15px;margin:14px 0 18px;}
+.pdf-btn{display:inline-flex;align-items:center;gap:8px;border:1.5px solid var(--sage);color:var(--sage-deep);background:transparent;font-size:16px;font-weight:700;text-decoration:none;padding:9px 20px;border-radius:999px;transition:background .2s,color .2s;}
+.pdf-btn:hover{background:var(--sage-deep);border-color:var(--sage-deep);color:#fff;}
+.pdf-btn svg{width:17px;height:17px;flex:none;}
+.download .more{display:inline-block;margin-left:14px;font-size:15px;}
+.pdf-box{background:var(--sage-pale);border-radius:16px;padding:20px 22px;margin:0 0 30px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;}
+.pdf-box p{margin:0;font-size:17px;line-height:1.45;color:var(--sage-deep);flex:1 1 240px;}
+.pdf-box p strong{display:block;font-family:var(--serif);font-weight:400;font-size:21px;color:var(--wine);margin-bottom:2px;}
+.pdf-box .pdf-btn{background:var(--sage-deep);border-color:var(--sage-deep);color:#fff;}
+.pdf-box .pdf-btn:hover{background:var(--wine);border-color:var(--wine);}
+@media (max-width:600px){.download .more{display:block;margin:12px 0 0;}.pdf-box .pdf-btn{width:100%;justify-content:center;}}
 @media (max-width:600px){
   body{font-size:18px;}
   .stats{grid-template-columns:1fr;}
@@ -81,7 +91,7 @@ footer{border-top:1px solid rgba(79,16,38,.12);margin-top:30px;padding:20px 0 40
   .stats{grid-template-columns:repeat(3,1fr);}
   .stat b{font-size:22pt;}
   .stat span{font-size:10.5pt;}
-  .download,.noprint{display:none;}
+  .download,.noprint,.pdf-box{display:none !important;}
   .cta{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
   .stat,.tag{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
   a{text-decoration:none;}
@@ -128,7 +138,7 @@ footer{border-top:1px solid rgba(79,16,38,.12);margin-top:30px;padding:20px 0 40
   <div class="eyebrow">Cellular Aging · Vivix+<sup>&trade;</sup></div>
   <h1>The Zombie Cell Problem</h1>
   <p class="dek">Why aging speeds up, and what your cells need.</p>
-  <p class="download noprint"><a href="Zombie-Cell-Problem-Short.pdf">Printable version (PDF)</a></p>
+  <p class="download noprint"><a class="pdf-btn" href="Zombie-Cell-Problem-Short.pdf" onclick="window.plausible&&plausible('Download: PDF Short')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg><span>Download the printable PDF</span></a></p>
 </header>
 
 <p>As we age, damaged cells called zombie cells stop working but refuse to die. They send out inflammation, harm the cells around them, and drain NAD+, the molecule your cells run on.<sup>1,2</sup> Aging speeds up when they build up faster than your immune system can clear them.<sup>3</sup></p>
@@ -152,6 +162,7 @@ footer{border-top:1px solid rgba(79,16,38,.12);margin-top:30px;padding:20px 0 40
   <a class="btn" href="../#order" onclick="window.plausible&&plausible('Click: Collateral Order')">See your options</a>
   <span class="alt">Questions first? <a href="mailto:bob@fergleads.com">bob@fergleads.com</a> · 913-208-6357</span>
 </div>
+<div class="pdf-box"><p><strong>Want to share this?</strong>Download the printable PDF to email or print.</p><a class="pdf-btn" href="Zombie-Cell-Problem-Short.pdf" onclick="window.plausible&&plausible('Download: PDF Short')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg><span>Download the PDF</span></a></div>
 <section class="sources short-sources">
 <p><strong>Sources.</strong> 1. Covarrubias AJ et al., <em>Nature Metabolism</em> 2020 (<a href="https://pubmed.ncbi.nlm.nih.gov/33199924/">PubMed</a>). 2. Chini CCS et al., <em>Nature Metabolism</em> 2020 (<a href="https://pubmed.ncbi.nlm.nih.gov/33199925/">PubMed</a>). 3. Ovadya Y et al., <em>Nature Communications</em> 2018 (<a href="https://pubmed.ncbi.nlm.nih.gov/30575733/">PubMed</a>). 4. Perrott KM et al., <em>GeroScience</em> 2017 (<a href="https://pubmed.ncbi.nlm.nih.gov/28378188/">PubMed</a>). 5. Escande C et al., <em>Diabetes</em> 2013 (<a href="https://pubmed.ncbi.nlm.nih.gov/23172919/">PubMed</a>). 6. Shaklee, <a href="https://us.shaklee.com/en_US/ferguson/Nutrition/Targeted-Solutions/Aging-Well/Vivix%2B%E2%84%A2/p/22106">Vivix+&trade; clinical and laboratory data</a>. Full story with all sources: <a href="https://bobfergusonlongevity.com/zombie-cells/">bobfergusonlongevity.com/zombie-cells</a></p>
 </section>

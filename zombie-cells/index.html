@@ -58,8 +58,19 @@ blockquote{margin:24px 0;padding:0 0 0 18px;border-left:3px solid var(--gold);fo
 .sources h2{font-size:22px;}
 .sources ol{padding-left:20px;margin:0;}
 .sources li{margin-bottom:6px;}
+.short-sources p{font-size:14px;line-height:1.5;margin:0;}
 footer{border-top:1px solid rgba(79,16,38,.12);margin-top:30px;padding:20px 0 40px;font-size:14px;color:var(--taupe);line-height:1.5;}
-.download{font-size:15px;margin:10px 0 0;}
+.download{font-size:15px;margin:14px 0 18px;}
+.pdf-btn{display:inline-flex;align-items:center;gap:8px;border:1.5px solid var(--sage);color:var(--sage-deep);background:transparent;font-size:16px;font-weight:700;text-decoration:none;padding:9px 20px;border-radius:999px;transition:background .2s,color .2s;}
+.pdf-btn:hover{background:var(--sage-deep);border-color:var(--sage-deep);color:#fff;}
+.pdf-btn svg{width:17px;height:17px;flex:none;}
+.download .more{display:inline-block;margin-left:14px;font-size:15px;}
+.pdf-box{background:var(--sage-pale);border-radius:16px;padding:20px 22px;margin:0 0 30px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;}
+.pdf-box p{margin:0;font-size:17px;line-height:1.45;color:var(--sage-deep);flex:1 1 240px;}
+.pdf-box p strong{display:block;font-family:var(--serif);font-weight:400;font-size:21px;color:var(--wine);margin-bottom:2px;}
+.pdf-box .pdf-btn{background:var(--sage-deep);border-color:var(--sage-deep);color:#fff;}
+.pdf-box .pdf-btn:hover{background:var(--wine);border-color:var(--wine);}
+@media (max-width:600px){.download .more{display:block;margin:12px 0 0;}.pdf-box .pdf-btn{width:100%;justify-content:center;}}
 @media (max-width:600px){
   body{font-size:18px;}
   .stats{grid-template-columns:1fr;}
@@ -80,7 +91,7 @@ footer{border-top:1px solid rgba(79,16,38,.12);margin-top:30px;padding:20px 0 40
   .stats{grid-template-columns:repeat(3,1fr);}
   .stat b{font-size:22pt;}
   .stat span{font-size:10.5pt;}
-  .download,.noprint{display:none;}
+  .download,.noprint,.pdf-box{display:none !important;}
   .cta{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
   .stat,.tag{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
   a{text-decoration:none;}
@@ -105,7 +116,7 @@ footer{border-top:1px solid rgba(79,16,38,.12);margin-top:30px;padding:20px 0 40
   body.short .dek{font-size:12.5pt;}
   body.short .figure svg{max-width:4.6in;}
   body.short .points li{padding:5pt 10pt;margin-bottom:4pt;}
-  body.short .figure svg{max-width:5.2in;}
+  body.short .figure svg{max-width:4.7in;}
   body.short .figure{padding:4pt;margin:6pt 0;}
   body.short h2{margin:8pt 0 4pt;font-size:15pt;}
   body.short .cta{padding:10pt 14pt;margin:8pt 0 6pt;}
@@ -114,6 +125,7 @@ footer{border-top:1px solid rgba(79,16,38,.12);margin-top:30px;padding:20px 0 40
   .btn{display:none;}
   .printurl{display:block !important;font-weight:700;color:var(--gold-light);font-size:12pt;margin:2pt 0;}
   body.short footer{margin-top:6pt;}
+  .short-sources p{font-size:8pt;line-height:1.35;}
 }
 .printurl{display:none;}
 </style>
@@ -127,7 +139,7 @@ footer{border-top:1px solid rgba(79,16,38,.12);margin-top:30px;padding:20px 0 40
   <h1>The Zombie Cell Problem</h1>
   <p class="dek">Why aging seems to speed up in our later years, and what your cells need to push back.</p>
   <p class="byline">From Bob Ferguson Longevity</p>
-  <p class="download noprint"><a href="Zombie-Cell-Problem.pdf">Download the printable version (PDF)</a> · <a href="../zombie-cells-short/">Read the one-minute version</a></p>
+  <p class="download noprint"><a class="pdf-btn" href="Zombie-Cell-Problem.pdf" onclick="window.plausible&&plausible('Download: PDF Long')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg><span>Download the printable PDF</span></a><a class="more" href="../zombie-cells-short/">Read the one-minute version</a></p>
 </header>
 
 <p>Almost everyone over 65 knows the feeling. A cold that once lasted three days now lingers for three weeks. A bruise takes a month to fade. Stairs that were nothing are now something. It feels like aging picked up speed.</p>
@@ -183,6 +195,7 @@ footer{border-top:1px solid rgba(79,16,38,.12);margin-top:30px;padding:20px 0 40
   <span class="alt">Questions first? <a href="mailto:bob@fergleads.com">bob@fergleads.com</a> · 913-208-6357</span>
 </div>
 
+<div class="pdf-box"><p><strong>Want to share this?</strong>Download the printable PDF to email or print.</p><a class="pdf-btn" href="Zombie-Cell-Problem.pdf" onclick="window.plausible&&plausible('Download: PDF Long')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg><span>Download the PDF</span></a></div>
 <section class="sources">
 <h2>Sources</h2>
 <ol>
