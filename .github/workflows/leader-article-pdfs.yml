@@ -1,0 +1,47 @@
+# Renders each new leader's two Zombie Cell article PDFs.
+# Started by the leader onboarding pipeline (repository_dispatch) right after it
+# publishes the leader's /zombie-cells/ pages, or by hand from the Actions tab.
+# Output: leader-pdfs/<repo_slug>/Zombie-Cell-Problem.pdf and -Short.pdf,
+# served at bobfergusonlongevity.com/leader-pdfs/<repo_slug>/.
+name: Leader article PDFs
+
+on:
+  repository_dispatch:
+    types: [leader-article-pdfs]
+  workflow_dispatch:
+    inputs:
+      repo_slug:
+        description: "Leader repo, e.g. jacob-anderson-landing"
+        required: true
+
+permissions:
+  contents: write
+
+concurrency:
+  group: leader-article-pdfs
+  cancel-in-progress: false
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Fonts (Caladea and Carlito, the Cambria and Calibri stand-ins)
+        run: sudo apt-get update -q && sudo apt-get install -y -q fonts-crosextra-carlito fonts-crosextra-caladea
+      - name: Browser
+        run: pip install -q playwright && python -m playwright install --with-deps chromium
+      - name: Render and publish
+        env:
+          SLUG: ${{ github.event.client_payload.repo_slug || inputs.repo_slug }}
+        run: |
+          if ! [[ "$SLUG" =~ ^[a-z0-9-]+-landing$ ]]; then echo "Bad repo slug: $SLUG"; exit 1; fi
+          python .github/scripts/render_leader_pdfs.py "$SLUG"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add "leader-pdfs/$SLUG"
+          git commit -m "Add article PDFs for $SLUG" || { echo "No changes"; exit 0; }
+          for i in 1 2 3; do git pull --rebase -q && git push && exit 0; sleep 5; done
+          exit 1
