@@ -1,0 +1,626 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Your Shaklee Business: Start Here</title><meta name="description" content="A new business builder's guide: why, how you earn, what you share, and your first 30 days."><meta name="robots" content="noindex,nofollow"><style>
+:root{
+  --wine:#4F1026; --wine2:#6C1030; --card:#EFE8D8; --gold:#C6974F; --gold2:#DCC190;
+  --cream:#F7F3EA; --cream2:#F3EEE0; --sage:#D6DFD9; --forest:#3E5A48; --deep:#2C4736; --taupe:#8A7268; --ink:#2B2024;
+  --head:Cambria,Caladea,Georgia,serif; --body:Calibri,Carlito,"Segoe UI",Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:var(--body);font-size:18px;line-height:1.55}
+a{color:var(--wine2)}
+img{max-width:100%;display:block}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--head);color:var(--wine);line-height:1.15;margin:0 0 .4em}
+h1{font-size:clamp(38px,6vw,64px)}
+h2{font-size:clamp(28px,4vw,40px)}
+h3{font-size:22px}
+p{margin:0 0 1em}
+.kicker{font-size:13px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--gold);margin-bottom:10px}
+.lead{font-size:21px;line-height:1.5}
+small,.small{font-size:14px;color:var(--taupe)}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:20;background:rgba(247,243,234,.95);backdrop-filter:blur(6px)}
+.nav .wrap{display:flex;gap:6px 18px;align-items:center;flex-wrap:wrap;padding-top:12px;padding-bottom:12px;font-size:15px}
+.nav b{font-family:var(--head);color:var(--wine);margin-right:auto;font-size:17px}
+.nav a{text-decoration:none;color:var(--ink);font-weight:600}
+.nav a:hover{color:var(--wine2)}
+
+/* hero */
+.hero{padding:70px 0 40px}
+.hero .lead{max-width:640px}
+.hero-by{margin-top:26px;display:inline-block;background:var(--card);border-radius:14px;padding:14px 20px}
+.hero-by b{font-family:var(--head);color:var(--wine);font-size:20px;display:block}
+
+section{padding:56px 0}
+section.alt{background:var(--cream2)}
+.card{background:var(--card);border-radius:16px;padding:24px 26px}
+.card.sage{background:var(--sage)}
+.card.white{background:#fff}
+.grid{display:grid;gap:18px}
+.g2{grid-template-columns:repeat(2,1fr)}
+.g3{grid-template-columns:repeat(3,1fr)}
+@media(max-width:820px){.g2,.g3{grid-template-columns:1fr}}
+.big{font-family:var(--head);font-size:44px;color:var(--wine);line-height:1}
+.pill{display:inline-block;background:var(--wine);color:var(--cream);font-weight:700;font-size:13px;border-radius:999px;padding:3px 12px;margin-bottom:8px;letter-spacing:.04em}
+
+/* checklist */
+.steps{counter-reset:s;list-style:none;margin:0;padding:0;display:grid;gap:14px}
+.steps li{counter-increment:s;background:#fff;border-radius:14px;padding:16px 20px 16px 70px;position:relative}
+.steps li::before{content:counter(s);position:absolute;left:18px;top:14px;width:36px;height:36px;border-radius:50%;background:var(--wine);color:var(--cream);font-family:var(--head);font-weight:700;display:flex;align-items:center;justify-content:center;font-size:18px}
+.steps b{display:block;font-family:var(--head);color:var(--wine);font-size:19px}
+
+/* videos */
+.vcard{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:0;background:#fff;border-radius:18px;overflow:hidden;text-decoration:none;color:var(--ink);box-shadow:0 6px 24px rgba(79,16,38,.10);transition:transform .15s}
+.vcard:hover{transform:translateY(-2px)}
+.vthumb img{width:100%;height:100%;object-fit:cover;aspect-ratio:16/9}
+.vbody{display:flex;flex-direction:column;padding:20px 24px;gap:6px}
+.vtitle{font-family:var(--head);font-size:24px;color:var(--wine);line-height:1.15}
+.vmeta{font-size:13px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--gold)}
+.vdesc{font-size:16px}
+.vcta{margin-top:auto;font-weight:700;color:var(--wine2)}
+.vcta::after{content:" \2192"}
+.vlist{display:grid;gap:18px}
+.vplay{cursor:default}.vplay:hover{transform:none}.vplay video{width:100%;display:block;aspect-ratio:16/9;background:#000;object-fit:cover}.vplay .vthumb{display:block}
+@media(max-width:700px){.vcard{grid-template-columns:1fr}}
+
+/* tables */
+.tbl{width:100%;border-collapse:collapse;background:#fff;border-radius:14px;overflow:hidden;font-size:16px}
+.tbl th{background:var(--wine);color:var(--cream);text-align:left;font-size:13px;letter-spacing:.06em;text-transform:uppercase;padding:10px 14px}
+.tbl td{padding:10px 14px;border-top:1px solid #efe8d8}
+.tbl tr:nth-child(even) td{background:#faf6ec}
+.scroll{overflow-x:auto}
+
+/* income chart */
+.income{background:#fff;border-radius:16px;padding:18px;overflow-x:auto}
+.irow{display:grid;grid-template-columns:200px minmax(260px,1fr) 100px 100px 100px;gap:10px;align-items:center;padding:7px 0;border-top:1px solid #f0e9d9;min-width:720px}
+.ihead{border-top:0;font-size:12px;letter-spacing:.06em;text-transform:uppercase;font-weight:700;color:var(--taupe)}
+.irank{font-weight:700;font-size:15px}
+.inum{text-align:right;font-size:15px;font-variant-numeric:tabular-nums}
+.inum.avg{font-weight:700;color:var(--wine)}
+
+.ichart svg{width:100%;height:28px;display:block}
+.ihead .ichart svg{height:26px}
+.legend{display:flex;gap:22px;flex-wrap:wrap;font-size:14px;color:var(--taupe);margin:10px 4px 0}
+.legend i{display:inline-block;vertical-align:middle;margin-right:6px}
+.dot{width:12px;height:12px;border-radius:50%;background:var(--wine)}
+.dot.o{background:var(--cream);border:2px solid var(--gold)}
+.rule{width:22px;height:4px;border-radius:2px;background:var(--gold)}
+
+/* leadership box */
+.pathbox{display:block;background:var(--wine);color:var(--cream);border-radius:18px;padding:26px 30px;text-decoration:none;margin-top:18px}
+.pathbox h3{color:var(--gold2);margin-bottom:6px}
+.pathbox span.go{display:inline-block;margin-top:8px;font-weight:700;color:var(--gold2)}
+.pathbox span.go::after{content:" \2192"}
+
+/* generation graphic (modal) */
+.modal{display:none}
+.modal:target{display:flex;position:fixed;inset:0;z-index:50;background:rgba(43,32,36,.72);align-items:center;justify-content:center;padding:20px}
+.modal .sheet{background:var(--cream);border-radius:20px;max-width:980px;width:100%;max-height:92vh;overflow:auto;padding:30px}
+.modal .close{float:right;font-size:15px;font-weight:700;text-decoration:none}
+.gtable{width:100%;border-collapse:separate;border-spacing:4px;font-size:16px}
+.gtable th{font-size:12px;letter-spacing:.05em;text-transform:uppercase;color:var(--taupe);text-align:center;padding:6px}
+.gtable th[scope=row]{text-align:left;text-transform:none;font-size:15px;letter-spacing:0;color:var(--ink);font-weight:700;white-space:nowrap}
+.gtable td{text-align:center;border-radius:8px;padding:9px 6px;font-weight:700}
+.gb6{background:#4F1026;color:#F7F3EA}.gb5{background:#6C1030;color:#F7F3EA}.gb4{background:#8A3A52;color:#F7F3EA}
+.gb3{background:#C6974F;color:#2B2024}.gb2{background:#DCC190;color:#2B2024}.gn{background:#efe8d8}
+.ginf{background:var(--sage);color:var(--deep)}
+
+/* misc */
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{background:#fff;border-radius:999px;padding:8px 16px;font-weight:700;font-size:15px}
+.dos li,.donts li{margin-bottom:6px}
+ul.clean{padding-left:20px;margin:0 0 1em}
+.warn{border-left:6px solid var(--gold)}
+footer{background:var(--wine);color:var(--cream);padding:46px 0;font-size:15px}
+footer a{color:var(--gold2)}
+.ids{background:#fff;border-radius:14px;padding:22px 26px}
+.printonly{display:none}
+.appendix{display:none}
+
+@media print{
+  @page{size:Letter;margin:.5in}
+  html{scroll-behavior:auto}
+  body{font-size:12.5px;line-height:1.45;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .nav{display:none}
+  section{padding:26px 0;break-inside:auto}
+  .card,.vcard,.steps li,.irow,.pathbox,.ids{break-inside:avoid}
+  h1{font-size:44px}h2{font-size:28px;break-after:avoid}h3{break-after:avoid}
+  .lead{font-size:15px}
+  .hero{padding:30px 0 10px}
+  .vcard{box-shadow:none;border:1px solid #e6dcc6}
+  .vdesc{font-size:12px}.vtitle{font-size:18px}
+  .income{overflow:visible}
+  .irow{grid-template-columns:150px 1fr 75px 75px 75px;min-width:0;font-size:11px}
+  .inum{font-size:11px}.irank{font-size:11px}
+  .g2{grid-template-columns:repeat(2,1fr)}.g3{grid-template-columns:repeat(3,1fr)}
+  .vcard{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+  .card{padding:14px 16px}.big{font-size:30px}h3{font-size:16px}
+  .ichart svg{height:26px}
+  #income,#thirty,#brand{break-before:page}
+  .irow{padding:3px 0}.legend{margin-top:4px}#income .lead{margin-bottom:.5em}#income .card{padding:10px 14px;margin-top:10px!important}#income .card p{margin-bottom:.5em}
+  .modal{display:none!important}
+  .appendix{display:block;break-before:page}
+  .printonly{display:inline}
+  .noprint{display:none}
+}
+
+.shot{margin:16px 0 8px;background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 6px 24px rgba(79,16,38,.10)}
+.shot img{width:100%;height:auto}
+.cap{font-size:15px;color:var(--ink);padding:12px 18px 14px}
+.cap b{color:var(--wine)}
+.rn{background:#FFF4CC;border:2px dashed #C6974F;border-radius:12px;padding:10px 16px;font-size:15px;margin:14px 0}
+.rn b{color:#7a4a00}
+.loop{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin:22px 0}
+.loop div{background:#fff;border-radius:14px;padding:14px 14px 12px;font-size:15px;line-height:1.35}
+.loop b{display:block;font-family:var(--head);color:var(--wine);font-size:18px;margin-bottom:4px}
+.loop i{display:inline-block;font-style:normal;font-weight:700;background:var(--wine);color:var(--cream);width:26px;height:26px;border-radius:50%;text-align:center;line-height:26px;margin-bottom:6px;font-size:14px}
+@media(max-width:820px){.loop{grid-template-columns:1fr}}
+.vrow{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:18px 0}
+.vrow a{display:block;background:#fff;border-radius:14px;overflow:hidden;text-decoration:none;color:var(--ink);box-shadow:0 4px 16px rgba(79,16,38,.08)}
+.vrow img{width:100%;aspect-ratio:16/9;object-fit:cover}
+.vrow span{display:block;padding:10px 14px 12px;font-size:15px}
+.vrow b{display:block;font-family:var(--head);color:var(--wine);font-size:18px}
+@media(max-width:820px){.vrow{grid-template-columns:1fr}}
+.s2{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start}@media(max-width:820px){.s2{grid-template-columns:1fr}}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:start}
+@media(max-width:820px){.two{grid-template-columns:1fr}}
+.btnlink{display:inline-block;background:var(--wine);color:var(--cream);text-decoration:none;font-weight:700;border-radius:999px;padding:10px 22px;margin:6px 8px 6px 0}
+.tbl td b{color:var(--wine)}
+.disc{font-size:14px;color:var(--taupe)}
+@media print{
+  .loop{grid-template-columns:repeat(5,1fr)}.loop div{font-size:11px}.loop b{font-size:13px}
+  .vrow{grid-template-columns:repeat(3,1fr)}.vrow span{font-size:11px}.vrow b{font-size:13px}
+  .two{grid-template-columns:1fr 1fr}.s2{grid-template-columns:1fr 1fr}
+  .kicker{break-after:avoid}
+  footer{padding:18px 0}
+  .shot,.rn,.loop div,.vrow a{break-inside:avoid}
+  .cap{font-size:11.5px}.rn{font-size:11.5px}
+  .pbreak{break-before:page}
+  .shot{margin-left:auto;margin-right:auto}.shot.w60{max-width:50%}.shot.w72{max-width:72%}
+  .s2 .shot{max-width:none}
+  .pbreak{display:none}
+  .pb{break-before:page}
+  footer{break-inside:avoid}
+}
+
+.vc{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 6px 24px rgba(79,16,38,.10);margin:16px 0;text-decoration:none;color:var(--ink)}
+.vc img,.vc video{width:100%;height:100%;object-fit:cover;aspect-ratio:16/9;display:block;background:#000}
+.vc .vb{display:flex;flex-direction:column;padding:18px 22px;gap:6px}
+.vc .vt{font-family:var(--head);font-size:23px;color:var(--wine);line-height:1.15}
+.vc .vm{font-size:13px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--gold)}
+.vc .vd{font-size:16px}
+.vc .vn{margin-top:auto;font-size:14px;color:var(--taupe)}
+.vlist .vc{margin:0}
+.prt{display:none}
+@media(max-width:700px){.vc{grid-template-columns:1fr}}
+.shot.w60{max-width:60%}.shot.w72{max-width:72%}
+@media(max-width:820px){.shot.w60,.shot.w72{max-width:100%}}
+.c46{grid-template-columns:.8fr 1.2fr}
+.tbl td,.tbl th{vertical-align:top}
+@media print{
+  .vc{grid-template-columns:1fr 1fr;box-shadow:none;border:1px solid #e6dcc6;break-inside:avoid}
+  .vc .vt{font-size:16px}.vc .vd{font-size:11.5px}.vc .vm,.vc .vn{font-size:10.5px}.vc .vb{padding:10px 14px}
+  .scr{display:none!important}.prt{display:grid!important}
+  .two{grid-template-columns:1fr 1fr}.c46{grid-template-columns:.8fr 1.2fr}
+  .apx h3{font-size:16px}
+  #income,#earn,#tool,#thirty{break-before:page}
+  #earn .wrap>h3{break-after:avoid}
+  .shot.w60{max-width:50%}.shot.w72{max-width:72%}
+  .tbl td,.tbl th{padding:6px 10px;font-size:11.5px}
+}
+</style></head><body><div class="nav"><div class="wrap">
+  <b>Your Shaklee Business</b>
+  <a href="#start">Before you start</a><a href="#why">Why</a><a href="#earn">How you earn</a><a href="#income">Rank and income</a><a href="#tool">Your tool</a><a href="#products">Products</a><a href="#thirty">First 30 days</a>
+</div></div>
+
+<header class="hero"><div class="wrap">
+  <div class="kicker">A guide for new business builders</div>
+  <h1>Your Shaklee business starts here.</h1>
+  <p class="lead">Why you are doing this. How you earn. What you share. And exactly what to do in your first 30 days. Simple enough to follow, complete enough to trust, and built so you can hand the same guide to the next person you sponsor.</p>
+  <div class="hero-by"><small>Created by</small><b>Bob Ferguson</b>Shaklee Senior Master Coordinator &middot; Fairfield, Iowa</div>
+  <p class="small" style="margin-top:14px"><span class="noprint">Want a copy to keep? <a href="#" onclick="window.print();return false;">Print or save as PDF</a>.</span><span class="printonly">Online version, with videos that play: <a href="https://bobfergusonlongevity.com/start/">bobfergusonlongevity.com/start/</a></span></p>
+</div></header>
+<section id="start" class="alt"><div class="wrap">
+  <div class="kicker">Part 1</div>
+  <h2>Before you do anything else</h2>
+  <p class="lead">You have already been sponsored. Take twenty minutes to set up your account, then an hour to look around, so everything later works the first time.</p>
+  <ol class="steps">
+    <li><b>Sign in to your account</b>Go to <a href="https://us.shaklee.com">us.shaklee.com</a> and sign in. This is where your customers shop, and where your own orders are placed.</li>
+    <li><b>Complete your profile</b>Check your name, email, and phone in <a href="https://us.shaklee.com/my-account/account">My Account</a>. This is how customers, your sponsor, and Shaklee reach you.</li>
+    <li><b>Add your shipping address and payment method</b>Set them in <a href="https://us.shaklee.com/my-account/shipping-addresses">Shipping Addresses</a> and <a href="https://us.shaklee.com/my-account/account-payment-details">Payment Options</a>.</li>
+    <li><b>Download the Shaklee Connect app</b>Track your volume, manage orders, and see your progress from your phone. It is in the Apple App Store and Google Play.</li>
+    <li><b>Set up your monthly loyalty order</b>A loyalty order of $100 or more, placed between the 1st and 15th of the month, earns loyalty points toward free products and keeps you at the 75 Active Volume monthly requirement. <a href="https://us.shaklee.com/my-account/manage-autoship">Manage loyalty orders</a>.</li>
+    <li><b>Create your personal storefront</b>Your first 90 days include a free trial of My Storefront, your own online store with your favorite products and bundles. <a href="https://us.shaklee.com/my-storefront">Set up My Storefront</a>.</li>
+    <li><b>Learn to create a cart</b>Build and share a customized cart for each person you talk to. Find the how-to guides in the <a href="https://shaklee-tools.lingoapp.com">Shaklee Tools</a> business resources kit.</li>
+    <li><b>Join the Ambassador community</b>The <a href="https://www.facebook.com/groups/965492904112478">Shaklee Share and Grow</a> Facebook group is for Ambassadors (you will need your Shaklee ID).</li>
+    <li><b>Book your onboarding appointment with Bob</b>This is where you set your goals, pick a launch date, and build your launch list. Bob will schedule it with you. Reach Bob at <a href="mailto:bob@fergleads.com">bob@fergleads.com</a>.</li>
+    <li><b>Give yourself one hour to explore</b>Sign in to <a href="https://shaklee.my.site.com/s/">My Business</a> and spend an hour clicking around. Open every link in the menu: Dashboard, Me, My Team, My Leads, Reports, Share Shaklee, Tools, Support, and AI. See what is there, and read in detail whatever pulls you in. You are not trying to learn it all. You are finding out what exists and what you are drawn to.</li>
+  </ol>
+</div></section>
+
+<section id="why"><div class="wrap">
+  <div class="kicker">Part 2</div>
+  <h2>Start with the why</h2>
+  <p class="lead">Before the numbers, watch these two. Everything that follows makes more sense once you know what you are building and who stands behind it.</p>
+  <div class="vlist">
+    <div class="vc scr"><video controls preload="none" playsinline poster="https://cdn.jsdelivr.net/gh/bobfairfield/ambassador-guide-assets@main/poster-opportunity.jpg"><source src="https://cdn.jsdelivr.net/gh/bobfairfield/ambassador-guide-assets@main/video-opportunity.mp4" type="video/mp4"></video><div class="vb"><span class="vm">3 min 19 sec</span><span class="vt">The opportunity: why you are doing this</span><span class="vd">Start here. This is the idea behind everything that follows.</span></div></div><a class="vc prt" href="https://cdn.jsdelivr.net/gh/bobfairfield/ambassador-guide-assets@main/video-opportunity.mp4"><img src="https://cdn.jsdelivr.net/gh/bobfairfield/ambassador-guide-assets@main/thumb-opportunity.jpg" alt="The opportunity: why you are doing this"><div class="vb"><span class="vm">3 min 19 sec</span><span class="vt">The opportunity: why you are doing this</span><span class="vd">Start here. This is the idea behind everything that follows.</span><span class="vn">Click to watch online</span></div></a>
+    <div class="vc scr"><video controls preload="none" playsinline poster="https://cdn.jsdelivr.net/gh/bobfairfield/ambassador-guide-assets@main/poster-roger.jpg"><source src="https://cdn.jsdelivr.net/gh/bobfairfield/ambassador-guide-assets@main/video-roger.mp4" type="video/mp4"></video><div class="vb"><span class="vm">15 min 44 sec</span><span class="vt">Why Shaklee, with Roger Barnett</span><span class="vd">Roger Barnett, Shaklee's Chairman and CEO, shares his vision for the company's future and what sets Shaklee apart in wellness.</span></div></div><a class="vc prt" href="https://cdn.jsdelivr.net/gh/bobfairfield/ambassador-guide-assets@main/video-roger.mp4"><img src="https://cdn.jsdelivr.net/gh/bobfairfield/ambassador-guide-assets@main/thumb-roger-barnett.jpg" alt="Why Shaklee, with Roger Barnett"><div class="vb"><span class="vm">15 min 44 sec</span><span class="vt">Why Shaklee, with Roger Barnett</span><span class="vd">Roger Barnett, Shaklee's Chairman and CEO, shares his vision for the company's future and what sets Shaklee apart in wellness.</span><span class="vn">Click to watch online</span></div></a>
+  </div>
+  <div class="grid g2" style="margin-top:22px">
+    <div class="card"><div class="big">8 years</div><p style="margin-top:8px">of cellular aging reversed in two months, in a randomized, placebo-controlled 60-day trial in healthy adults 45 to 65, with Vivix+<sup>™</sup>.*</p></div>
+    <div class="card sage"><div class="big">100%</div><p style="margin-top:8px">money-back guarantee on every Shaklee product, even if the container is empty.</p></div>
+  </div>
+</div></section>
+
+<!-- ============ HOW YOU EARN ============ -->
+<section id="earn" class="alt"><div class="wrap">
+  <div class="kicker">Part 3</div>
+  <h2>How you earn, in three levels</h2>
+  <p class="lead">Learn Level 1 first. It is all you need to begin. Levels 2 and 3 are here so you can see where the path goes.</p>
+
+  <h3 style="margin-top:30px"><span class="pill">LEVEL 1</span><br>Earn by sharing</h3>
+  <div class="vc scr"><video controls preload="none" playsinline poster="https://cdn.jsdelivr.net/gh/bobfairfield/ambassador-guide-assets@main/poster-share-earn.jpg"><source src="https://cdn.jsdelivr.net/gh/bobfairfield/ambassador-guide-assets@main/video-share-earn.mp4" type="video/mp4"></video><div class="vb"><span class="vm">4 min 16 sec</span><span class="vt">How to Share &amp; Earn</span><span class="vd">Shaklee's own walk-through of Level 1: the 30 for 30, the Star Club Bonus, and the 10 to 40% customer commission.</span></div></div><a class="vc prt" href="https://cdn.jsdelivr.net/gh/bobfairfield/ambassador-guide-assets@main/video-share-earn.mp4"><img src="https://cdn.jsdelivr.net/gh/bobfairfield/ambassador-guide-assets@main/thumb-share-earn.jpg" alt="How to Share &amp; Earn"><div class="vb"><span class="vm">4 min 16 sec</span><span class="vt">How to Share &amp; Earn</span><span class="vd">Shaklee's own walk-through of Level 1: the 30 for 30, the Star Club Bonus, and the 10 to 40% customer commission.</span><span class="vn">Click to watch online</span></div></a>
+  <div class="grid g3">
+    <div class="card"><div class="big">30%</div><h3 style="margin-top:8px">30 for 30</h3><p>Each time you personally enroll a new customer, Member, or Ambassador, you earn at least 30% on their product purchases in their first 30 days.</p></div>
+    <div class="card"><div class="big">$50</div><h3 style="margin-top:8px">Star Club Bonus</h3><p>Earn $50 for every $500 of first purchases by three or more new customers in a month. If a new Ambassador joins that month with a qualifying order, the bonus is boosted by $25.</p></div>
+    <div class="card"><div class="big">10 to 40%</div><h3 style="margin-top:8px">Customer commission</h3><p>On the monthly purchases of your personal customers after their first 30 days. The percentage rises with the number of buying customers and their total purchases.</p></div>
+  </div>
+  <div class="scroll" style="margin-top:18px"><table class="tbl">
+    <tr><th>Buying customers</th><th>Total monthly purchases</th><th>Commission</th><th>Tier</th></tr>
+    <tr><td>1</td><td>$1 to $499</td><td>10%</td><td>Promoter I</td></tr>
+    <tr><td>3</td><td>$500 to $999</td><td>15%</td><td>Promoter II</td></tr>
+    <tr><td>5</td><td>$1,000 to $2,999</td><td>20%</td><td>Promoter III</td></tr>
+    <tr><td>10</td><td>$3,000 to $4,999</td><td>25%</td><td>Premier</td></tr>
+    <tr><td>15</td><td>$5,000 to $7,499</td><td>30%</td><td>Pro</td></tr>
+    <tr><td>20</td><td>$7,500 to $9,999</td><td>35%</td><td>Elite</td></tr>
+    <tr><td>30</td><td>$10,000 and up</td><td>40%</td><td>Visionary</td></tr>
+  </table></div>
+  <p class="small" style="margin-top:8px">Each month the count and the total start at zero and grow as your customers order. Example from the plan: $1,500 in product sales from 6 buying customers in a month qualifies for a 20% commission, a $300 payout. That shows how the math works. It is not a prediction of what you will earn.</p>
+  <div class="grid g2" style="margin-top:18px">
+    <div class="card sage"><h3>The POP Rebate</h3><p style="margin:0">Each month you also receive a rebate on your own product purchases, up to $750, equal to the commission percentage you qualified for that month.</p></div>
+    <div class="card sage"><h3>The one monthly requirement</h3><p style="margin:0">Keep 75 Active Volume each month, from personal orders or new customers' orders. Your monthly loyalty order of $100 or more does it.</p></div>
+  </div>
+
+  <h3 style="margin-top:44px"><span class="pill">LEVEL 2</span><br>Earn by helping others share</h3>
+  <div class="vc scr"><video controls preload="none" playsinline poster="https://cdn.jsdelivr.net/gh/bobfairfield/ambassador-guide-assets@main/poster-build-team.jpg"><source src="https://cdn.jsdelivr.net/gh/bobfairfield/ambassador-guide-assets@main/video-build-team.mp4" type="video/mp4"></video><div class="vb"><span class="vm">3 min 20 sec</span><span class="vt">How to Build a Team</span><span class="vd">Shaklee's own walk-through of how team bonuses grow with Directors, and the six generations that lead into Level 3.</span></div></div><a class="vc prt" href="https://cdn.jsdelivr.net/gh/bobfairfield/ambassador-guide-assets@main/video-build-team.mp4"><img src="https://cdn.jsdelivr.net/gh/bobfairfield/ambassador-guide-assets@main/thumb-build-team.jpg" alt="How to Build a Team"><div class="vb"><span class="vm">3 min 20 sec</span><span class="vt">How to Build a Team</span><span class="vd">Shaklee's own walk-through of how team bonuses grow with Directors, and the six generations that lead into Level 3.</span><span class="vn">Click to watch online</span></div></a>
+  <p>When you enroll Ambassadors and help them share and succeed, you can earn team bonuses on the product volume your team creates. These are paid on product purchases, not on recruiting. Ambassadors do not earn compensation for recruiting or sponsoring.</p>
+  <div class="scroll"><table class="tbl">
+    <tr><th>Your title</th><th>What you need each month</th><th>What opens</th></tr>
+    <tr><td>Ambassador II</td><td>75 Qualifying Volume</td><td>Level 1 Bonus, 6%</td></tr>
+    <tr><td>Senior Ambassador</td><td>500 Customer Volume</td><td>Level 1 Bonus rises to 8%</td></tr>
+    <tr><td>Director</td><td>500 Customer Volume and 2,000 Personal Team Volume</td><td>Level 1 Bonus rises to 10%, plus the Level 2 Bonus (2%) and the Director Team Bonus (6%)</td></tr>
+  </table></div>
+  <div class="card" style="margin-top:18px"><h3>Director is the key milestone</h3>
+    <p>Directors earn on the volume of everyone on their team, not only the people they enrolled: up to 16% on Level 1 volume and up to 8% on Level 2 volume, with the Director Team Bonus stacked on top of the level bonuses. Directors also receive a 25% product discount instead of 15%, invitations to leadership calls and training, and added reporting tools.</p>
+    <p>There are two ways to reach Director. One is about $3,000 (2,000 points) in personal customer sales. The other is to become a Senior Ambassador with about $750 (500 points) in customer sales and help three Ambassadors do the same. The simplest path: build 10 loyal customers first, then coach three Ambassadors to do the same.</p>
+    <p style="margin:0">There is a current Director Accelerator, a $500 shopping spree for becoming a Director in your first full two months. Confirm current terms in your back office.</p></div>
+
+  <h3 style="margin-top:44px"><span class="pill">LEVEL 3</span><br>The full leadership path</h3>
+  <p>You do not need this on day one. Each title adds requirements and opens more bonuses. Rank Up Bonuses are one-time and are earned when you reach a title and keep it for three more consecutive months.</p>
+  <div class="scroll"><table class="tbl">
+    <tr><th>Title</th><th>Cust. Vol.</th><th>Personal Team Vol.</th><th>Org. Vol.</th><th>Qualified Org. Vol.</th><th>Director legs</th><th>Rank Up Bonus</th></tr>
+    <tr><td>Director</td><td>500</td><td>2,000</td><td></td><td></td><td></td><td>Global Conference registration</td></tr>
+    <tr><td>Senior Director</td><td>500</td><td>2,500</td><td></td><td></td><td>1</td><td>$1,000</td></tr>
+    <tr><td>Coordinator</td><td>500</td><td>3,000</td><td></td><td></td><td>2</td><td>$2,000</td></tr>
+    <tr><td>Senior Coordinator</td><td>500</td><td>3,000</td><td>10,000</td><td></td><td>2</td><td>$2,500</td></tr>
+    <tr><td>Executive Coordinator</td><td>500</td><td>3,500</td><td>20,000</td><td></td><td>3</td><td>$4,000</td></tr>
+    <tr><td>Senior Executive Coordinator</td><td>500</td><td>3,500</td><td>30,000</td><td></td><td>3</td><td>$5,000</td></tr>
+    <tr><td>Key Coordinator</td><td>500</td><td>4,000</td><td>50,000</td><td>25,000</td><td>4</td><td>$7,500</td></tr>
+    <tr><td>Senior Key Coordinator</td><td>500</td><td>4,500</td><td>75,000</td><td>37,500</td><td>5</td><td>$10,000</td></tr>
+    <tr><td>Master Coordinator</td><td>500</td><td>5,000</td><td>100,000</td><td>50,000</td><td>6</td><td>$20,000</td></tr>
+    <tr><td>Senior Master Coordinator</td><td>500</td><td>6,000</td><td>200,000</td><td>100,000</td><td>8</td><td>$20,000</td></tr>
+    <tr><td>Presidential Master Coordinator*</td><td>500</td><td>7,000</td><td>500,000</td><td>250,000</td><td>10</td><td>$20,000</td></tr>
+  </table></div>
+  <p class="small" style="margin-top:8px">*Requires at least two legs at Master Coordinator or higher. A Director leg is a line of your organization with at least one Director or higher. Every title also requires 75 Active Volume.</p>
+  <a class="pathbox" href="#gen-bonuses"><h3>See the leadership generation bonuses in detail</h3><span>From Senior Director up, you earn on the volume of leaders in your organization, generation by generation, plus the Infinity Bonus and Infinity Match at the top titles.</span><br><span class="go">Open the full graphic</span></a>
+</div></section>
+
+
+<!-- ============ INCOME ============ -->
+<section id="income"><div class="wrap">
+  <div class="kicker">Part 4</div>
+  <h2>Rank and income: what the data shows</h2>
+  <p class="lead">This is Shaklee's published 2025 earnings data by title. Use it to see which title lines up with the income you want to build toward.</p>
+  <div class="income"><div class="irow ihead"><div class="irank">Title</div><div class="ichart"><svg viewBox="0 0 400 26" aria-hidden="true"><text x="8.0" y="20" text-anchor="middle" font-size="19" font-weight="700" fill="#8A7268">$1K</text><text x="124.3" y="20" text-anchor="middle" font-size="19" font-weight="700" fill="#8A7268">$10K</text><text x="240.7" y="20" text-anchor="middle" font-size="19" font-weight="700" fill="#8A7268">$100K</text><text x="357.0" y="20" text-anchor="middle" font-size="19" font-weight="700" fill="#8A7268">$1M</text></svg></div><div class="inum">Lowest third</div><div class="inum">Average</div><div class="inum">Highest third</div></div><div class="irow"><div class="irank">Director</div><div class="ichart"><svg viewBox="0 0 400 28" role="img" aria-label="Director: lowest third average $2,952, average $6,678, highest third average $11,356"><title>Director: low third $2,952, average $6,678, high third $11,356</title><line x1="8.0" y1="0" x2="8.0" y2="28" stroke="#D8CDB8" stroke-width="1"/><line x1="124.3" y1="0" x2="124.3" y2="28" stroke="#D8CDB8" stroke-width="1"/><line x1="240.7" y1="0" x2="240.7" y2="28" stroke="#D8CDB8" stroke-width="1"/><line x1="357.0" y1="0" x2="357.0" y2="28" stroke="#D8CDB8" stroke-width="1"/><line x1="62.7" y1="14" x2="130.8" y2="14" stroke="#C6974F" stroke-width="5" stroke-linecap="round"/><circle cx="62.7" cy="14" r="5.5" fill="#F7F3EA" stroke="#C6974F" stroke-width="2"/><circle cx="130.8" cy="14" r="5.5" fill="#F7F3EA" stroke="#C6974F" stroke-width="2"/><circle cx="103.9" cy="14" r="8" fill="#4F1026" stroke="#F7F3EA" stroke-width="2"/></svg></div><div class="inum">$2,952</div><div class="inum avg">$6,678</div><div class="inum">$11,356</div></div><div class="irow"><div class="irank">Senior Director</div><div class="ichart"><svg viewBox="0 0 400 28" role="img" aria-label="Senior Director: lowest third average $4,682, average $11,747, highest third average $21,034"><title>Senior Director: low third $4,682, average $11,747, high third $21,034</title><line x1="8.0" y1="0" x2="8.0" y2="28" stroke="#D8CDB8" stroke-width="1"/><line x1="124.3" y1="0" x2="124.3" y2="28" stroke="#D8CDB8" stroke-width="1"/><line x1="240.7" y1="0" x2="240.7" y2="28" stroke="#D8CDB8" stroke-width="1"/><line x1="357.0" y1="0" x2="357.0" y2="28" stroke="#D8CDB8" stroke-width="1"/><line x1="86.0" y1="14" x2="161.9" y2="14" stroke="#C6974F" stroke-width="5" stroke-linecap="round"/><circle cx="86.0" cy="14" r="5.5" fill="#F7F3EA" stroke="#C6974F" stroke-width="2"/><circle cx="161.9" cy="14" r="5.5" fill="#F7F3EA" stroke="#C6974F" stroke-width="2"/><circle cx="132.5" cy="14" r="8" fill="#4F1026" stroke="#F7F3EA" stroke-width="2"/></svg></div><div class="inum">$4,682</div><div class="inum avg">$11,747</div><div class="inum">$21,034</div></div><div class="irow"><div class="irank">Coordinator</div><div class="ichart"><svg viewBox="0 0 400 28" role="img" aria-label="Coordinator: lowest third average $6,083, average $10,588, highest third average $15,759"><title>Coordinator: low third $6,083, average $10,588, high third $15,759</title><line x1="8.0" y1="0" x2="8.0" y2="28" stroke="#D8CDB8" stroke-width="1"/><line x1="124.3" y1="0" x2="124.3" y2="28" stroke="#D8CDB8" stroke-width="1"/><line x1="240.7" y1="0" x2="240.7" y2="28" stroke="#D8CDB8" stroke-width="1"/><line x1="357.0" y1="0" x2="357.0" y2="28" stroke="#D8CDB8" stroke-width="1"/><line x1="99.2" y1="14" x2="147.3" y2="14" stroke="#C6974F" stroke-width="5" stroke-linecap="round"/><circle cx="99.2" cy="14" r="5.5" fill="#F7F3EA" stroke="#C6974F" stroke-width="2"/><circle cx="147.3" cy="14" r="5.5" fill="#F7F3EA" stroke="#C6974F" stroke-width="2"/><circle cx="127.2" cy="14" r="8" fill="#4F1026" stroke="#F7F3EA" stroke-width="2"/></svg></div><div class="inum">$6,083</div><div class="inum avg">$10,588</div><div class="inum">$15,759</div></div><div class="irow"><div class="irank">Senior Coordinator</div><div class="ichart"><svg viewBox="0 0 400 28" role="img" aria-label="Senior Coordinator: lowest third average $10,002, average $21,645, highest third average $36,109"><title>Senior Coordinator: low third $10,002, average $21,645, high third $36,109</title><line x1="8.0" y1="0" x2="8.0" y2="28" stroke="#D8CDB8" stroke-width="1"/><line x1="124.3" y1="0" x2="124.3" y2="28" stroke="#D8CDB8" stroke-width="1"/><line x1="240.7" y1="0" x2="240.7" y2="28" stroke="#D8CDB8" stroke-width="1"/><line x1="357.0" y1="0" x2="357.0" y2="28" stroke="#D8CDB8" stroke-width="1"/><line x1="124.3" y1="14" x2="189.2" y2="14" stroke="#C6974F" stroke-width="5" stroke-linecap="round"/><circle cx="124.3" cy="14" r="5.5" fill="#F7F3EA" stroke="#C6974F" stroke-width="2"/><circle cx="189.2" cy="14" r="5.5" fill="#F7F3EA" stroke="#C6974F" stroke-width="2"/><circle cx="163.3" cy="14" r="8" fill="#4F1026" stroke="#F7F3EA" stroke-width="2"/></svg></div><div class="inum">$10,002</div><div class="inum avg">$21,645</div><div class="inum">$36,109</div></div><div class="irow"><div class="irank">Executive Coordinator</div><div class="ichart"><svg viewBox="0 0 400 28" role="img" aria-label="Executive Coordinator: lowest third average $26,428, average $40,817, highest third average $55,763"><title>Executive Coordinator: low third $26,428, average $40,817, high third $55,763</title><line x1="8.0" y1="0" x2="8.0" y2="28" stroke="#D8CDB8" stroke-width="1"/><line x1="124.3" y1="0" x2="124.3" y2="28" stroke="#D8CDB8" stroke-width="1"/><line x1="240.7" y1="0" x2="240.7" y2="28" stroke="#D8CDB8" stroke-width="1"/><line x1="357.0" y1="0" x2="357.0" y2="28" stroke="#D8CDB8" stroke-width="1"/><line x1="173.4" y1="14" x2="211.1" y2="14" stroke="#C6974F" stroke-width="5" stroke-linecap="round"/><circle cx="173.4" cy="14" r="5.5" fill="#F7F3EA" stroke="#C6974F" stroke-width="2"/><circle cx="211.1" cy="14" r="5.5" fill="#F7F3EA" stroke="#C6974F" stroke-width="2"/><circle cx="195.4" cy="14" r="8" fill="#4F1026" stroke="#F7F3EA" stroke-width="2"/></svg></div><div class="inum">$26,428</div><div class="inum avg">$40,817</div><div class="inum">$55,763</div></div><div class="irow"><div class="irank">Senior Executive Coordinator</div><div class="ichart"><svg viewBox="0 0 400 28" role="img" aria-label="Senior Executive Coordinator: lowest third average $28,396, average $43,770, highest third average $58,780"><title>Senior Executive Coordinator: low third $28,396, average $43,770, high third $58,780</title><line x1="8.0" y1="0" x2="8.0" y2="28" stroke="#D8CDB8" stroke-width="1"/><line x1="124.3" y1="0" x2="124.3" y2="28" stroke="#D8CDB8" stroke-width="1"/><line x1="240.7" y1="0" x2="240.7" y2="28" stroke="#D8CDB8" stroke-width="1"/><line x1="357.0" y1="0" x2="357.0" y2="28" stroke="#D8CDB8" stroke-width="1"/><line x1="177.1" y1="14" x2="213.8" y2="14" stroke="#C6974F" stroke-width="5" stroke-linecap="round"/><circle cx="177.1" cy="14" r="5.5" fill="#F7F3EA" stroke="#C6974F" stroke-width="2"/><circle cx="213.8" cy="14" r="5.5" fill="#F7F3EA" stroke="#C6974F" stroke-width="2"/><circle cx="198.9" cy="14" r="8" fill="#4F1026" stroke="#F7F3EA" stroke-width="2"/></svg></div><div class="inum">$28,396</div><div class="inum avg">$43,770</div><div class="inum">$58,780</div></div><div class="irow"><div class="irank">Key Coordinator</div><div class="ichart"><svg viewBox="0 0 400 28" role="img" aria-label="Key Coordinator: lowest third average $46,791, average $61,496, highest third average $79,803"><title>Key Coordinator: low third $46,791, average $61,496, high third $79,803</title><line x1="8.0" y1="0" x2="8.0" y2="28" stroke="#D8CDB8" stroke-width="1"/><line x1="124.3" y1="0" x2="124.3" y2="28" stroke="#D8CDB8" stroke-width="1"/><line x1="240.7" y1="0" x2="240.7" y2="28" stroke="#D8CDB8" stroke-width="1"/><line x1="357.0" y1="0" x2="357.0" y2="28" stroke="#D8CDB8" stroke-width="1"/><line x1="202.3" y1="14" x2="229.3" y2="14" stroke="#C6974F" stroke-width="5" stroke-linecap="round"/><circle cx="202.3" cy="14" r="5.5" fill="#F7F3EA" stroke="#C6974F" stroke-width="2"/><circle cx="229.3" cy="14" r="5.5" fill="#F7F3EA" stroke="#C6974F" stroke-width="2"/><circle cx="216.1" cy="14" r="8" fill="#4F1026" stroke="#F7F3EA" stroke-width="2"/></svg></div><div class="inum">$46,791</div><div class="inum avg">$61,496</div><div class="inum">$79,803</div></div><div class="irow"><div class="irank">Senior Key Coordinator</div><div class="ichart"><svg viewBox="0 0 400 28" role="img" aria-label="Senior Key Coordinator: lowest third average $69,543, average $107,354, highest third average $166,938"><title>Senior Key Coordinator: low third $69,543, average $107,354, high third $166,938</title><line x1="8.0" y1="0" x2="8.0" y2="28" stroke="#D8CDB8" stroke-width="1"/><line x1="124.3" y1="0" x2="124.3" y2="28" stroke="#D8CDB8" stroke-width="1"/><line x1="240.7" y1="0" x2="240.7" y2="28" stroke="#D8CDB8" stroke-width="1"/><line x1="357.0" y1="0" x2="357.0" y2="28" stroke="#D8CDB8" stroke-width="1"/><line x1="222.3" y1="14" x2="266.5" y2="14" stroke="#C6974F" stroke-width="5" stroke-linecap="round"/><circle cx="222.3" cy="14" r="5.5" fill="#F7F3EA" stroke="#C6974F" stroke-width="2"/><circle cx="266.5" cy="14" r="5.5" fill="#F7F3EA" stroke="#C6974F" stroke-width="2"/><circle cx="244.2" cy="14" r="8" fill="#4F1026" stroke="#F7F3EA" stroke-width="2"/></svg></div><div class="inum">$69,543</div><div class="inum avg">$107,354</div><div class="inum">$166,938</div></div><div class="irow"><div class="irank">Master Coordinator</div><div class="ichart"><svg viewBox="0 0 400 28" role="img" aria-label="Master Coordinator: lowest third average $110,690, average $164,424, highest third average $224,186"><title>Master Coordinator: low third $110,690, average $164,424, high third $224,186</title><line x1="8.0" y1="0" x2="8.0" y2="28" stroke="#D8CDB8" stroke-width="1"/><line x1="124.3" y1="0" x2="124.3" y2="28" stroke="#D8CDB8" stroke-width="1"/><line x1="240.7" y1="0" x2="240.7" y2="28" stroke="#D8CDB8" stroke-width="1"/><line x1="357.0" y1="0" x2="357.0" y2="28" stroke="#D8CDB8" stroke-width="1"/><line x1="245.8" y1="14" x2="281.4" y2="14" stroke="#C6974F" stroke-width="5" stroke-linecap="round"/><circle cx="245.8" cy="14" r="5.5" fill="#F7F3EA" stroke="#C6974F" stroke-width="2"/><circle cx="281.4" cy="14" r="5.5" fill="#F7F3EA" stroke="#C6974F" stroke-width="2"/><circle cx="265.8" cy="14" r="8" fill="#4F1026" stroke="#F7F3EA" stroke-width="2"/></svg></div><div class="inum">$110,690</div><div class="inum avg">$164,424</div><div class="inum">$224,186</div></div><div class="irow"><div class="irank">Senior Master Coordinator</div><div class="ichart"><svg viewBox="0 0 400 28" role="img" aria-label="Senior Master Coordinator: lowest third average $185,243, average $241,080, highest third average $308,806"><title>Senior Master Coordinator: low third $185,243, average $241,080, high third $308,806</title><line x1="8.0" y1="0" x2="8.0" y2="28" stroke="#D8CDB8" stroke-width="1"/><line x1="124.3" y1="0" x2="124.3" y2="28" stroke="#D8CDB8" stroke-width="1"/><line x1="240.7" y1="0" x2="240.7" y2="28" stroke="#D8CDB8" stroke-width="1"/><line x1="357.0" y1="0" x2="357.0" y2="28" stroke="#D8CDB8" stroke-width="1"/><line x1="271.8" y1="14" x2="297.6" y2="14" stroke="#C6974F" stroke-width="5" stroke-linecap="round"/><circle cx="271.8" cy="14" r="5.5" fill="#F7F3EA" stroke="#C6974F" stroke-width="2"/><circle cx="297.6" cy="14" r="5.5" fill="#F7F3EA" stroke="#C6974F" stroke-width="2"/><circle cx="285.1" cy="14" r="8" fill="#4F1026" stroke="#F7F3EA" stroke-width="2"/></svg></div><div class="inum">$185,243</div><div class="inum avg">$241,080</div><div class="inum">$308,806</div></div><div class="irow"><div class="irank">Presidential Master Coordinator</div><div class="ichart"><svg viewBox="0 0 400 28" role="img" aria-label="Presidential Master Coordinator: lowest third average $603,972, average $895,052, highest third average $1,186,133"><title>Presidential Master Coordinator: low third $603,972, average $895,052, high third $1,186,133</title><line x1="8.0" y1="0" x2="8.0" y2="28" stroke="#D8CDB8" stroke-width="1"/><line x1="124.3" y1="0" x2="124.3" y2="28" stroke="#D8CDB8" stroke-width="1"/><line x1="240.7" y1="0" x2="240.7" y2="28" stroke="#D8CDB8" stroke-width="1"/><line x1="357.0" y1="0" x2="357.0" y2="28" stroke="#D8CDB8" stroke-width="1"/><line x1="331.5" y1="14" x2="365.6" y2="14" stroke="#C6974F" stroke-width="5" stroke-linecap="round"/><circle cx="331.5" cy="14" r="5.5" fill="#F7F3EA" stroke="#C6974F" stroke-width="2"/><circle cx="365.6" cy="14" r="5.5" fill="#F7F3EA" stroke="#C6974F" stroke-width="2"/><circle cx="351.4" cy="14" r="8" fill="#4F1026" stroke="#F7F3EA" stroke-width="2"/></svg></div><div class="inum">$603,972</div><div class="inum avg">$895,052</div><div class="inum">$1,186,133</div></div></div>
+  <div class="legend"><span><i class="dot"></i>Average</span><span><i class="dot o"></i>Lowest and highest third averages</span><span><i class="rule"></i>The range between them</span><span>Dollar scale grows by 10x at each gridline</span></div>
+  <div class="card warn" style="margin-top:18px">
+    <h3>Read this part carefully</h3>
+    <p><b>These earnings do not consider Ambassador expenses</b> incurred in operating a Shaklee business, such as the Business Starter Kit, event registration fees, travel, office supplies, insurance premiums, and products purchased for business purposes.</p>
+    <p style="margin:0">Earnings are not guaranteed. Results depend on your skills, dedication, and effort, and can be affected by outside economic conditions. Each figure is the average for the lowest third, all, or highest third of Ambassadors at that title during 2025, based on the highest title they reached in the year. Source: <a href="https://images.shaklee.com/library/2025-Shaklee-Earnings-Statement.pdf">The 2025 Shaklee U.S. Earnings Statement</a>.</p>
+  </div>
+</div></section>
+
+
+<section id="tool" class="alt"><div class="wrap">
+  <div class="kicker">Part 5</div>
+  <h2>Your tool: one page, one kit</h2>
+  <div class="vc scr"><video controls preload="none" playsinline poster="https://cdn.jsdelivr.net/gh/bobfairfield/ambassador-guide-assets@main/poster-roger-grow.jpg"><source src="https://cdn.jsdelivr.net/gh/bobfairfield/ambassador-guide-assets@main/video-roger-grow.mp4" type="video/mp4"></video><div class="vb"><span class="vm">4 min 17 sec</span><span class="vt">Grow our impact, with Roger Barnett</span><span class="vd">You have seen what is possible. Roger Barnett, Shaklee's Chairman and CEO, on why this work is worth the effort. Then here is what to do.</span></div></div><a class="vc prt" href="https://cdn.jsdelivr.net/gh/bobfairfield/ambassador-guide-assets@main/video-roger-grow.mp4"><img src="https://cdn.jsdelivr.net/gh/bobfairfield/ambassador-guide-assets@main/thumb-roger-grow.jpg" alt="Grow our impact, with Roger Barnett"><div class="vb"><span class="vm">4 min 17 sec</span><span class="vt">Grow our impact, with Roger Barnett</span><span class="vd">You have seen what is possible. Roger Barnett, Shaklee's Chairman and CEO, on why this work is worth the effort. Then here is what to do.</span><span class="vn">Click to watch online</span></div></a>
+  <p class="lead">Every conversation about Shaklee starts with the same page. The page that brought you this guide is Bob's, and yours will carry your name. Before you build anything, go through it the way a visitor would.</p>
+
+  <div class="loop">
+    <div><i>1</i><b>Try it</b>Start Vivix+<sup>™</sup> yourself and fill in your own checklist.</div>
+    <div><i>2</i><b>Share the page</b>Send your page to someone in a community you already belong to.</div>
+    <div><i>3</i><b>Walk through it</b>Go through the page together, virtually or in person.</div>
+    <div><i>4</i><b>They start</b>They choose, check out, and begin their 30 days.</div>
+    <div><i>5</i><b>They share</b>Their results carry to their own communities.</div>
+  </div>
+
+  <div class="shot w60"><img src="https://cdn.jsdelivr.net/gh/bobfairfield/ambassador-guide-assets@main/land_hero.jpg" alt="The top of the landing page with the Vivix+&trade; headline and video">
+    <div class="cap"><b>This is the page.</b> A headline, a short video, and the study result, all on one screen. <a href="https://bobfergusonlongevity.com">Open the live page</a> and scroll it yourself.</div></div>
+
+  <h3 style="margin-top:28px">Take the tour once, as a visitor</h3>
+  <p>Open the page and go in this order. Each short video plays right on the page.</p>
+  <div class="vrow">
+    <a href="https://cdn.jsdelivr.net/gh/bobfairfield/bob-ferguson-landing@main/vivix-sizzle.mp4"><img src="https://cdn.jsdelivr.net/gh/bobfairfield/ambassador-guide-assets@main/t_sizzle.jpg" alt="Vivix+&trade; introduction video"><span><b>The introduction</b>45 seconds</span></a>
+    <a href="https://cdn.jsdelivr.net/gh/bobfairfield/bob-ferguson-landing@main/joe-testimonial.mp4"><img src="https://cdn.jsdelivr.net/gh/bobfairfield/ambassador-guide-assets@main/t_joe.jpg" alt="Joe Weaver testimonial video"><span><b>Joe Weaver's story</b>1 min 40 sec</span></a>
+    <a href="https://cdn.jsdelivr.net/gh/bobfairfield/bob-ferguson-landing@main/science-behind-vivix.mp4"><img src="https://cdn.jsdelivr.net/gh/bobfairfield/ambassador-guide-assets@main/t_sci.jpg" alt="Science behind Vivix+&trade; video"><span><b>The science, explained</b>2 min 10 sec</span></a>
+  </div>
+  <p>Then keep scrolling: the study results, why NAD+ matters, and the section where you choose how to start. Two more videos are there for people with time and interest. One is the longer interview with Dr. Erin Barrett. The other, near the bottom, is the opportunity video for anyone curious about sharing this, not just using it.</p>
+
+  <div class="card sage" style="margin-top:18px">
+    <h3>Now go through it again</h3>
+    <p style="margin-bottom:.4em">This time, imagine your name at the top. As you scroll, ask yourself two things.</p>
+    <ul class="clean" style="margin-bottom:0">
+      <li>Which person in my life would be glad to have this page in front of them?</li>
+      <li>Which of the communities I already belong to would they be part of?</li>
+    </ul>
+  </div>
+
+  <h3 style="margin-top:30px">What is in your kit</h3>
+  <p>One short form, and four things arrive in your inbox, all with your name on them. The same kit goes to everyone you bring in, so the system is duplicated, not reinvented by each new person.</p>
+  <div class="grid g2">
+    <div class="card white"><div class="pill">1</div><h3>Your landing page</h3><p style="margin:0">A live page like the one you just toured, with your name, your photo, and your Shaklee storefront behind every button. See Part 7.</p></div>
+    <div class="card white"><div class="pill">2</div><h3>Your business card</h3><p style="margin:0">Front and back, print-ready, with a QR code that opens your page.</p></div>
+    <div class="card white"><div class="pill">3</div><h3>How Do You Feel Today?</h3><p style="margin:0">A private wellness checklist, fillable on screen. For you first, then for anyone who wants it. See Part 8.</p></div>
+    <div class="card white"><div class="pill">4</div><h3>Your prospect tracker</h3><p style="margin:0">A spreadsheet that keeps every conversation organized as they add up. See Part 8.</p></div>
+  </div>
+</div></section>
+
+<section id="walk"><div class="wrap">
+  <div class="kicker">Part 6</div>
+  <h2>Walk someone through it</h2>
+  <p class="lead">A page can do the selling on its own, and some people will order straight from it. Most people would rather have someone beside them while they look, to help them choose. That is your role.</p>
+
+  <div class="two">
+    <div class="card"><h3>Virtually</h3><p style="margin:0">Share your screen on a video call, then hand them the mouse. They scroll. You watch and listen.</p></div>
+    <div class="card"><h3>In person</h3><p style="margin:0">Turn the laptop toward them and let them run it. You sit alongside.</p></div>
+  </div>
+
+  <ol class="steps" style="margin-top:20px">
+    <li><b>Let them explore at their own pace</b>Answer questions, but otherwise stay quiet. What they stop and look at tells you what attracts them, and it keeps their attention on what matters to them.</li>
+    <li><b>Encourage the three short videos</b>If they scroll past them, invite them back: the introduction, Joe's story, and the two-minute science explainer. The longer Dr. Barrett interview and the opportunity video are theirs to watch if they have time and interest.</li>
+    <li><b>Wait until they are ready, then suggest Start with Vivix+<sup>™</sup></b>When they are satisfied, suggest they click the <i>Start with Vivix+<sup>™</sup></i> button. They see three ways to begin, and you talk them through the choice together.</li>
+    <li><b>Check out together</b>Walk them through membership, as shown below. Offer guest checkout at retail if they would rather skip membership.</li>
+    <li><b>If they are here to evaluate the business</b>Always have them click the opportunity video, then talk through checking out as an Ambassador. The steps for that follow the checkout.</li>
+  </ol>
+
+  <h3 style="margin-top:30px">The three ways to begin</h3>
+  <div class="two c46" style="margin-top:8px">
+    <div class="shot" style="margin:0"><img src="https://cdn.jsdelivr.net/gh/bobfairfield/ambassador-guide-assets@main/choice_cards.jpg" alt="Start with Vivix+&trade; choices: Vivix+&trade; alone, Cellular Reset Stack, Complete Stack"><div class="cap">What they see after clicking <b>Start with Vivix+<sup>™</sup></b>.</div></div>
+    <div>
+      <p><a href="https://us.shaklee.com/en_US/ferguson/Nutrition/Targeted-Solutions/Aging-Well/Vivix%2B%E2%84%A2/p/22106"><b>Vivix+<sup>™</sup></b></a> on its own is the product from the clinical trial. Two bottles make them a member automatically.</p>
+      <p>The <a href="https://us.shaklee.com/en_US/ferguson/Nutrition/Bundle-%26-Boost/Cellular-Reset-Stack/p/89892"><b>Cellular Reset Stack</b></a> adds Liquid BioCell&reg; Life+ for structure: skin, joints, and mobility.</p>
+      <p>The <a href="https://us.shaklee.com/en_US/ferguson/Nutrition/Targeted-Solutions/Collagen/Bio-Age%E2%84%A2-Reset-Stack/p/89885"><b>Complete Stack</b></a> (called the Bio-Age&trade; Reset Stack on Shaklee's own pages) adds Life Shake&trade; for muscle and Life Essentials for your daily foundation.</p>
+      <p style="margin:0">Either stack makes them a member automatically. Checkout opens on Shaklee's secure site in a new tab.</p>
+    </div>
+  </div>
+
+  <h3 style="margin-top:34px">Checking out, in three moves</h3>
+  <div class="shot w72"><img src="https://cdn.jsdelivr.net/gh/bobfairfield/ambassador-guide-assets@main/strip_checkout.jpg" alt="Three details of the Shaklee checkout: Learn More and Add Membership, the cart with two Vivix+&trade; and free membership, and the free shipping promotion">
+    <div class="cap">
+      <b>1.</b> Under the member price, they click <i>Learn More</i>, which opens the explanation and an <i>Add Membership</i> link. They click it and choose Add Membership.
+      <b>2.</b> For Vivix+<sup>™</sup> alone, two bottles go in the cart. That reaches the $150 mark, so membership is added at no charge.
+      <b>3.</b> Free shipping applies. Both stacks are over $150, so they get free shipping and membership automatically. If they prefer, offer guest checkout at retail and skip membership.
+      <span class="noprint"><a href="#screens">See the full screens</a></span><span class="printonly"><a href="#apx">See the full screens, last pages</a></span>
+    </div></div>
+  <p class="disc">Prices and promotions change. The live page and cart always show the current terms.</p>
+
+  <h3 style="margin-top:34px">When they decide to become an Ambassador</h3>
+  <p>You sponsor them from your own My Business site, with them beside you. Choose Ambassador, pick what they start with (any product, or either stack, which both include the Business Starter Kit), and check out together. Then click Return to My Own Account.</p>
+  <div class="shot w72"><img src="https://cdn.jsdelivr.net/gh/bobfairfield/ambassador-guide-assets@main/strip_sponsor.jpg" alt="Three details of sponsoring an Ambassador: Sponsor Someone on the dashboard, the Sponsor Someone pop-up, and the Become an Ambassador page">
+    <div class="cap">
+      <b>1.</b> On your My Business dashboard, click <i>Sponsor Someone</i>.
+      <b>2.</b> Choose Ambassador and United States. Both sponsor lines show your name. Clicking Next confirms you have your customer's consent and that they agree to the Statement of Privileges and Responsibilities and the Privacy Policy, so be sure they have read them.
+      <b>3.</b> The page opens with "You are managing the account of Guest." The two stacks include the Business Starter Kit and free priority processing and shipping for new Ambassadors. They can also start with Vivix+<sup>™</sup> or any other product, and the cart offers the Starter Kit as an add-on.
+      <span class="noprint"><a href="#screens">See the full screens</a></span><span class="printonly"><a href="#apx">See the full screens, last pages</a></span>
+    </div></div>
+  <p>Then hand them this guide, so they can start Part 1 and the same system continues with them.</p>
+</div></section>
+
+<section id="clone" class="alt"><div class="wrap">
+  <div class="kicker">Part 7</div>
+  <h2>Make your own page</h2>
+  <p class="lead">Everything in Part 6 works best when the page is yours. It takes about five minutes to ask for, and the kit arrives in your inbox within minutes.</p>
+
+  <ol class="steps">
+    <li><b>Open the link</b><a href="https://bobfergusonlongevity.com/duplicate">bobfergusonlongevity.com/duplicate</a></li>
+    <li><b>Choose your form</b>There are two versions, one for people who use a Google account and one for people who do not. Pick the one that matches you.</li>
+    <li><b>Fill in the short form</b>Only a few things are needed. See the list below.</li>
+    <li><b>Submit, then check your inbox</b>Everything is there in a few minutes: your page address, your card, your checklist, and your tracker.</li>
+    <li><b>Open your page on your phone</b>Send the link to yourself and look at it the way a visitor will.</li>
+  </ol>
+
+  <h3 style="margin-top:28px">What the form asks for</h3>
+  <table class="tbl"><thead><tr><th>Field</th><th>What to enter</th></tr></thead><tbody>
+    <tr><td><b>Full name</b></td><td>Used on your page, card, checklist and tracker.</td></tr>
+    <tr><td><b>Email and phone</b></td><td>Where your kit is sent and how your page lists you.</td></tr>
+    <tr><td><b>Shaklee storefront handle</b></td><td>The part of your Shaklee web address that follows <i>en_US/</i>. You will have it once your account is set up in Part 1.</td></tr>
+    <tr><td><b>Color scheme</b></td><td>Wine and Gold, or Sage and Forest.</td></tr>
+    <tr><td><b>Headshot (optional)</b></td><td>Needed for your card and the About section of your page. You can add it later, but the card waits for the photo.</td></tr>
+    <tr><td><b>A personal note (optional)</b></td><td>One sentence on why you take Vivix+<sup>™</sup> or why you share it. It becomes your short bio.</td></tr>
+  </tbody></table>
+
+  <div class="card white" style="margin-top:20px"><div class="pill">Optional, later</div>
+    <p style="margin:0">Your own web address (about twenty minutes and roughly $12 to $20 a year) and a custom email address are both optional. Skip them until your page is in regular use. Short guides for each are available when you are ready.</p></div>
+</div></section>
+
+<section id="tools"><div class="wrap">
+  <div class="kicker">Part 8</div>
+  <h2>Two simple tools: the checklist and the tracker</h2>
+
+  <h3>How Do You Feel Today?</h3>
+  <div class="two">
+    <div class="shot" style="margin-top:6px"><img src="https://cdn.jsdelivr.net/gh/bobfairfield/ambassador-guide-assets@main/well1.jpg" alt="How Do You Feel Today? wellness checklist"><div class="cap">Nine areas of everyday comfort, each with a Today column and an After 30 Days column.</div></div>
+    <div>
+      <p>It is a private, one-page snapshot of how a person feels right now, with a place to mark what has changed thirty days later. Real change is gradual, so it is easy to miss. The checklist makes it visible.</p>
+      <p><b>Two ways to use it.</b></p>
+      <ul class="clean">
+        <li><b>As a baseline.</b> Fill it in before starting Vivix+<sup>™</sup> and the stack, then again at day 30.</li>
+        <li><b>As a natural invitation.</b> It comes up in conversation, and you offer it.</li>
+      </ul>
+      <p><b>It belongs to the person.</b> You do not read it, ask what they marked, or keep a copy. The questions do the real work, not you. If they choose to show you, that is their choice.</p>
+      <p>Start with your own, the day you begin Vivix+<sup>™</sup>.</p>
+    </div>
+  </div>
+
+  <h3 style="margin-top:30px">Your prospect tracker</h3>
+  <p>A spreadsheet that keeps your conversations organized as they add up. Three tabs do the work, and the rest is for reference.</p>
+  <div class="grid g3">
+    <div class="card"><h3>Prospect Tracker</h3><p style="margin:0">One row per person: how you met, when you reached out, whether you sent your landing page or walked through it together, and what is next. Current Stage, Priority and days since last contact fill in automatically.</p></div>
+    <div class="card"><h3>Priority View</h3><p style="margin:0">A live, self-sorting list. Ambassadors first, then Members, then people you have walked through the page with, so you always see who needs your attention.</p></div>
+    <div class="card"><h3>Pipeline Summary</h3><p style="margin:0">Counts by stage, overdue follow-ups, and how many people you have asked for referrals.</p></div>
+  </div>
+  <p style="margin-top:14px">A tab called How To Use explains every column. One rule keeps it clean: one row per person, always. If someone comes back after going quiet, update their row.</p>
+</div></section>
+
+<section id="community" class="alt"><div class="wrap">
+  <div class="kicker">Part 9</div>
+  <h2>How this grows: community, not a list</h2>
+  <p class="lead">You do not need a list of a hundred names or a stream of posts. You belong to communities already, and in each one you carry some trust. This business grows by being useful there, one person at a time.</p>
+
+  <div class="grid g3">
+    <div class="card"><h3>Where trust already exists</h3><p style="margin:0">A fitness class, a coaching group, a faith community, a civic club, a school or neighborhood group, a circle of business owners. Joe Weaver's story on the page came from one: a trusted instructor who tried it himself and said so.</p></div>
+    <div class="card"><h3>Be the one who tried it</h3><p style="margin:0">Your thirty days, and your own checklist, are the most believable thing you have. Share what you notice when it comes up naturally, not before.</p></div>
+    <div class="card"><h3>Offer a walk-through</h3><p style="margin:0">When someone shows interest, do not pitch. Ask, "Would you like me to go through this page with you?" Then follow Part 6.</p></div>
+  </div>
+
+  <div class="card white" style="margin-top:18px">
+    <h3>Let the tools travel for you</h3>
+    <p style="margin:0">Your card puts your page in someone's hand. Your page does the explaining. Your tracker remembers every conversation so you can follow up when the time is right. When a neighbor gets results, their story reaches a community you may never have entered yourself.</p>
+  </div>
+
+  <div class="two" style="margin-top:18px">
+    <div class="card sage"><h3>What this is</h3><ul class="clean" style="margin:0"><li>Real conversations, one at a time</li><li>Walk-throughs, virtual or in person</li><li>Following up with care, and on time</li></ul></div>
+    <div class="card sage"><h3>What this is not</h3><ul class="clean" style="margin:0"><li>A list of a hundred friends to work through</li><li>Mass posting or message blasts</li><li>Adding health claims of your own. Let the page speak.</li></ul></div>
+  </div>
+
+  <div class="card warn" style="margin-top:18px"><h3>Share it the right way</h3>
+    <ul class="clean"><li>Label everything you create as from a "Shaklee Ambassador."</li><li>Do not claim products diagnose, treat, cure, or prevent disease.</li><li>Do not make income or lifestyle claims. Never show checks, bonuses, or statements.</li><li>Link the Average Earnings Statement whenever you talk about the opportunity.</li><li>Send self-produced product materials to compliance@shaklee.com for written approval before you use them.</li></ul>
+    <p class="small" style="margin:0">The Compliance kit in <a href="https://shaklee-tools.lingoapp.com">Shaklee Tools</a> has "Say This, Not That" guides for sharing both products and the opportunity.</p></div>
+</div></section>
+
+<section id="products"><div class="wrap">
+  <div class="kicker">Part 10</div>
+  <h2>The products you will share</h2>
+  <p class="lead">Shaklee offers roughly 300 products. You do not need to know them all, but you do need to know enough to help the people who start with Vivix+<sup>™</sup> or a stack grow into the whole line. That starts with you.</p>
+
+  <div class="card white" style="border-left:6px solid var(--gold)">
+    <div class="pill">Your product hour</div>
+    <h3>Read the catalog with a pad and a pen</h3>
+    <p>Spend an hour with the <a href="https://shaklee-tools.lingoapp.com/a/US-English-Catalog-Spring-2026-gggxmk?asset_token=J57pRAjQN3600pOPaMMR-k3cl3dSydUirtmbUzmw3Ak&v=0">Shaklee Product Catalog</a>. Write down the products you might want to try, and the people you know who might need or respond to any of them.</p>
+    <p style="margin:0">This is one of the key early steps. It builds your own belief, and it prepares you to help Members and Ambassadors who start with Vivix+<sup>™</sup> or a stack expand into using every product line.</p>
+  </div>
+
+  <div class="card" style="margin-top:22px"><h3>The sharp edge: Vivix+<sup>™</sup> and the stacks</h3>
+    <p>Vivix+<sup>™</sup> is an NAD+ booster and cellular defense in one, shown in a randomized, placebo-controlled 60-day trial in healthy adults 45 to 65 to reverse 8 years of cellular aging in two months.* It is the product most conversations begin with, and your own results matter most.</p>
+    <p style="margin:0">Two stacks build on it. The <b>Cellular Reset Stack</b> adds Liquid BioCell&reg; Life+ for structure: skin, joints, and mobility. The <b>Complete Stack</b>, called the Bio-Age&trade; Reset Stack on Shaklee's own pages, also adds Life Shake&trade; for muscle and Life Essentials for your daily foundation.</p></div>
+
+  <h3 style="margin-top:34px">Clean skin care</h3>
+  <div class="vlist" style="margin-bottom:14px"><div class="vc scr"><video controls preload="none" playsinline poster="https://cdn.jsdelivr.net/gh/bobfairfield/ambassador-guide-assets@main/poster-youth.jpg"><source src="https://cdn.jsdelivr.net/gh/bobfairfield/ambassador-guide-assets@main/video-youth.mp4" type="video/mp4"></video><div class="vb"><span class="vm">2 min 23 sec</span><span class="vt">Introducing YOUTH skin care</span><span class="vd">A look at the full YOUTH regimen, step by step.</span></div></div><a class="vc prt" href="https://cdn.jsdelivr.net/gh/bobfairfield/ambassador-guide-assets@main/video-youth.mp4"><img src="https://cdn.jsdelivr.net/gh/bobfairfield/ambassador-guide-assets@main/thumb-youth-skin-care.jpg" alt="Introducing YOUTH skin care"><div class="vb"><span class="vm">2 min 23 sec</span><span class="vt">Introducing YOUTH skin care</span><span class="vd">A look at the full YOUTH regimen, step by step.</span><span class="vn">Click to watch online</span></div></a></div>
+  <p>YOUTH is a clean, botanical-based skin care line. More than 2,500 harmful ingredients are banned from the formulas, and many products across YOUTH, Pomifera, and Shaklee Body are EWG VERIFIED, which means EWG's scientists and toxicologists reviewed them and found them free from EWG's list of ingredients of concern, with full ingredient transparency.</p>
+
+  <h3 style="margin-top:34px">Clean home care</h3>
+  <div class="vlist" style="margin-bottom:14px"><div class="vc scr"><video controls preload="none" playsinline poster="https://cdn.jsdelivr.net/gh/bobfairfield/ambassador-guide-assets@main/poster-basic-h2.jpg"><source src="https://cdn.jsdelivr.net/gh/bobfairfield/ambassador-guide-assets@main/video-basic-h2.mp4" type="video/mp4"></video><div class="vb"><span class="vm">1 min 1 sec</span><span class="vt">Get Clean Basic H2</span><span class="vd">One concentrated bottle for the whole house, shown in a minute.</span></div></div><a class="vc prt" href="https://cdn.jsdelivr.net/gh/bobfairfield/ambassador-guide-assets@main/video-basic-h2.mp4"><img src="https://cdn.jsdelivr.net/gh/bobfairfield/ambassador-guide-assets@main/thumb-green-home.jpg" alt="Get Clean Basic H2"><div class="vb"><span class="vm">1 min 1 sec</span><span class="vt">Get Clean Basic H2</span><span class="vd">One concentrated bottle for the whole house, shown in a minute.</span><span class="vn">Click to watch online</span></div></a></div>
+  <p>Shaklee's home care is plant-based, concentrated, biodegradable, and free from harsh chemicals. Basic H2 is the star: one concentrated bottle for the whole house. People often start by cleaning their home and stay for the rest.</p>
+
+  <div class="card sage" style="margin-top:22px"><h3>The Shaklee Guarantee</h3><p style="margin:0">A 100% money-back guarantee. If someone is not satisfied with any product, they can send it back for a full refund, even if the container is empty. Trying the products is a low-risk first step for you and for every customer you share them with.</p></div>
+  <p class="small" style="margin-top:14px">*These statements have not been evaluated by the Food and Drug Administration. These products are not intended to diagnose, treat, cure, or prevent any disease. Study details and ingredient information are at <a href="https://us.shaklee.com">us.shaklee.com</a> and on the landing page.</p>
+</div></section>
+
+<section id="thirty" class="alt"><div class="wrap">
+  <div class="kicker">Part 11</div>
+  <h2>Your first 30 days</h2>
+  <p class="lead">Use the products yourself, learn the plan, and run the same loop you will teach: try it, share it, walk someone through it. By day 30 you will have your own evidence.</p>
+  <div class="scroll"><table class="tbl">
+    <tr><th>When</th><th>What to do</th><th>What you are learning</th></tr>
+    <tr><td><b>Days 1 to 7</b></td><td>Give yourself the two key hours: one exploring My Business (Part 1), one with the product catalog and a pad and pen (Part 10). Finish your account setup, place your first order, set your monthly loyalty order, and meet with Bob for your onboarding appointment. Start Vivix+<sup>™</sup> and fill in your own checklist.</td><td>How the tools and ordering work, and what you are drawn to.</td></tr>
+    <tr><td><b>Days 8 to 14</b></td><td>Watch the videos in Parts 2, 3 and 5. Tour the landing page twice, once as a visitor and once imagining your name on it. Ask for your own page and kit (Part 7).</td><td>How the page works and what it says to someone seeing it for the first time.</td></tr>
+    <tr><td><b>Days 15 to 21</b></td><td>Share your page with someone in a community you already belong to. When they are interested, walk through it together (Part 6). Start your tracker, one row per person.</td><td>How people respond, and which part of the page they stop at.</td></tr>
+    <tr><td><b>Days 22 to 30</b></td><td>Fill in your day-30 checklist. Review four things: your own results, how many conversations you had, who started, and how it felt. Meet with Bob and decide your next step.</td><td>Whether this fits you.</td></tr>
+  </table></div>
+  <div class="card white" style="margin-top:22px"><h3>Pass it on</h3><p style="margin:0">When you sponsor someone, give them this same guide. Walk them through Part 1 on their first call, then follow the same 30 days together. That is how a system stays the same from the first person to the hundredth.</p></div>
+</div></section>
+
+<section class="appendix apx" id="apx"><div class="wrap"><div class="kicker">Appendix</div><h2>The full checkout and sponsoring screens</h2>
+  <h3>Checking out as a Member or guest</h3>
+  <div class="s2">
+    <div class="shot"><img src="https://cdn.jsdelivr.net/gh/bobfairfield/ambassador-guide-assets@main/a4.jpg" alt="Shaklee Vivix+&trade; product page with cookie notice"><div class="cap"><b>The product page.</b> They arrive on your storefront ("You are shopping with" and your name). A cookie notice may appear: Agree &amp; Continue.</div></div>
+    <div class="shot"><img src="https://cdn.jsdelivr.net/gh/bobfairfield/ambassador-guide-assets@main/a2.jpg" alt="Product page with membership details open"><div class="cap"><b>Membership details.</b> Learn More under the member price opens the explanation and the Add Membership link.</div></div>
+  </div>
+  <div class="s2">
+    <div class="shot"><img src="https://cdn.jsdelivr.net/gh/bobfairfield/ambassador-guide-assets@main/a1.jpg" alt="Cart with two Vivix+&trade; and free membership"><div class="cap"><b>The cart.</b> Two Vivix+<sup>&trade;</sup>, Membership at $0.00, and the two promotions applied.</div></div>
+    <div class="shot"><img src="https://cdn.jsdelivr.net/gh/bobfairfield/ambassador-guide-assets@main/choice_cards.jpg" alt="The three ways to start on the landing page"><div class="cap"><b>The three ways to begin.</b> What they see after clicking Start with Vivix+<sup>&trade;</sup> on the landing page.</div></div>
+  </div>
+  <h3 style="margin-top:20px">Sponsoring an Ambassador</h3>
+  <div class="s2">
+    <div class="shot"><img src="https://cdn.jsdelivr.net/gh/bobfairfield/ambassador-guide-assets@main/b3.jpg" alt="My Business dashboard"><div class="cap"><b>My Business dashboard.</b> Sponsor Someone is in the Grow Your Business card.</div></div>
+    <div class="shot"><img src="https://cdn.jsdelivr.net/gh/bobfairfield/ambassador-guide-assets@main/b2.jpg" alt="Sponsor Someone pop-up"><div class="cap"><b>Sponsor Someone.</b> Choose Ambassador and United States, then confirm consent and the terms.</div></div>
+  </div>
+  <div class="shot w60"><img src="https://cdn.jsdelivr.net/gh/bobfairfield/ambassador-guide-assets@main/b1.jpg" alt="Become an Ambassador page"><div class="cap"><b>Become an Ambassador.</b> "You are managing the account of Guest." Check out together, then click Return to My Own Account at the top right.</div></div>
+  <p class="disc">Prices and promotions change. The live pages always show the current terms.</p>
+</div></section>
+<div id="screens" class="modal"><div class="sheet apx"><a class="close noprint" href="#walk">Close &times;</a><div class="kicker">The full screens</div><h2>Checkout and sponsoring, screen by screen</h2>
+  <h3>Checking out as a Member or guest</h3>
+  <div class="s2">
+    <div class="shot"><img src="https://cdn.jsdelivr.net/gh/bobfairfield/ambassador-guide-assets@main/a4.jpg" alt="Shaklee Vivix+&trade; product page with cookie notice"><div class="cap"><b>The product page.</b> They arrive on your storefront ("You are shopping with" and your name). A cookie notice may appear: Agree &amp; Continue.</div></div>
+    <div class="shot"><img src="https://cdn.jsdelivr.net/gh/bobfairfield/ambassador-guide-assets@main/a2.jpg" alt="Product page with membership details open"><div class="cap"><b>Membership details.</b> Learn More under the member price opens the explanation and the Add Membership link.</div></div>
+  </div>
+  <div class="s2">
+    <div class="shot"><img src="https://cdn.jsdelivr.net/gh/bobfairfield/ambassador-guide-assets@main/a1.jpg" alt="Cart with two Vivix+&trade; and free membership"><div class="cap"><b>The cart.</b> Two Vivix+<sup>&trade;</sup>, Membership at $0.00, and the two promotions applied.</div></div>
+    <div class="shot"><img src="https://cdn.jsdelivr.net/gh/bobfairfield/ambassador-guide-assets@main/choice_cards.jpg" alt="The three ways to start on the landing page"><div class="cap"><b>The three ways to begin.</b> What they see after clicking Start with Vivix+<sup>&trade;</sup> on the landing page.</div></div>
+  </div>
+  <h3 style="margin-top:20px">Sponsoring an Ambassador</h3>
+  <div class="s2">
+    <div class="shot"><img src="https://cdn.jsdelivr.net/gh/bobfairfield/ambassador-guide-assets@main/b3.jpg" alt="My Business dashboard"><div class="cap"><b>My Business dashboard.</b> Sponsor Someone is in the Grow Your Business card.</div></div>
+    <div class="shot"><img src="https://cdn.jsdelivr.net/gh/bobfairfield/ambassador-guide-assets@main/b2.jpg" alt="Sponsor Someone pop-up"><div class="cap"><b>Sponsor Someone.</b> Choose Ambassador and United States, then confirm consent and the terms.</div></div>
+  </div>
+  <div class="shot w60"><img src="https://cdn.jsdelivr.net/gh/bobfairfield/ambassador-guide-assets@main/b1.jpg" alt="Become an Ambassador page"><div class="cap"><b>Become an Ambassador.</b> "You are managing the account of Guest." Check out together, then click Return to My Own Account at the top right.</div></div>
+  <p class="disc">Prices and promotions change. The live pages always show the current terms.</p>
+</div></div>
+<!-- ============ APPENDIX: GENERATION BONUSES ============ -->
+<div id="gen-bonuses" class="modal"><div class="sheet">
+  <a class="close noprint" href="#earn">Close &times;</a>
+  <div class="kicker">Leadership generation bonuses</div>
+  <h2>How leadership bonuses build, generation by generation</h2>
+  <p>A Generation is the volume of a downline leg, from a Director down to the next Director. The first Director in a leg is your first Generation Leader for that leg. From Senior Director up you earn on up to six generations.</p>
+  <table class="gtable"><thead><tr><th>Title</th><th>Gen 1</th><th>Gen 2</th><th>Gen 3</th><th>Gen 4</th><th>Gen 5</th><th>Gen 6</th><th>Infinity Bonus</th><th>Infinity Match</th></tr></thead><tbody><tr><th scope='row'>Senior Director</th><td class="gb6">6%</td><td class="gb3">3%</td><td class="gn"></td><td class="gn"></td><td class="gn"></td><td class="gn"></td><td class="ginf"></td><td class="ginf"></td></tr><tr><th scope='row'>Coordinator</th><td class="gb6">6%</td><td class="gb4">4%</td><td class="gn"></td><td class="gn"></td><td class="gn"></td><td class="gn"></td><td class="ginf"></td><td class="ginf"></td></tr><tr><th scope='row'>Senior Coordinator</th><td class="gb6">6%</td><td class="gb5">5%</td><td class="gn"></td><td class="gn"></td><td class="gn"></td><td class="gn"></td><td class="ginf"></td><td class="ginf"></td></tr><tr><th scope='row'>Executive Coordinator</th><td class="gb6">6%</td><td class="gb6">6%</td><td class="gb4">4%</td><td class="gn"></td><td class="gn"></td><td class="gn"></td><td class="ginf"></td><td class="ginf"></td></tr><tr><th scope='row'>Senior Executive Coordinator</th><td class="gb6">6%</td><td class="gb6">6%</td><td class="gb4">4%</td><td class="gb2">2%</td><td class="gn"></td><td class="gn"></td><td class="ginf"></td><td class="ginf"></td></tr><tr><th scope='row'>Key Coordinator</th><td class="gb6">6%</td><td class="gb6">6%</td><td class="gb4">4%</td><td class="gb4">4%</td><td class="gn"></td><td class="gn"></td><td class="ginf">2%</td><td class="ginf"></td></tr><tr><th scope='row'>Senior Key Coordinator</th><td class="gb6">6%</td><td class="gb6">6%</td><td class="gb4">4%</td><td class="gb4">4%</td><td class="gn"></td><td class="gn"></td><td class="ginf">2.5%</td><td class="ginf">10%</td></tr><tr><th scope='row'>Master Coordinator</th><td class="gb6">6%</td><td class="gb6">6%</td><td class="gb4">4%</td><td class="gb4">4%</td><td class="gb3">3%</td><td class="gn"></td><td class="ginf">3%</td><td class="ginf">15%</td></tr><tr><th scope='row'>Senior Master Coordinator</th><td class="gb6">6%</td><td class="gb6">6%</td><td class="gb4">4%</td><td class="gb4">4%</td><td class="gb3">3%</td><td class="gb3">3%</td><td class="ginf">3.5%</td><td class="ginf">20%</td></tr><tr><th scope='row'>Presidential Master Coordinator</th><td class="gb6">6%</td><td class="gb6">6%</td><td class="gb4">4%</td><td class="gb4">4%</td><td class="gb3">3%</td><td class="gb3">3%</td><td class="ginf">4%</td><td class="ginf">25%</td></tr></tbody></table>
+  <div class="grid g3" style="margin-top:14px">
+    <div class="card white"><b>Stacked on top</b><p style="margin:0">Directors and higher also earn Level 1 (10%), Level 2 (2%), and the Director Team Bonus (6%) on the same volume.</p></div>
+    <div class="card white"><b>Compression</b><p style="margin:0">If someone in a leg drops below Director, the next leader below moves up a generation for payout.</p></div>
+    <div class="card white"><b>Infinity</b><p style="margin:0">At Key Coordinator and above, the Infinity Bonus is paid across unlimited generations, as a differential. Presidential Master Coordinators can earn up to 1% more.</p></div>
+  </div>
+  <p class="small" style="margin-top:12px">Source: the Shaklee Compensation Plan. Shaklee makes no promises or guarantees regarding earning additional income. Percentages are paid on product point value (PV). Details are at <a href="https://us.shaklee.com/earnings">us.shaklee.com/earnings</a>.</p>
+</div></div>
+<div class="appendix"><div class="wrap">
+  <div class="kicker">Leadership generation bonuses</div>
+  <h2>How leadership bonuses build, generation by generation</h2>
+  <p>A Generation is the volume of a downline leg, from a Director down to the next Director. From Senior Director up you earn on up to six generations.</p>
+  <table class="gtable"><thead><tr><th>Title</th><th>Gen 1</th><th>Gen 2</th><th>Gen 3</th><th>Gen 4</th><th>Gen 5</th><th>Gen 6</th><th>Infinity Bonus</th><th>Infinity Match</th></tr></thead><tbody><tr><th scope='row'>Senior Director</th><td class="gb6">6%</td><td class="gb3">3%</td><td class="gn"></td><td class="gn"></td><td class="gn"></td><td class="gn"></td><td class="ginf"></td><td class="ginf"></td></tr><tr><th scope='row'>Coordinator</th><td class="gb6">6%</td><td class="gb4">4%</td><td class="gn"></td><td class="gn"></td><td class="gn"></td><td class="gn"></td><td class="ginf"></td><td class="ginf"></td></tr><tr><th scope='row'>Senior Coordinator</th><td class="gb6">6%</td><td class="gb5">5%</td><td class="gn"></td><td class="gn"></td><td class="gn"></td><td class="gn"></td><td class="ginf"></td><td class="ginf"></td></tr><tr><th scope='row'>Executive Coordinator</th><td class="gb6">6%</td><td class="gb6">6%</td><td class="gb4">4%</td><td class="gn"></td><td class="gn"></td><td class="gn"></td><td class="ginf"></td><td class="ginf"></td></tr><tr><th scope='row'>Senior Executive Coordinator</th><td class="gb6">6%</td><td class="gb6">6%</td><td class="gb4">4%</td><td class="gb2">2%</td><td class="gn"></td><td class="gn"></td><td class="ginf"></td><td class="ginf"></td></tr><tr><th scope='row'>Key Coordinator</th><td class="gb6">6%</td><td class="gb6">6%</td><td class="gb4">4%</td><td class="gb4">4%</td><td class="gn"></td><td class="gn"></td><td class="ginf">2%</td><td class="ginf"></td></tr><tr><th scope='row'>Senior Key Coordinator</th><td class="gb6">6%</td><td class="gb6">6%</td><td class="gb4">4%</td><td class="gb4">4%</td><td class="gn"></td><td class="gn"></td><td class="ginf">2.5%</td><td class="ginf">10%</td></tr><tr><th scope='row'>Master Coordinator</th><td class="gb6">6%</td><td class="gb6">6%</td><td class="gb4">4%</td><td class="gb4">4%</td><td class="gb3">3%</td><td class="gn"></td><td class="ginf">3%</td><td class="ginf">15%</td></tr><tr><th scope='row'>Senior Master Coordinator</th><td class="gb6">6%</td><td class="gb6">6%</td><td class="gb4">4%</td><td class="gb4">4%</td><td class="gb3">3%</td><td class="gb3">3%</td><td class="ginf">3.5%</td><td class="ginf">20%</td></tr><tr><th scope='row'>Presidential Master Coordinator</th><td class="gb6">6%</td><td class="gb6">6%</td><td class="gb4">4%</td><td class="gb4">4%</td><td class="gb3">3%</td><td class="gb3">3%</td><td class="ginf">4%</td><td class="ginf">25%</td></tr></tbody></table>
+  <p class="small" style="margin-top:10px">Directors and higher also earn Level 1 (10%), Level 2 (2%), and the Director Team Bonus (6%) on the same volume. If someone in a leg drops below Director, the next leader moves up a generation (compression). The Infinity Bonus is paid across unlimited generations as a differential. Presidential Master Coordinators can earn up to 1% more. Source: the Shaklee Compensation Plan, us.shaklee.com/earnings.</p>
+</div></div>
+
+
+<!-- ============ IMPORTANT INFORMATION ============ -->
+<footer><div class="wrap">
+  <h2 style="color:var(--gold2)">Important information</h2>
+  <div class="ids" style="color:var(--ink);margin-bottom:18px">
+    <h3>Income Disclosure Statement</h3>
+    <p>Shaklee makes no promises or guarantees regarding earning additional income or any other earnings opportunity. The success or failure of each Shaklee Ambassador, like any other business opportunity, depends on your own skills and personal effort.</p>
+    <p>Shaklee Ambassadors do not earn compensation for the recruitment or sponsorship of other Shaklee Ambassadors.</p>
+    <p style="margin:0">The Shaklee Compensation Plan and the 2025 Income Disclosure Statement (IDS) can be found here - <a href="https://us.shaklee.com/earnings">us.shaklee.com/earnings</a></p>
+  </div>
+  <p>This guide was created by Bob Ferguson, an independent Shaklee Ambassador. It was not produced, approved, or endorsed by Shaklee, and it is not an offer of employment. Financial success in Shaklee requires commitment, diligence, effort, financial investment, and sales skill, and results vary widely.</p>
+  <p style="margin:0">Questions about the compensation plan: <a href="mailto:comp@shaklee.com">comp@shaklee.com</a> &middot; Business questions: <a href="mailto:fieldsupport@shaklee.com">fieldsupport@shaklee.com</a> &middot; Product questions: <a href="mailto:productsupport@shaklee.com">productsupport@shaklee.com</a></p>
+<p class="small" style="margin:14px 0 0;color:var(--gold2)">*These statements have not been evaluated by the Food and Drug Administration. These products are not intended to diagnose, treat, cure, or prevent any disease. Results described are from the cited study and may vary. Independent Shaklee Ambassador.</p></div></footer>
+</body></html>
