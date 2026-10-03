@@ -184,6 +184,25 @@ footer a{color:var(--gold2)}
   footer{break-inside:avoid}
 }
 
+details.later{margin-top:10px}
+details.later summary{cursor:pointer;font-weight:700;color:var(--wine);background:#fff;border-radius:12px;padding:14px 20px;list-style:none;border:1px solid #e4dcc8}
+details.later summary::-webkit-details-marker{display:none}
+details.later summary::after{content:" +";font-weight:700}
+details.later[open] summary::after{content:" \2212"}
+details.later[open] summary{margin-bottom:14px}
+.weeks{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:820px){.weeks{grid-template-columns:1fr}}
+.week{background:#fff;border-radius:14px;padding:20px 22px;break-inside:avoid}
+.week .wk{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--gold2,#9a7a3a);font-weight:700}
+.week h3{margin:2px 0 8px}
+.chk{list-style:none;margin:0;padding:0}
+.chk li{margin:8px 0}
+.chk label{display:flex;gap:10px;align-items:flex-start;cursor:pointer}
+.chk input{width:18px;height:18px;flex:none;margin-top:4px}
+.week .learn{margin:10px 0 0;font-size:14px;color:#5b4a3a}
+.score td{height:38px}
+.score td+td{border-left:1px solid #efe8d8}
+
 .vc{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 6px 24px rgba(79,16,38,.10);margin:16px 0;text-decoration:none;color:var(--ink)}
 .vc img,.vc video{width:100%;height:100%;object-fit:cover;aspect-ratio:16/9;display:block;background:#000}
 .vc .vb{display:flex;flex-direction:column;padding:18px 22px;gap:6px}
@@ -211,7 +230,7 @@ footer a{color:var(--gold2)}
 }
 </style></head><body><div class="nav"><div class="wrap">
   <b>Your Shaklee Business</b>
-  <a href="#start">Before you start</a><a href="#why">Why</a><a href="#earn">How you earn</a><a href="#income">Rank and income</a><a href="#tool">Your tool</a><a href="#products">Products</a><a href="#thirty">First 30 days</a>
+  <a href="#start">Before you start</a><a href="#why">Why</a><a href="#earn">How you earn</a><a href="#income">Rank and income</a><a href="#tool">Your tool</a><a href="#walk">Walk-through</a><a href="#clone">Your page</a><a href="#tools">Tools</a><a href="#community">Community</a><a href="#products">Products</a><a href="#thirty">First 30 days</a>
 </div></div>
 
 <header class="hero"><div class="wrap">
@@ -329,6 +348,7 @@ footer a{color:var(--gold2)}
 
   <h3 style="margin-top:44px"><span class="pill">LEVEL 3</span><br>The full leadership path</h3>
   <p>You do not need this on day one. Each title adds requirements and opens more bonuses. Rank Up Bonuses are one-time and are earned when you reach a title and keep it for three more consecutive months.</p>
+  <details class="later"><summary>Show the full leadership path</summary>
   <div class="scroll"><table class="tbl">
     <tr><th>Title</th><th>Cust. Vol.</th><th>Personal Team Vol.</th><th>Org. Vol.</th><th>Qualified Org. Vol.</th><th>Director legs</th><th>Rank Up Bonus</th></tr>
     <tr><td>Director</td><td>500</td><td>2,000</td><td></td><td></td><td></td><td>Global Conference registration</td></tr>
@@ -345,6 +365,7 @@ footer a{color:var(--gold2)}
   </table></div>
   <p class="small" style="margin-top:8px">*Requires at least two legs at Master Coordinator or higher. A Director leg is a line of your organization with at least one Director or higher. Every title also requires 75 Active Volume.</p>
   <a class="pathbox" href="#gen-bonuses"><h3>See the leadership generation bonuses in detail</h3><span>From Senior Director up, you earn on the volume of leaders in your organization, generation by generation, plus the Infinity Bonus and Infinity Match at the top titles.</span><br><span class="go">Open the full graphic</span></a>
+  </details>
 </div></section>
 
 
@@ -372,7 +393,7 @@ footer a{color:var(--gold2)}
 
   <div class="loop">
     <div><i>1</i><b>Try it</b>Start Vivix+<sup>™</sup> yourself and fill in your own checklist.</div>
-    <div><i>2</i><b>Share the page</b>Send your page to someone in a community you already belong to.</div>
+    <div><i>2</i><b>Share the page</b>Send your own page (Part 7) to someone in a community you already belong to.</div>
     <div><i>3</i><b>Walk through it</b>Go through the page together, virtually or in person.</div>
     <div><i>4</i><b>They start</b>They choose, check out, and begin their 30 days.</div>
     <div><i>5</i><b>They share</b>Their results carry to their own communities.</div>
@@ -457,6 +478,14 @@ footer a{color:var(--gold2)}
       <b>3.</b> The page opens with "You are managing the account of Guest." The two stacks include the Business Starter Kit and free priority processing and shipping for new Ambassadors. They can also start with Vivix+<sup>™</sup> or any other product, and the cart offers the Starter Kit as an add-on.
       <span class="noprint"><a href="#screens">See the full screens</a></span><span class="printonly"><a href="#apx">See the full screens, last pages</a></span>
     </div></div>
+  <div class="card" style="margin-top:22px"><h3>Questions you will hear</h3>
+    <p class="small" style="margin-top:0">Keep your answers short and factual. Let the page, the guarantee and Shaklee's own documents speak.</p>
+    <ul class="clean">
+      <li><b>"It costs more than I expected."</b> Everything Shaklee sells carries a 100% money-back guarantee, even if the container is empty, so trying it carries little risk. Members get member pricing, and orders of $150 or more ship free.</li>
+      <li><b>"Is this one of those pyramid or MLM things?"</b> Ambassadors are paid on product purchases, not on recruiting. The compensation plan and the earnings statement are public at us.shaklee.com/earnings, so invite them to read both.</li>
+      <li><b>"I am not a salesperson."</b> You are not selling. You are walking someone through a page and letting them decide, as shown above.</li>
+      <li><b>"Will it work for me?"</b> Results vary. The page shows what the study found in healthy adults. Suggest the How Do You Feel Today? checklist, try it for 30 days, and see what they notice.</li>
+    </ul></div>
   <div class="card warn" style="margin-top:14px"><h3>Before you hand over the guide</h3>
     <p style="margin-bottom:.4em">Stay with them until their business setup is finished, so the guide starts from a clean slate:</p>
     <ul class="clean"><li>Their storefront handle is chosen.</li><li>Their banking information is in, so they can be paid.</li><li>Optional: their favorite products and bundles are set on their storefront.</li></ul>
@@ -466,7 +495,7 @@ footer a{color:var(--gold2)}
 <section id="clone" class="alt"><div class="wrap">
   <div class="kicker">Part 7</div>
   <h2>Make your own page</h2>
-  <p class="lead">Everything in Part 6 works best when the page is yours. It takes about five minutes to ask for, and the kit arrives in your inbox within minutes.</p>
+  <p class="lead">Everything in Part 6 works best when the page is yours. Ask for it in your first week. It takes about five minutes, and the kit arrives in your inbox within minutes.</p>
 
   <ol class="steps">
     <li><b>Open the link</b><a href="https://bobfergusonlongevity.com/duplicate">bobfergusonlongevity.com/duplicate</a></li>
@@ -482,7 +511,7 @@ footer a{color:var(--gold2)}
     <tr><td><b>Email and phone</b></td><td>Where your kit is sent and how your page lists you.</td></tr>
     <tr><td><b>Shaklee storefront handle</b></td><td>The part of your Shaklee web address that follows <i>en_US/</i>. You choose it as part of your business setup in Part 1.</td></tr>
     <tr><td><b>Color scheme</b></td><td>Wine and Gold, or Sage and Forest.</td></tr>
-    <tr><td><b>Headshot (optional)</b></td><td>Needed for your card and the About section of your page. You can add it later, but the card waits for the photo.</td></tr>
+    <tr><td><b>Headshot (optional)</b></td><td>Only the Google account version of the form can take a photo. If you use the other version, your card is made without one.</td></tr>
     <tr><td><b>A personal note (optional)</b></td><td>One sentence on why you take Vivix+<sup>™</sup> or why you share it. It becomes your short bio.</td></tr>
   </tbody></table>
 
@@ -576,14 +605,49 @@ footer a{color:var(--gold2)}
 <section id="thirty" class="alt"><div class="wrap">
   <div class="kicker">Part 11</div>
   <h2>Your first 30 days</h2>
-  <p class="lead">Use the products yourself, learn the plan, and run the same loop you will teach: try it, share it, walk someone through it. By day 30 you will have your own evidence.</p>
-  <div class="scroll"><table class="tbl">
-    <tr><th>When</th><th>What to do</th><th>What you are learning</th></tr>
-    <tr><td><b>Days 1 to 7</b></td><td>Give yourself the two key hours: one exploring My Business (Part 1), one with the product catalog and a pad and pen (Part 10). Make sure your business setup is finished (Part 1), place your first order, set your monthly loyalty order, and meet with Bob for your onboarding appointment. Start Vivix+<sup>™</sup> and fill in your own checklist.</td><td>How the tools and ordering work, and what you are drawn to.</td></tr>
-    <tr><td><b>Days 8 to 14</b></td><td>Watch the videos in Parts 2, 3 and 5. Tour the landing page twice, once as a visitor and once imagining your name on it. Ask for your own page and kit (Part 7).</td><td>How the page works and what it says to someone seeing it for the first time.</td></tr>
-    <tr><td><b>Days 15 to 21</b></td><td>Share your page with someone in a community you already belong to. When they are interested, walk through it together (Part 6). Start your tracker, one row per person.</td><td>How people respond, and which part of the page they stop at.</td></tr>
-    <tr><td><b>Days 22 to 30</b></td><td>Fill in your day-30 checklist. Review four things: your own results, how many conversations you had, who started, and how it felt. Meet with Bob and decide your next step.</td><td>Whether this fits you.</td></tr>
-  </table></div>
+  <p class="lead">Use the products yourself, learn the plan, and run the same loop you will teach: try it, share it, walk someone through it. Tick each box as you go. By day 30 you will have your own evidence.</p>
+  <div class="weeks">
+    <div class="week"><div class="wk">Days 1 to 7</div><h3>Get set up and look around</h3>
+      <ul class="chk">
+        <li><label><input type="checkbox"> Finish your business setup, and the rest of Part 1: the app, your loyalty order, learning carts, joining the community.</label></li>
+        <li><label><input type="checkbox"> Place your first order and start Vivix+<sup>™</sup>. Fill in your own checklist (Part 8).</label></li>
+        <li><label><input type="checkbox"> Ask for your own page and kit (Part 7). It takes about five minutes.</label></li>
+        <li><label><input type="checkbox"> Give yourself the two key hours: one exploring My Business (Part 1), one with the product catalog, a pad and a pen (Part 10).</label></li>
+        <li><label><input type="checkbox"> Meet with Bob for your onboarding appointment and agree your targets (see the scorecard below).</label></li>
+      </ul>
+      <p class="learn"><b>You are learning:</b> how the tools and ordering work, and what you are drawn to.</p></div>
+    <div class="week"><div class="wk">Days 8 to 14</div><h3>Make it yours</h3>
+      <ul class="chk">
+        <li><label><input type="checkbox"> Watch any videos you have not seen yet in Parts 2, 3, 5 and 10.</label></li>
+        <li><label><input type="checkbox"> Open your own page when it arrives. Tour it twice, once as a visitor and once imagining someone you know seeing it.</label></li>
+        <li><label><input type="checkbox"> Read Part 6, then practice a walk-through with a friend or with Bob.</label></li>
+        <li><label><input type="checkbox"> Open your tracker and add the first names you think of (Part 8).</label></li>
+      </ul>
+      <p class="learn"><b>You are learning:</b> how the page works and what it says to someone seeing it for the first time.</p></div>
+    <div class="week"><div class="wk">Days 15 to 21</div><h3>Share it</h3>
+      <ul class="chk">
+        <li><label><input type="checkbox"> Share your page with someone in a community you already belong to.</label></li>
+        <li><label><input type="checkbox"> When they are interested, walk through it together (Part 6).</label></li>
+        <li><label><input type="checkbox"> Keep your tracker current, one row per person.</label></li>
+      </ul>
+      <p class="learn"><b>You are learning:</b> how people respond, and which part of the page they stop at.</p></div>
+    <div class="week"><div class="wk">Days 22 to 30</div><h3>Look back and decide</h3>
+      <ul class="chk">
+        <li><label><input type="checkbox"> Fill in the After 30 Days column of your own checklist.</label></li>
+        <li><label><input type="checkbox"> Fill in your scorecard below and review four things: your own results, how many conversations you had, who started, and how it felt.</label></li>
+        <li><label><input type="checkbox"> Meet with Bob and decide your next step.</label></li>
+      </ul>
+      <p class="learn"><b>You are learning:</b> whether this fits you.</p></div>
+  </div>
+
+  <div class="card white" style="margin-top:22px"><h3>Your 30-day scorecard</h3>
+    <p class="small" style="margin-top:0">Agree your targets with Bob at your onboarding appointment. Write them in the middle column, and your actual numbers in the last.</p>
+    <table class="tbl score"><thead><tr><th>What you count</th><th>My target</th><th>What happened</th></tr></thead><tbody>
+      <tr><td>Conversations started</td><td></td><td></td></tr>
+      <tr><td>Walk-throughs done</td><td></td><td></td></tr>
+      <tr><td>People who started</td><td></td><td></td></tr>
+    </tbody></table></div>
+
   <div class="card white" style="margin-top:22px"><h3>Pass it on</h3><p style="margin:0">When you sponsor someone, finish their business setup with them first (Part 6), then give them this same guide. Walk them through Part 1 on their first call, then follow the same 30 days together. That is how a system stays the same from the first person to the hundredth.</p></div>
 </div></section>
 
@@ -658,4 +722,4 @@ footer a{color:var(--gold2)}
   <p>This guide was created by Bob Ferguson, an independent Shaklee Ambassador. It was not produced, approved, or endorsed by Shaklee, and it is not an offer of employment. Financial success in Shaklee requires commitment, diligence, effort, financial investment, and sales skill, and results vary widely.</p>
   <p style="margin:0">Questions about the compensation plan: <a href="mailto:comp@shaklee.com">comp@shaklee.com</a> &middot; Business questions: <a href="mailto:fieldsupport@shaklee.com">fieldsupport@shaklee.com</a> &middot; Product questions: <a href="mailto:productsupport@shaklee.com">productsupport@shaklee.com</a></p>
 <p class="small" style="margin:14px 0 0;color:var(--gold2)">*These statements have not been evaluated by the Food and Drug Administration. These products are not intended to diagnose, treat, cure, or prevent any disease. Results described are from the cited study and may vary. Independent Shaklee Ambassador.</p></div></footer>
-</body></html>
+<script>window.addEventListener('beforeprint',function(){document.querySelectorAll('details').forEach(function(d){d.open=true})});</script></body></html>
