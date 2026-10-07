@@ -269,6 +269,18 @@ a.dl:hover{background:var(--wine2)}
 
 sup{line-height:0;font-size:.62em;vertical-align:super}
 .shot.w60,.shot.w72{margin-left:auto;margin-right:auto}
+
+/* in-page viewer */
+.viewer{position:fixed;inset:0;z-index:80;background:rgba(43,32,36,.92);display:flex;flex-direction:column;padding:12px 16px}
+.viewer[hidden]{display:none}
+.vbar{display:flex;justify-content:flex-end;align-items:center;gap:16px;padding:4px 0 12px}
+.vbar a{color:#fff;font-size:14px}
+.vclose{font-family:inherit;font-size:15px;font-weight:700;line-height:1;background:#f7f3ec;color:var(--wine);border:0;border-radius:999px;padding:10px 18px;cursor:pointer}
+.vclose:focus-visible,.vbar a:focus-visible{outline:3px solid #c9a15a;outline-offset:2px}
+.vbody{flex:1;min-height:0;display:flex;align-items:center;justify-content:center}
+.vbody video{max-width:100%;max-height:100%;background:#000;border-radius:10px}
+.vbody iframe{width:100%;height:100%;border:0;background:#fff;border-radius:10px}
+@media print{.viewer{display:none!important}}
 </style></head><body><div class="nav stepper"><div class="wrap"><b>Your Shaklee Business</b><ol class="steps5"><li><a href="#m1" data-m="m1"><i>1</i><span>Get started</span></a></li><li><a href="#m2" data-m="m2"><i>2</i><span>How you earn</span></a></li><li><a href="#m3" data-m="m3"><i>3</i><span>Your tool</span></a></li><li><a href="#m4" data-m="m4"><i>4</i><span>Tools and community</span></a></li><li><a href="#m5" data-m="m5"><i>5</i><span>Products and 30 days</span></a></li></ol><div class="bar"><span id="barfill"></span></div></div></div>
 <div class="module" id="m1" data-title="Get started"><header class="hero"><div class="wrap">
   <div class="kicker">A guide for new business builders</div>
@@ -763,7 +775,7 @@ document.addEventListener('click',function(e){
  var h=a.getAttribute('href').slice(1);if(!h)return;
  var t=document.getElementById(h);if(!t)return;
  var m=t.classList.contains('module')?t:t.closest('.module');
- if(m){e.preventDefault();show(m.id,t.classList.contains('module')?null:t);history.replaceState(null,'','#'+h)}
+ if(m){var cl=a.classList.contains('close');if(!cl)e.preventDefault();show(m.id,t.classList.contains('module')?null:t);if(!cl)history.replaceState(null,'','#'+h)}
 });
 var ht=location.hash?document.getElementById(location.hash.slice(1)):null;
 var hm=ht?(ht.classList.contains('module')?ht:ht.closest('.module')):null;
@@ -774,4 +786,23 @@ show(sid,hm&&ht&&!ht.classList.contains('module')?ht:null);
 document.querySelectorAll('.ownername').forEach(function(s){s.textContent=OWNER.name});
 document.querySelectorAll('.hl-mail').forEach(function(a){a.href='mailto:'+OWNER.email});
 if(OWNER.phone){document.querySelectorAll('.hl-text-wrap').forEach(function(w){w.hidden=false});document.querySelectorAll('.hl-text').forEach(function(a){a.href='sms:'+OWNER.phone})}
+})();</script><script>(function(){
+var v=document.createElement('div');v.className='viewer noprint';v.hidden=true;
+v.innerHTML='<div class="vbar"><a class="vnew" target="_blank" rel="noopener" href="#">Open in new tab</a><button type="button" class="vclose">Close \u00d7</button></div><div class="vbody"></div>';
+document.body.appendChild(v);
+var body=v.querySelector('.vbody'),nw=v.querySelector('.vnew');
+function close(){v.hidden=true;body.innerHTML=''}
+function open(kind,url){body.innerHTML='';nw.href=url;
+ if(kind==='video'){var el=document.createElement('video');el.controls=true;el.autoplay=true;el.playsInline=true;el.src=url;body.appendChild(el)}
+ else{var f=document.createElement('iframe');f.src=url;f.title='Live page';body.appendChild(f)}
+ v.hidden=false;v.querySelector('.vclose').focus()}
+v.querySelector('.vclose').addEventListener('click',close);
+v.addEventListener('click',function(e){if(e.target===v||e.target===body)close()});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!v.hidden)close()});
+document.addEventListener('click',function(e){var a=e.target.closest('a[href]');if(!a||a.closest('.viewer')||a.closest('.prt'))return;
+ var h=a.getAttribute('href');
+ if(/\.mp4(\?|$)/.test(h)){e.preventDefault();open('video',h);return}
+ if(h==='https://bobfergusonlongevity.com'){e.preventDefault();open('page',h)}
+});
+document.querySelectorAll('a[href^="http"]').forEach(function(a){var h=a.getAttribute('href');if(/\.(xlsx|mp4)(\?|$)/.test(h)||h==='https://bobfergusonlongevity.com')return;a.target='_blank';a.rel='noopener'});
 })();</script></body></html>
