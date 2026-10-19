@@ -1096,6 +1096,44 @@
     .ob-head h2{font-size:25px;}
     .hero-cta .btn{width:100%;box-sizing:border-box;}
   }
+
+  /* BFL-TALK: contact block, sticky call/text bar, talk-first line */
+  .talk{background:var(--cream);padding:56px 0 64px;}
+  .talk-card{max-width:720px;margin:0 auto;background:#fff;border-radius:18px;padding:36px 28px 32px;text-align:center;box-shadow:0 4px 18px rgba(79,16,38,0.07);}
+  .talk-card h2{font-family:var(--serif);color:var(--wine-dark);font-size:30px;line-height:1.2;margin:0 0 10px;}
+  .talk-card p{font-size:17px;line-height:1.6;color:var(--wine-dark);margin:0 0 24px;}
+  .talk-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+  .talk-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:54px;min-width:150px;padding:0 26px;border-radius:999px;font-family:var(--sans);font-weight:700;font-size:18px;box-sizing:border-box;transition:transform 0.15s ease, box-shadow 0.15s ease;}
+  .talk-btn:hover{transform:translateY(-1px);}
+  .talk-btn svg{width:22px;height:22px;flex:none;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+  .talk-btn.call{background:var(--wine-dark);color:var(--cream);}
+  .talk-btn.text{background:var(--gold);color:var(--wine-darker);}
+  .talk-btn.mail{background:transparent;color:var(--wine-dark);border:1.5px solid var(--wine-dark);}
+  .talk-btn.mail:hover{background:var(--wine-dark);color:var(--cream);}
+  .talk-card p.talk-num{margin:22px 0 0;font-size:22px;font-weight:700;letter-spacing:.02em;}
+  .talk-num a{color:var(--wine-dark);border-bottom:1.5px solid var(--gold);}
+  .talk-first{font-size:16px;line-height:1.5;color:var(--wine-dark);margin:12px 0 0;text-align:center;}
+  .talk-first a{font-weight:700;border-bottom:1.5px solid var(--gold);}
+  .ob-foot .talk-first{font-size:16px;margin:0 0 8px;}
+  footer .contact .tel{font-size:18px;font-weight:700;letter-spacing:.02em;}
+  .talk-bar{display:none;}
+  @media (max-width:700px){
+    .talk{padding:40px 0 48px;}
+    .talk-card{padding:30px 18px 26px;}
+    .talk-card h2{font-size:26px;}
+    .talk-actions{flex-direction:row;flex-wrap:wrap;gap:10px;}
+    .talk-actions .talk-btn{flex:1 1 40%;min-width:0;min-height:48px;font-size:17px;padding:0 12px;}
+    .talk-actions .talk-btn.mail{flex:1 1 100%;min-height:44px;border:0;background:transparent;font-size:16px;text-decoration:underline;text-decoration-color:var(--gold);text-underline-offset:4px;}
+    .talk-actions .talk-btn.mail:hover{background:transparent;color:var(--wine-dark);}
+    .talk-actions .talk-btn.mail:only-child{min-height:48px;border:1.5px solid var(--wine-dark);text-decoration:none;}
+    .talk-bar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:900;gap:10px;padding:8px 14px calc(8px + env(safe-area-inset-bottom));background:var(--wine-dark);box-shadow:0 -6px 20px rgba(40,12,24,0.25);transform:translateY(110%);visibility:hidden;transition:transform .25s ease, visibility .25s;}
+    .talk-bar.is-on{transform:none;visibility:visible;}
+    body.ob-open .talk-bar{display:none;}
+    .talk-bar .talk-btn{flex:1;min-width:0;min-height:44px;font-size:17px;padding:0 12px;}
+    .talk-bar .talk-btn.call{background:var(--gold);color:var(--wine-darker);}
+    .talk-bar .talk-btn.text{background:var(--cream);color:var(--wine-dark);}
+    body.has-talk-bar footer{padding-bottom:calc(36px + 64px);}
+  }
 </style>
 <!-- Privacy-friendly analytics by Plausible -->
 <script async src="https://plausible.io/js/pa-a3jZtwKU4Lx7RIBy_e41c.js"></script>
@@ -1121,7 +1159,7 @@
     <div class="video-share"><button type="button" class="video-share-btn" data-video="vivix"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12v7a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7"/><path d="M16 6l-4-4-4 4"/><path d="M12 2v14"/></svg><span>Share this video</span></button></div>
 
     <p class="sub">Vivix+<sup>&trade;</sup> boosts NAD+ and defends against the damage that accelerates aging, at the same time. That combination is what a recent double-blind, placebo-controlled trial measured, and here's what it found.</p>
-    <div class="hero-cta"><a class="btn btn-gold bfl-buy" href="https://us.shaklee.com/en_US/ferguson/Nutrition/Targeted-Solutions/Aging-Well/Vivix%2B%E2%84%A2/p/22106" target="_blank" rel="noopener">Start with Vivix+<sup>&trade;</sup></a></div>
+    <div class="hero-cta"><a class="btn btn-gold bfl-buy" href="https://us.shaklee.com/en_US/ferguson/Nutrition/Targeted-Solutions/Aging-Well/Vivix%2B%E2%84%A2/p/22106" target="_blank" rel="noopener">Start with Vivix+<sup>&trade;</sup></a><!--BFL-PHONE--><p class="talk-first">Prefer to talk first? <a href="tel:+19132086357">Call</a> or <a href="sms:+19132086357">text me</a>.</p><!--/BFL-PHONE--></div>
 
     <p class="hero-note">*Results from a randomized, placebo-controlled 60-day trial in healthy adults 45 to 65. Vivix+<sup>&trade;</sup> also produced double-digit declines in key inflammatory markers. It builds on the original Vivix formula, backed by 18 years of laboratory and clinical research across four areas of cellular science (defense, energy, repair, and performance) and proven to impact all 12 hallmarks of aging.</p>
   </div>
@@ -1241,6 +1279,7 @@
       <div class="side">
         <span class="value">Backed by Shaklee's 100% money-back guarantee</span>
         <a class="bfl-buy btn btn-gold" href="https://us.shaklee.com/en_US/ferguson/Nutrition/Targeted-Solutions/Aging-Well/Vivix%2B%E2%84%A2/p/22106" target="_blank" rel="noopener">Start with Vivix+<sup>&trade;</sup></a>
+        <!--BFL-PHONE--><p class="talk-first">Prefer to talk first? <a href="tel:+19132086357">Call</a> or <a href="sms:+19132086357">text me</a>.</p><!--/BFL-PHONE-->
       </div>
     </div>
   </div>
@@ -1292,13 +1331,32 @@
 </section>
 
 <!-- FOOTER -->
+<!-- BFL-TALK: contact block -->
+<section class="talk" id="talk">
+  <div class="wrap">
+    <div class="talk-card">
+      <h2>Questions? Call or text me.</h2>
+      <p>I'm happy to talk it through with you before you order.</p>
+      <div class="talk-actions">
+<!--BFL-PHONE-->
+        <a class="talk-btn call" href="tel:+19132086357"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>Call</a>
+        <a class="talk-btn text" href="sms:+19132086357"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 8.6 8.6 0 0 1-3.6-.8L3 21l1.9-5.2A8.4 8.4 0 0 1 3 11.5 8.5 8.5 0 0 1 12 3a8.5 8.5 0 0 1 9 8.5z"/></svg>Text</a>
+<!--/BFL-PHONE-->
+        <a class="talk-btn mail" href="mailto:bob@fergleads.com"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>Email</a>
+      </div>
+<!--BFL-PHONE-->
+      <p class="talk-num"><a href="tel:+19132086357">913-208-6357</a></p>
+<!--/BFL-PHONE-->
+    </div>
+  </div>
+</section>
 <footer>
   <div class="wrap">
     <div class="foot-grid">
       <div>
         <h4>Bob Ferguson Longevity</h4>
         <div class="contact">
-          913-208-6357<br>
+          <!--BFL-PHONE--><a class="tel" href="tel:+19132086357">913-208-6357</a><br><!--/BFL-PHONE-->
           <a href="mailto:bob@fergleads.com">bob@fergleads.com</a>
         </div>
       </div>
@@ -1307,6 +1365,29 @@
     <p class="legal">These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease. &copy;2026 Shaklee Corporation.</p>
   </div>
 </footer>
+<!--BFL-PHONE-->
+<!-- BFL-TALK: sticky call/text bar (phones only) -->
+<div class="talk-bar" id="talkBar" role="region" aria-label="Call or text">
+  <a class="talk-btn call" href="tel:+19132086357"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>Call</a>
+  <a class="talk-btn text" href="sms:+19132086357"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 8.6 8.6 0 0 1-3.6-.8L3 21l1.9-5.2A8.4 8.4 0 0 1 3 11.5 8.5 8.5 0 0 1 12 3a8.5 8.5 0 0 1 9 8.5z"/></svg>Text</a>
+</div>
+<script>
+(function(){
+  var bar = document.getElementById('talkBar'); if(!bar) return;
+  document.body.classList.add('has-talk-bar');
+  var sec = document.getElementById('talk'), inView = false;
+  function update(){
+    var y = window.pageYOffset || document.documentElement.scrollTop || 0;
+    bar.classList.toggle('is-on', y > 400 && !inView);
+  }
+  if('IntersectionObserver' in window && sec){
+    new IntersectionObserver(function(en){ inView = en[0].isIntersecting; update(); }).observe(sec);
+  }
+  window.addEventListener('scroll', update, {passive:true});
+  update();
+})();
+</script>
+<!--/BFL-PHONE-->
 
 <!-- Begin Constant Contact Active Forms -->
 <script> var _ctct_m = "38e95b3ad7a8d750bde7e98ca2988623"; </script>
@@ -1373,6 +1454,7 @@
 
     <div class="ob-foot">
       <p class="ob-guarantee"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 2l7 3v6c0 5-3.5 8.5-7 10-3.5-1.5-7-5-7-10V5z"/></svg>Every order is backed by Shaklee&rsquo;s 100% money-back guarantee, even if the bottle&rsquo;s empty.</p>
+      <!--BFL-PHONE--><p class="talk-first">Prefer to talk first? <a href="tel:+19132086357">Call</a> or <a href="sms:+19132086357">text me</a>.</p><!--/BFL-PHONE-->
       <p>Checkout opens on Shaklee&rsquo;s secure site in a new tab. You can check out as a guest, or become a member with any stack or any order of $150 or more.</p>
     </div>
   </div>
@@ -1595,6 +1677,8 @@ function playInlineVideo(videoId, btnId){
     if(/shaklee\.com/i.test(href)) track('Click: Shop');
     else if(/calendly\.com|calendar\.app\.google|calendar\.google\.com/i.test(href)) track('Click: Book a Call');
     else if(/^mailto:/i.test(href)) track('Click: Email');
+    else if(/^tel:/i.test(href)) track('Click: Call');
+    else if(/^sms:/i.test(href)) track('Click: Text');
   }, true);
 })();
 </script>
