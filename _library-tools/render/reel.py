@@ -1,7 +1,8 @@
+import os
 import numpy as np, subprocess, math, sys
 from PIL import Image, ImageDraw, ImageFont, ImageFilter, ImageChops
 
-M = "/tmp/claude-0/-home-claude/8635634e-87a8-51f3-932d-b7898d563da4/scratchpad/deck/x/ppt/media/"
+M = os.path.join(os.environ.get("BFL_ASSETS", os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "assets")), "deck", "x", "ppt", "media") + "/"
 OUT = sys.argv[1]
 W, H, FPS, DUR = 1080, 1920, 30, 15.0
 NF = int(FPS * DUR)

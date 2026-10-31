@@ -121,6 +121,10 @@ def tools_section(p):
       ("Prospect Tracker", "A spreadsheet that keeps track of who you have talked to and what to do next. It opens in Excel or Google Sheets. A computer gives the best view.", [("Download the tracker", "tools/Prospect-Tracker.xlsx", True)]),
       ("Your Business Cards", "Print ready. Take both files to any print shop.", [("Front (PDF)", "tools/Business-Card-Front.pdf", False), ("Back (PDF)", "tools/Business-Card-Back.pdf", False)]),
     ]
+    for ec in p.get("extra_cards", []):
+        rows.append((ec["label"], "Print ready. Take both files to any print shop.", [("Front (PDF)", ec["front"], False), ("Back (PDF)", ec["back"], False)]))
+    if p.get("extra_cards"):
+        rows[2] = ("Ann's Business Cards",) + rows[2][1:]
     if d.get("files") is False:
         rows = []
     if ab:
