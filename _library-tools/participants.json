@@ -1,0 +1,473 @@
+[
+ {
+  "slug": "annie-keane",
+  "display_name": "Annie Keane",
+  "first": "Annie",
+  "email": "AnnieTKeane@gmail.com",
+  "landing_url": "https://bobfairfield.github.io/annie-keane-landing/",
+  "short_slug": "annie",
+  "onscreen_url": "bobfergusonlongevity.com/go/annie",
+  "link_text": "bobfergusonlongevity.com/go/annie",
+  "link_url": "https://bobfergusonlongevity.com/go/annie",
+  "drive": {
+   "folder": "1yq0J-OsNqwiSWg4zXocO4hFruJoHDsuO",
+   "checklist": "1Vn3G0V6qvfL_zgvleXjTA23DGzXaPlUC",
+   "tracker": "1o7CS9iBJJLimhEjV1lJtjJs3Odx60q35",
+   "card_front": "1RNj5EBX2ZahD9otop5jGocz7X41r3R7e",
+   "card_back": "12ohXMvNQmvZ6_u2lP-oTns4aimsf6VU4",
+   "article_base": "https://bobfairfield.github.io/annie-keane-landing/"
+  }
+ },
+ {
+  "slug": "robert-e-bross",
+  "display_name": "Robert E. Bross",
+  "first": "Robert",
+  "email": "Rebross55@gmail.com",
+  "landing_url": "https://bobfairfield.github.io/robert-e-bross-landing/",
+  "short_slug": "robert",
+  "onscreen_url": "bobfergusonlongevity.com/go/robert",
+  "link_text": "bobfergusonlongevity.com/go/robert",
+  "link_url": "https://bobfergusonlongevity.com/go/robert",
+  "drive": {
+   "folder": "1hygRmMjbBLzh7U6n4lgBhNlhDaxg9RAo",
+   "checklist": "1ccBbUdJYZKoHSU0jgdgXttSXGyGC-bQB",
+   "tracker": "1M04_ucCAOGLHm4zY5ZgWdmhkDdW6rIh3",
+   "card_front": "16OWOXy4KGOjcU6fEcdHD4jaYOGPvyu9l",
+   "card_back": "15FaPnTzqe-CHFduU8yj84hcByYysx5-b",
+   "article_base": "https://bobfairfield.github.io/robert-e-bross-landing/"
+  }
+ },
+ {
+  "slug": "toni-parker",
+  "display_name": "Toni Parker",
+  "first": "Toni",
+  "email": "toni_parker@mac.com",
+  "landing_url": "https://toniparkerlongevity.com/",
+  "short_slug": null,
+  "onscreen_url": "toniparkerlongevity.com",
+  "link_text": "toniparkerlongevity.com",
+  "link_url": "https://toniparkerlongevity.com",
+  "drive": {
+   "folder": "1t69i7Ss-JFACJB2OZp2FomeGFkU3vXKM",
+   "checklist": "1RiwIw7vKmxsnAxKrB5HGp7iHkpMKw17f",
+   "tracker": "1OQa27vI-zQrS2384IFRSu6vG1iO_sks2",
+   "card_front": "1LmNoZahCafmMoQlRpCtzmhCX6seLld1e",
+   "card_back": "1aisYtmD7tiyXhtdaOFazwOltgTxhNRZv",
+   "article_base": "https://toniparkerlongevity.com/"
+  }
+ },
+ {
+  "slug": "anne-christie",
+  "display_name": "Anne Christie",
+  "first": "Anne",
+  "email": "anneschristie@gmail.com",
+  "landing_url": "https://annechristielongevity.com/",
+  "short_slug": null,
+  "onscreen_url": "annechristielongevity.com",
+  "link_text": "annechristielongevity.com",
+  "link_url": "https://annechristielongevity.com",
+  "article_base": "https://annechristielongevity.com/",
+  "drive": {
+   "article_base": "https://annechristielongevity.com/",
+   "files": true,
+   "prefix": "Anne_Christie"
+  }
+ },
+ {
+  "slug": "dubi-gordon",
+  "display_name": "Dubi Gordon",
+  "first": "Dubi",
+  "email": "dubigordon@me.com",
+  "landing_url": "https://dubigordonlongevity.com/",
+  "short_slug": null,
+  "onscreen_url": "dubigordonlongevity.com",
+  "link_text": "dubigordonlongevity.com",
+  "link_url": "https://dubigordonlongevity.com",
+  "article_base": "https://dubigordonlongevity.com/",
+  "drive": {
+   "article_base": "https://dubigordonlongevity.com/",
+   "files": false,
+   "prefix": null
+  }
+ },
+ {
+  "slug": "james-r-lang",
+  "display_name": "James R Lang",
+  "first": "James",
+  "email": "gymlang@gmail.com",
+  "landing_url": "https://bobfairfield.github.io/james-r-lang-landing/",
+  "short_slug": "james",
+  "onscreen_url": "bobfergusonlongevity.com/go/james",
+  "link_text": "bobfergusonlongevity.com/go/james",
+  "link_url": "https://bobfergusonlongevity.com/go/james",
+  "article_base": "https://bobfairfield.github.io/james-r-lang-landing/",
+  "drive": {
+   "article_base": "https://bobfairfield.github.io/james-r-lang-landing/",
+   "files": true,
+   "prefix": "James_R_Lang"
+  }
+ },
+ {
+  "slug": "joe-weaver",
+  "display_name": "Joe Weaver",
+  "first": "Joe",
+  "email": "joe@befitafter60.com",
+  "landing_url": "https://bobfairfield.github.io/joe-weaver-landing/",
+  "short_slug": "joe",
+  "onscreen_url": "bobfergusonlongevity.com/go/joe",
+  "link_text": "bobfergusonlongevity.com/go/joe",
+  "link_url": "https://bobfergusonlongevity.com/go/joe",
+  "article_base": "https://bobfairfield.github.io/joe-weaver-landing/",
+  "drive": {
+   "article_base": "https://bobfairfield.github.io/joe-weaver-landing/",
+   "files": false,
+   "prefix": null
+  }
+ },
+ {
+  "slug": "kristin-heneghan",
+  "display_name": "Kristin Heneghan",
+  "first": "Kristin",
+  "email": "kristin@kristinlouise.com",
+  "landing_url": "https://bobfairfield.github.io/kristin-heneghan-landing/",
+  "short_slug": "kristin",
+  "onscreen_url": "bobfergusonlongevity.com/go/kristin",
+  "link_text": "bobfergusonlongevity.com/go/kristin",
+  "link_url": "https://bobfergusonlongevity.com/go/kristin",
+  "article_base": "https://bobfairfield.github.io/kristin-heneghan-landing/",
+  "drive": {
+   "article_base": "https://bobfairfield.github.io/kristin-heneghan-landing/",
+   "files": true,
+   "prefix": "Kristin_Heneghan"
+  }
+ },
+ {
+  "slug": "lisa-sugrue",
+  "display_name": "Lisa Sugrue",
+  "first": "Lisa",
+  "email": "info@longevitylisa.com",
+  "landing_url": "https://bobfairfield.github.io/lisa-sugrue-landing/",
+  "short_slug": "lisa",
+  "onscreen_url": "bobfergusonlongevity.com/go/lisa",
+  "link_text": "bobfergusonlongevity.com/go/lisa",
+  "link_url": "https://bobfergusonlongevity.com/go/lisa",
+  "article_base": "https://bobfairfield.github.io/lisa-sugrue-landing/",
+  "drive": {
+   "article_base": "https://bobfairfield.github.io/lisa-sugrue-landing/",
+   "files": true,
+   "prefix": "Lisa_Sugrue"
+  }
+ },
+ {
+  "slug": "lohrainne-janell",
+  "display_name": "Lohrainne Janell",
+  "first": "Lohrainne",
+  "email": "lohrainnejanell@gmail.com",
+  "landing_url": "https://bobfairfield.github.io/lohrainne-janell-landing/",
+  "short_slug": "lohrainne",
+  "onscreen_url": "bobfergusonlongevity.com/go/lohrainne",
+  "link_text": "bobfergusonlongevity.com/go/lohrainne",
+  "link_url": "https://bobfergusonlongevity.com/go/lohrainne",
+  "article_base": "https://bobfairfield.github.io/lohrainne-janell-landing/",
+  "drive": {
+   "article_base": "https://bobfairfield.github.io/lohrainne-janell-landing/",
+   "files": false,
+   "prefix": null
+  }
+ },
+ {
+  "slug": "lynne-stidham",
+  "display_name": "Lynne Stidham",
+  "first": "Lynne",
+  "email": "lynne@choosegoodhealth.com",
+  "landing_url": "https://bobfairfield.github.io/lynne-stidham-landing/",
+  "short_slug": "lynne",
+  "onscreen_url": "bobfergusonlongevity.com/go/lynne",
+  "link_text": "bobfergusonlongevity.com/go/lynne",
+  "link_url": "https://bobfergusonlongevity.com/go/lynne",
+  "article_base": "https://bobfairfield.github.io/lynne-stidham-landing/",
+  "drive": {
+   "article_base": "https://bobfairfield.github.io/lynne-stidham-landing/",
+   "files": true,
+   "prefix": "Lynne_Stidham"
+  }
+ },
+ {
+  "slug": "mary-riley",
+  "display_name": "Mary Riley",
+  "first": "Mary",
+  "email": "mary@maryoriley.com",
+  "landing_url": "https://bobfairfield.github.io/mary-riley-landing/",
+  "short_slug": "mary",
+  "onscreen_url": "bobfergusonlongevity.com/go/mary",
+  "link_text": "bobfergusonlongevity.com/go/mary",
+  "link_url": "https://bobfergusonlongevity.com/go/mary",
+  "article_base": "https://bobfairfield.github.io/mary-riley-landing/",
+  "drive": {
+   "article_base": "https://bobfairfield.github.io/mary-riley-landing/",
+   "files": true,
+   "prefix": "Mary_Riley"
+  }
+ },
+ {
+  "slug": "mike-farkas",
+  "display_name": "Mike Farkas",
+  "first": "Mike",
+  "email": "vitamanct@aol.com",
+  "landing_url": "https://mikefarkaslongevity.com/",
+  "short_slug": null,
+  "onscreen_url": "mikefarkaslongevity.com",
+  "link_text": "mikefarkaslongevity.com",
+  "link_url": "https://mikefarkaslongevity.com",
+  "article_base": "https://mikefarkaslongevity.com/",
+  "drive": {
+   "article_base": "https://mikefarkaslongevity.com/",
+   "files": true,
+   "prefix": "Mike_Farkas"
+  }
+ },
+ {
+  "slug": "nedra-sahr",
+  "display_name": "Nedra Sahr",
+  "first": "Nedra",
+  "email": "Nedra@northstar-ventures.com",
+  "landing_url": "https://nedrasahrlongevity.com/",
+  "short_slug": null,
+  "onscreen_url": "nedrasahrlongevity.com",
+  "link_text": "nedrasahrlongevity.com",
+  "link_url": "https://nedrasahrlongevity.com",
+  "article_base": "https://nedrasahrlongevity.com/",
+  "drive": {
+   "article_base": "https://nedrasahrlongevity.com/",
+   "files": true,
+   "prefix": "Nedra_Sahr"
+  }
+ },
+ {
+  "slug": "sue-geoff",
+  "display_name": "Sue & Geoff",
+  "first": "Sue and Geoff",
+  "email": "sue@lamdingroup.com",
+  "landing_url": "https://bobfairfield.github.io/sue-geoff-landing/",
+  "short_slug": "sue",
+  "onscreen_url": "bobfergusonlongevity.com/go/sue",
+  "link_text": "bobfergusonlongevity.com/go/sue",
+  "link_url": "https://bobfergusonlongevity.com/go/sue",
+  "article_base": "https://bobfairfield.github.io/sue-geoff-landing/",
+  "drive": {
+   "article_base": "https://bobfairfield.github.io/sue-geoff-landing/",
+   "files": false,
+   "prefix": null
+  }
+ },
+ {
+  "slug": "susan-boettcher",
+  "display_name": "Susan Boettcher",
+  "first": "Susan",
+  "email": "cyclingsusan@gmail.com",
+  "landing_url": "https://susanboettcherlongevity.com/",
+  "short_slug": null,
+  "onscreen_url": "susanboettcherlongevity.com",
+  "link_text": "susanboettcherlongevity.com",
+  "link_url": "https://susanboettcherlongevity.com",
+  "article_base": "https://susanboettcherlongevity.com/",
+  "drive": {
+   "article_base": "https://susanboettcherlongevity.com/",
+   "files": true,
+   "prefix": "Susan_Boettcher"
+  }
+ },
+ {
+  "slug": "torah-torres",
+  "display_name": "Torah Torres",
+  "first": "Torah",
+  "email": "torahtorres@gmail.com",
+  "landing_url": "https://bobfairfield.github.io/torah-torres-landing/",
+  "short_slug": "torah",
+  "onscreen_url": "bobfergusonlongevity.com/go/torah",
+  "link_text": "bobfergusonlongevity.com/go/torah",
+  "link_url": "https://bobfergusonlongevity.com/go/torah",
+  "article_base": "https://bobfairfield.github.io/torah-torres-landing/",
+  "drive": {
+   "article_base": "https://bobfairfield.github.io/torah-torres-landing/",
+   "files": false,
+   "prefix": null
+  }
+ },
+ {
+  "slug": "naomi-sunshine",
+  "display_name": "Naomi Sunshine",
+  "first": "Naomi",
+  "email": "mikaa.mich@gmail.com",
+  "landing_url": "https://bobfairfield.github.io/naomi-sunshine-landing/",
+  "short_slug": "naomi",
+  "onscreen_url": "bobfergusonlongevity.com/go/naomi",
+  "link_text": "bobfergusonlongevity.com/go/naomi",
+  "link_url": "https://bobfergusonlongevity.com/go/naomi",
+  "article_base": "https://bobfairfield.github.io/naomi-sunshine-landing/",
+  "drive": {
+   "article_base": "https://bobfairfield.github.io/naomi-sunshine-landing/",
+   "files": true,
+   "prefix": "Naomi_Sunshine"
+  }
+ },
+ {
+  "slug": "jacob-anderson",
+  "display_name": "Jacob Anderson",
+  "first": "Jacob",
+  "email": "gofastguru1@gmail.com",
+  "landing_url": "https://bobfairfield.github.io/jacob-anderson-landing/",
+  "short_slug": "jacob",
+  "onscreen_url": "bobfergusonlongevity.com/go/jacob",
+  "link_text": "bobfergusonlongevity.com/go/jacob",
+  "link_url": "https://bobfergusonlongevity.com/go/jacob",
+  "article_base": "https://bobfairfield.github.io/jacob-anderson-landing/",
+  "drive": {
+   "article_base": "https://bobfairfield.github.io/jacob-anderson-landing/",
+   "files": true,
+   "prefix": "Jacob_Anderson"
+  }
+ },
+ {
+  "slug": "nahom-abegaze",
+  "display_name": "Nahom Abegaze",
+  "first": "Nahom",
+  "email": "thenahomabegaze@gmail.com",
+  "landing_url": "https://bobfairfield.github.io/nahom-abegaze-landing/",
+  "short_slug": "nahom",
+  "onscreen_url": "bobfergusonlongevity.com/go/nahom",
+  "link_text": "bobfergusonlongevity.com/go/nahom",
+  "link_url": "https://bobfergusonlongevity.com/go/nahom",
+  "article_base": "https://bobfairfield.github.io/nahom-abegaze-landing/",
+  "drive": {
+   "article_base": "https://bobfairfield.github.io/nahom-abegaze-landing/",
+   "files": true,
+   "prefix": "Nahom_Abegaze"
+  }
+ },
+ {
+  "slug": "angela-nesbitt",
+  "display_name": "Angela Nesbitt",
+  "first": "Angela",
+  "email": "angela@angelanesbitt.com",
+  "landing_url": "https://bobfairfield.github.io/angela-nesbitt-landing/",
+  "short_slug": "angela",
+  "onscreen_url": "bobfergusonlongevity.com/go/angela",
+  "link_text": "bobfergusonlongevity.com/go/angela",
+  "link_url": "https://bobfergusonlongevity.com/go/angela",
+  "article_base": "https://bobfairfield.github.io/angela-nesbitt-landing/",
+  "drive": {
+   "article_base": "https://bobfairfield.github.io/angela-nesbitt-landing/",
+   "files": true,
+   "prefix": "Angela_Nesbitt"
+  },
+  "video_base": "https://bobfairfield.github.io/angela-nesbitt-landing/library-videos/"
+ },
+ {
+  "slug": "bob-leader",
+  "display_name": "Bob Leader",
+  "first": "Bob",
+  "email": "bob@fergusonleadersunlimited.com",
+  "landing_url": "https://bobfairfield.github.io/bob-leader-landing/",
+  "short_slug": "bobleader",
+  "onscreen_url": "bobfergusonlongevity.com/go/bobleader",
+  "link_text": "bobfergusonlongevity.com/go/bobleader",
+  "link_url": "https://bobfergusonlongevity.com/go/bobleader",
+  "article_base": "https://bobfairfield.github.io/bob-leader-landing/",
+  "drive": {
+   "article_base": "https://bobfairfield.github.io/bob-leader-landing/",
+   "files": true,
+   "prefix": "Bob_Leader"
+  },
+  "video_base": "https://bobfairfield.github.io/bob-leader-landing/library-videos/"
+ },
+ {
+  "slug": "mindi-huseman",
+  "display_name": "Mindi Huseman",
+  "first": "Mindi",
+  "email": "holistic2dolist@gmail.com",
+  "landing_url": "https://bobfairfield.github.io/mindi-huseman-landing/",
+  "short_slug": "mindi",
+  "onscreen_url": "bobfergusonlongevity.com/go/mindi",
+  "link_text": "bobfergusonlongevity.com/go/mindi",
+  "link_url": "https://bobfergusonlongevity.com/go/mindi",
+  "article_base": "https://bobfairfield.github.io/mindi-huseman-landing/",
+  "drive": {
+   "article_base": "https://bobfairfield.github.io/mindi-huseman-landing/",
+   "files": true,
+   "prefix": "Mindi_Huseman"
+  },
+  "video_base": "https://mindihusemanlongevity.com/library-videos/"
+ },
+ {
+  "slug": "pam-partch",
+  "display_name": "Pam Partch",
+  "first": "Pam",
+  "email": "pampartch@gmail.com",
+  "landing_url": "https://bobfairfield.github.io/pam-partch-landing/",
+  "short_slug": "pam",
+  "onscreen_url": "bobfergusonlongevity.com/go/pam",
+  "link_text": "bobfergusonlongevity.com/go/pam",
+  "link_url": "https://bobfergusonlongevity.com/go/pam",
+  "article_base": "https://bobfairfield.github.io/pam-partch-landing/",
+  "drive": {
+   "article_base": "https://bobfairfield.github.io/pam-partch-landing/",
+   "files": true,
+   "prefix": "Pam_Partch"
+  },
+  "video_base": "https://pamandalpartchlongevity.com/library-videos/"
+ },
+ {
+  "slug": "allen-partch",
+  "display_name": "Allen Partch",
+  "first": "Allen",
+  "email": "landofand@msn.com",
+  "landing_url": "https://bobfairfield.github.io/allen-partch-landing/",
+  "short_slug": "allen",
+  "onscreen_url": "bobfergusonlongevity.com/go/allen",
+  "link_text": "bobfergusonlongevity.com/go/allen",
+  "link_url": "https://bobfergusonlongevity.com/go/allen",
+  "article_base": "https://bobfairfield.github.io/allen-partch-landing/",
+  "drive": {
+   "article_base": "https://bobfairfield.github.io/allen-partch-landing/",
+   "files": true,
+   "prefix": "Allen_Partch"
+  },
+  "video_base": "https://bobfairfield.github.io/allen-partch-landing/library-videos/"
+ },
+ {
+  "slug": "four-corners-health",
+  "display_name": "Four Corners Health",
+  "first": "Ann and Ben",
+  "email": "ann_michels@comcast.net",
+  "landing_url": "https://bobfairfield.github.io/four-corners-health-landing/",
+  "short_slug": "fourcorners",
+  "onscreen_url": "bobfergusonlongevity.com/go/fourcorners",
+  "link_text": "bobfergusonlongevity.com/go/fourcorners",
+  "link_url": "https://bobfergusonlongevity.com/go/fourcorners",
+  "article_base": "https://bobfairfield.github.io/four-corners-health-landing/",
+  "drive": {
+   "article_base": "https://bobfairfield.github.io/four-corners-health-landing/",
+   "files": true,
+   "prefix": "Four_Corners_Health"
+  },
+  "video_base": "https://bobfairfield.github.io/four-corners-health-landing/library-videos/"
+ },
+ {
+  "slug": "suzanne-chaney",
+  "display_name": "Suzanne Chaney",
+  "first": "Suzanne",
+  "email": "suzanne@sschaney.com",
+  "landing_url": "https://bobfairfield.github.io/suzanne-chaney-landing/",
+  "short_slug": "suzanne",
+  "onscreen_url": "bobfergusonlongevity.com/go/suzanne",
+  "link_text": "bobfergusonlongevity.com/go/suzanne",
+  "link_url": "https://bobfergusonlongevity.com/go/suzanne",
+  "article_base": "https://bobfairfield.github.io/suzanne-chaney-landing/",
+  "drive": {
+   "article_base": "https://bobfairfield.github.io/suzanne-chaney-landing/",
+   "files": true,
+   "prefix": "Suzanne_Chaney"
+  }
+ }
+]

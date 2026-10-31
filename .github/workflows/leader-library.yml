@@ -1,0 +1,82 @@
+# Builds one leader's Sharing Library: personalized videos, library page, short link.
+# Started by hand from the Actions tab, or by the onboarding pipeline with a
+# repository_dispatch of type "leader-library" carrying the same fields.
+#
+# Needs one repository secret, LEADER_REPOS_TOKEN: a GitHub token that can write
+# to the leaders' *-landing repositories (the videos are stored there).
+# Optional: put the leader's tool files in _library-tools/inbox/<slug>/ named
+# How-Do-You-Feel-Today.pdf, Prospect-Tracker.xlsx, Business-Card-Front.pdf,
+# Business-Card-Back.pdf. With no files, the page shows videos and the article only.
+name: Leader library
+
+on:
+  repository_dispatch:
+    types: [leader-library]
+  workflow_dispatch:
+    inputs:
+      repo_slug: { description: "Leader repo, e.g. nahom-abegaze-landing", required: true }
+      name: { description: "Full name as it should appear on the videos", required: true }
+      first: { description: "First name or names for greetings", required: false }
+      email: { description: "Leader email", required: true }
+      short_slug: { description: "Short link word, e.g. nahom", required: true }
+
+permissions:
+  contents: write
+
+concurrency:
+  group: leader-library
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      REPO_SLUG: ${{ github.event.client_payload.repo_slug || inputs.repo_slug }}
+      L_NAME: ${{ github.event.client_payload.name || inputs.name }}
+      L_FIRST: ${{ github.event.client_payload.first || inputs.first }}
+      L_EMAIL: ${{ github.event.client_payload.email || inputs.email }}
+      L_SHORT: ${{ github.event.client_payload.short_slug || inputs.short_slug }}
+    steps:
+      - name: Check inputs
+        run: |
+          [[ "$REPO_SLUG" =~ ^[a-z0-9-]+-landing$ ]] || { echo "Bad repo slug"; exit 1; }
+          [[ "$L_SHORT" =~ ^[a-z0-9]+$ ]] || { echo "Bad short slug"; exit 1; }
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          repository: bobfairfield/${{ env.REPO_SLUG }}
+          token: ${{ secrets.LEADER_REPOS_TOKEN }}
+          path: leader-repo
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - name: Tools
+        run: |
+          sudo apt-get update -q && sudo apt-get install -y -q ffmpeg fonts-inter
+          pip install -q pillow numpy
+      - name: Add leader and build
+        run: |
+          SLUG="${REPO_SLUG%-landing}"
+          HAS_TOOLS=no; [ -d "_library-tools/inbox/$SLUG" ] && HAS_TOOLS=yes
+          python _library-tools/scripts/add_leader.py "$REPO_SLUG" --name "$L_NAME" --first "${L_FIRST:-}" --email "$L_EMAIL" --short "$L_SHORT" --leader-dir leader-repo --tools $HAS_TOOLS
+          python _library-tools/scripts/build_leader.py "$SLUG" leader-repo
+          if [ "$HAS_TOOLS" = yes ]; then
+            mkdir -p "library/$SLUG/tools"
+            cp "_library-tools/inbox/$SLUG/"* "library/$SLUG/tools/"
+          fi
+          python _library-tools/build_library.py .
+      - name: Publish videos to the leader's repo
+        working-directory: leader-repo
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add library-videos
+          git commit -m "Add Sharing Library videos" || echo "No video changes"
+          for i in 1 2 3; do git pull --rebase -q && git push && break; sleep 5; done
+      - name: Publish library page
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add library go _library-tools/participants.json
+          git commit -m "Add Sharing Library for $L_NAME" || { echo "No changes"; exit 0; }
+          for i in 1 2 3; do git pull --rebase -q && git push && exit 0; sleep 5; done
+          exit 1
