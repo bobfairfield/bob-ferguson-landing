@@ -11,10 +11,9 @@ ROOT = os.path.abspath(os.path.join(TOOLS, ".."))
 ASSETS = os.path.join(TOOLS, "assets")
 os.environ["BFL_ASSETS"] = ASSETS
 sys.path.insert(0, os.path.join(TOOLS, "render"))
-os.chdir(ASSETS)  # feed.py opens fb/... relative to here
-
 slug = sys.argv[1]
-leader_dir = sys.argv[2] if len(sys.argv) > 2 else None
+leader_dir = os.path.abspath(sys.argv[2]) if len(sys.argv) > 2 else None  # resolve before chdir below
+os.chdir(ASSETS)  # feed.py opens fb/... relative to here
 series_id = sys.argv[3] if len(sys.argv) > 3 else "series-01"
 people = json.load(open(os.path.join(TOOLS, "participants.json")))
 p = next(x for x in people if x["slug"] == slug)
