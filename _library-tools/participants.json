@@ -476,23 +476,5 @@
    "files": true,
    "prefix": "Suzanne_Chaney"
   }
- },
- {
-  "slug": "sam-test",
-  "display_name": "Sam Test",
-  "first": "Sam",
-  "email": "bob@fergleads.com",
-  "landing_url": "https://bobfairfield.github.io/sam-test-landing/",
-  "short_slug": "samtest",
-  "onscreen_url": "bobfergusonlongevity.com/go/samtest",
-  "link_text": "bobfergusonlongevity.com/go/samtest",
-  "link_url": "https://bobfergusonlongevity.com/go/samtest",
-  "article_base": "https://bobfairfield.github.io/sam-test-landing/",
-  "video_base": "https://bobfairfield.github.io/sam-test-landing/library-videos/",
-  "drive": {
-   "article_base": "https://bobfairfield.github.io/sam-test-landing/",
-   "files": false,
-   "prefix": "Sam_Test"
-  }
  }
 ]
