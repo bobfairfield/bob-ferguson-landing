@@ -476,23 +476,5 @@
    "files": true,
    "prefix": "Suzanne_Chaney"
   }
- },
- {
-  "slug": "test-kit",
-  "display_name": "Test Kit",
-  "first": "Test",
-  "email": "bob@fergusonleadersunlimited.com",
-  "landing_url": "https://bobfairfield.github.io/test-kit-landing/",
-  "short_slug": "test",
-  "onscreen_url": "bobfergusonlongevity.com/go/test",
-  "link_text": "bobfergusonlongevity.com/go/test",
-  "link_url": "https://bobfergusonlongevity.com/go/test",
-  "article_base": "https://bobfairfield.github.io/test-kit-landing/",
-  "video_base": "https://bobfairfield.github.io/test-kit-landing/library-videos/",
-  "drive": {
-   "article_base": "https://bobfairfield.github.io/test-kit-landing/",
-   "files": true,
-   "prefix": "Test_Kit"
-  }
  }
 ]
