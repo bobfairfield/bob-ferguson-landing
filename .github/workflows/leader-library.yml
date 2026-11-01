@@ -80,3 +80,29 @@ jobs:
           git commit -m "Add Sharing Library for $L_NAME" || { echo "No changes"; exit 0; }
           for i in 1 2 3; do git pull --rebase -q && git push && exit 0; sleep 5; done
           exit 1
+      - name: Wait for the library to go live
+        run: |
+          SLUG="${REPO_SLUG%-landing}"
+          URL="https://bobfergusonlongevity.com/library/$SLUG/"
+          VIDEO=$(python3 -c "import json;p=[x for x in json.load(open('_library-tools/participants.json')) if x['slug']=='$SLUG'][0];print(p['video_base']+'series-01/reel.mp4')")
+          for i in $(seq 1 40); do
+            A=$(curl -s -o /dev/null -w '%{http_code}' -L "$URL")
+            B=$(curl -s -o /dev/null -w '%{http_code}' -L -I "$VIDEO")
+            if [ "$A" = 200 ] && [ "$B" = 200 ]; then echo "Library and videos are live"; exit 0; fi
+            sleep 15
+          done
+          echo "Not confirmed live after 10 minutes; sending the email anyway"
+      - name: Email the kit
+        if: success()
+        env:
+          KIT_MAIL_URL: ${{ secrets.KIT_MAIL_URL }}
+          KIT_MAIL_KEY: ${{ secrets.KIT_MAIL_KEY }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: python _library-tools/scripts/notify_kit.py live
+      - name: Tell Apps Script the library failed
+        if: failure()
+        env:
+          KIT_MAIL_URL: ${{ secrets.KIT_MAIL_URL }}
+          KIT_MAIL_KEY: ${{ secrets.KIT_MAIL_KEY }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: python _library-tools/scripts/notify_kit.py failed
