@@ -476,5 +476,23 @@
    "files": true,
    "prefix": "Suzanne_Chaney"
   }
+ },
+ {
+  "slug": "donna-jewett",
+  "display_name": "Donna Jewett",
+  "first": "Donna",
+  "email": "ddjewett711@gmail.com",
+  "landing_url": "https://bobfairfield.github.io/donna-jewett-landing/",
+  "short_slug": "donna",
+  "onscreen_url": "bobfergusonlongevity.com/go/donna",
+  "link_text": "bobfergusonlongevity.com/go/donna",
+  "link_url": "https://bobfergusonlongevity.com/go/donna",
+  "article_base": "https://bobfairfield.github.io/donna-jewett-landing/",
+  "video_base": "https://bobfairfield.github.io/donna-jewett-landing/library-videos/",
+  "drive": {
+   "article_base": "https://bobfairfield.github.io/donna-jewett-landing/",
+   "files": true,
+   "prefix": "Donna_Jewett"
+  }
  }
 ]
