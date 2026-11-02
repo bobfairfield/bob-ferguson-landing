@@ -13,15 +13,14 @@ os.environ["BFL_ASSETS"] = ASSETS
 sys.path.insert(0, os.path.join(TOOLS, "render"))
 slug = sys.argv[1]
 leader_dir = os.path.abspath(sys.argv[2]) if len(sys.argv) > 2 else None  # resolve before chdir below
-os.chdir(ASSETS)  # feed.py opens fb/... relative to here
+os.chdir(ASSETS)  # assets are opened relative to here
 series_id = sys.argv[3] if len(sys.argv) > 3 else "series-01"
 people = json.load(open(os.path.join(TOOLS, "participants.json")))
 p = next(x for x in people if x["slug"] == slug)
 
 import reel30 as M
-import feed as F
 FPS, SPLIT, NF = M.FPS, int(M.D2 * M.FPS), M.NF
-fmts = {"reel": (M.make_frame, "1080x1920"), "feed": (F.frame, "1080x1350")}
+fmts = {"reel": (M.make_frame, "1080x1920")}
 M.set_participant(p["onscreen_url"], p["display_name"])
 
 if p.get("video_base"):

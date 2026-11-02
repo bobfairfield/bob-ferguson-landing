@@ -3,7 +3,7 @@
 
 Usage:  python3 build_library.py <output_dir>
 Reads participants.json and series.json that sit next to this script.
-Video files are expected at <output_dir>/library/<slug>/<series_id>/feed.mp4 and reel.mp4
+Video files are expected at <output_dir>/library/<slug>/<series_id>/reel.mp4
 """
 import json, os, sys, html
 
@@ -144,7 +144,6 @@ def page(p):
         caps = CAPTIONS[s["id"]]
         base = (p["video_base"] + f"{s['id']}/") if p.get("video_base") else f"{s['id']}/"
         items = [
-          {"kind":"feed","label":"Facebook Post","help":"For your regular Facebook timeline or page. This video is tall, so it fills more of the screen.","src":base+"feed.mp4","filename":f"{s['id']}-facebook-post.mp4","poster":"../shared/poster-feed.jpg","caption":caps["feed"].replace("{link}", link)},
           {"kind":"reel","label":"Facebook Reel","help":"For Facebook Reels. In Facebook tap Create, then Reel, then choose this video.","src":base+"reel.mp4","filename":f"{s['id']}-facebook-reel.mp4","poster":"../shared/poster-reel.jpg","caption":caps["reel"].replace("{link}", link)},
           {"kind":"story","label":"Facebook Story","help":"For Facebook Stories. In Facebook tap Create, then Story, then choose this video. Add the link with the Link sticker.","src":base+"reel.mp4","filename":f"{s['id']}-facebook-story.mp4","poster":"../shared/poster-reel.jpg","caption":"Link for the sticker:\n"+link+"\n\nWords you can add on the story:\n"+STORY_NOTE[s["id"]]+"\n\n"+FOOT_STAR},
         ]
