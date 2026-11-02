@@ -1,0 +1,21 @@
+# One-time: adds the Level 2 overview graphic to every existing leader's Ambassador guide.
+# Run from the Actions tab. Leave "dry run" on first to see who would change.
+name: Leader guides, add Level 2 overview
+on:
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Dry run (true = report only, false = make the changes)"
+        default: "true"
+permissions:
+  contents: read
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Patch the guides
+        env:
+          LEADER_REPOS_TOKEN: ${{ secrets.LEADER_REPOS_TOKEN }}
+          DRY_RUN: ${{ inputs.dry_run }}
+        run: python3 .github/scripts/patch_guides_l2.py
