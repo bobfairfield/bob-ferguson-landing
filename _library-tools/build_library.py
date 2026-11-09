@@ -22,7 +22,13 @@ CAPTIONS = {
   "story": "{link}",
  }
 }
-STORY_NOTE = {"series-01": "3.2 points more VO₂ max. 8 years of cellular aging. No exercise.*"}
+STORY_NOTE = {"series-01": "3.2 points more VO₂ max. 8 years of cellular aging. No exercise.*",
+ "series-02": "One happy lady's story.*"}
+FOOT_STORY = "This is one person's experience. Individual results vary."
+CAPTIONS["series-02"] = {
+  "reel": "One happy lady's story, in her own words. Watch to the end, then see the details at {link}\n\n" + FOOT_STAR + "\n" + FOOT_STORY,
+  "story": "{link}",
+}
 
 CSS = """
 :root{--wine:#4F1026;--wine2:#6C1030;--gold:#C6974F;--cream:#F3EEE0;--card:#FBF8F1;--sage:#5B7A63;--ink:#3a1a26}
@@ -143,9 +149,12 @@ def page(p):
     for s in series:
         caps = CAPTIONS[s["id"]]
         base = (p["video_base"] + f"{s['id']}/") if p.get("video_base") else f"{s['id']}/"
-        items = [
-          {"kind":"reel","label":"Facebook Reel","help":"For Facebook Reels. In Facebook tap Create, then Reel, then choose this video.","src":base+"reel.mp4","filename":f"{s['id']}-facebook-reel.mp4","poster":"../shared/poster-reel.jpg","caption":caps["reel"].replace("{link}", link)},
-          {"kind":"story","label":"Facebook Story","help":"For Facebook Stories. In Facebook tap Create, then Story, then choose this video. Add the link with the Link sticker.","src":base+"reel.mp4","filename":f"{s['id']}-facebook-story.mp4","poster":"../shared/poster-reel.jpg","caption":"Link for the sticker:\n"+link+"\n\nWords you can add on the story:\n"+STORY_NOTE[s["id"]]+"\n\n"+FOOT_STAR},
+        items = []
+        if "feed" in caps:
+            items.append({"kind":"feed","label":"Facebook Post","help":"For your regular Facebook timeline or page. This video is tall, so it fills more of the screen.","src":base+"feed.mp4","filename":f"{s['id']}-facebook-post.mp4","poster":"../shared/poster-feed.jpg","caption":caps["feed"].replace("{link}", link)})
+        items += [
+          {"kind":"reel","label":"Facebook Reel","help":"For Facebook Reels. In Facebook tap Create, then Reel, then choose this video.","src":base+"reel.mp4","filename":f"{s['id']}-facebook-reel.mp4","poster":"../shared/"+s.get("poster","poster-reel.jpg"),"caption":caps["reel"].replace("{link}", link)},
+          {"kind":"story","label":"Facebook Story","help":"For Facebook Stories. In Facebook tap Create, then Story, then choose this video. Add the link with the Link sticker.","src":base+"reel.mp4","filename":f"{s['id']}-facebook-story.mp4","poster":"../shared/"+s.get("poster","poster-reel.jpg"),"caption":"Link for the sticker:\n"+link+"\n\nWords you can add on the story:\n"+STORY_NOTE[s["id"]]+"\n\n"+FOOT_STAR},
         ]
         items_by_series.append({"id":s["id"],"title":s["title"],"added":s["added"],"blurb":s["blurb"],"items":items})
     data = {"series": items_by_series}

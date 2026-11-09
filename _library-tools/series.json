@@ -1,3 +1,4 @@
 [
- {"id":"series-01","title":"Series 1: VO₂ max, without exercise*","added":"October 29, 2026","blurb":"A 30 second video: 3.2 points more VO₂ max, 8 years of cellular aging."}
+ {"id": "series-01", "title": "Series 1: VO₂ max, without exercise*", "added": "October 29, 2026", "blurb": "A 30 second video: 3.2 points more VO₂ max, 8 years of cellular aging."},
+ {"id": "series-02", "title": "Series 2: One happy lady's story", "added": "November 8, 2026", "blurb": "A 43 second reel in her own words, ending with your name and link.", "poster": "poster-series-02.jpg"}
 ]
