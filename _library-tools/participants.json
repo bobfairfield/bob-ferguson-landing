@@ -494,5 +494,23 @@
    "files": true,
    "prefix": "Donna_Jewett"
   }
+ },
+ {
+  "slug": "mary-williams",
+  "display_name": "Mary Williams",
+  "first": "Mary",
+  "email": "mawilliams1234@gmail.com",
+  "landing_url": "https://bobfairfield.github.io/mary-williams-landing/",
+  "short_slug": "maryw",
+  "onscreen_url": "bobfergusonlongevity.com/go/maryw",
+  "link_text": "bobfergusonlongevity.com/go/maryw",
+  "link_url": "https://bobfergusonlongevity.com/go/maryw",
+  "article_base": "https://bobfairfield.github.io/mary-williams-landing/",
+  "video_base": "https://bobfairfield.github.io/mary-williams-landing/library-videos/",
+  "drive": {
+   "article_base": "https://bobfairfield.github.io/mary-williams-landing/",
+   "files": true,
+   "prefix": "Mary_Williams"
+  }
  }
 ]
