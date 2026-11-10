@@ -129,7 +129,7 @@ function toggleCap(id, btn){ const el=document.getElementById(id); const show = 
   const root = $('#series');
   D.series.forEach((s, si) => {
     const sec = document.createElement('section'); sec.className='card';
-    let h = '<h2>'+s.title+(si===0?'<span class="tag">NEW</span>':'')+'</h2><p class="note">Added '+s.added+'. '+s.blurb+'</p>';
+    let h = '<h2>'+s.title+(s.is_new?'<span class="tag">NEW</span>':'')+'</h2><p class="note">Added '+s.added+'. '+s.blurb+'</p>';
     s.items.forEach((it, ii) => {
       const id = s.id+'-'+it.kind;
       h += '<div class="fmt"><h3>'+it.label+'</h3><p class="note">'+it.help+'</p>'
@@ -262,7 +262,8 @@ def page(p):
           {"kind":"reel","label":"Facebook Reel","help":"For Facebook Reels. In Facebook tap Create, then Reel, then choose this video.","src":base+"reel.mp4","filename":f"{s['id']}-facebook-reel.mp4","poster":"../shared/"+s.get("poster","poster-reel.jpg"),"caption":caps["reel"].replace("{link}", link)},
           {"kind":"story","label":"Facebook Story","help":"For Facebook Stories. In Facebook tap Create, then Story, then choose this video. Add the link with the Link sticker.","src":base+"reel.mp4","filename":f"{s['id']}-facebook-story.mp4","poster":"../shared/"+s.get("poster","poster-reel.jpg"),"caption":"Link for the sticker:\n"+link+"\n\nWords you can add on the story:\n"+STORY_NOTE[s["id"]]+"\n\n"+FOOT_STAR},
         ]
-        items_by_series.append({"id":s["id"],"title":s["title"],"added":s["added"],"blurb":s["blurb"],"items":items,"watch":watch_url(p, s)})
+        items_by_series.append({"id":s["id"],"title":s["title"],"added":s["added"],"blurb":s["blurb"],"items":items,"watch":watch_url(p, s),
+                                "is_new": s.get("new", s is series[-1])})
     data = {"series": items_by_series}
     short_note = ""
     if p.get("short_slug"):
