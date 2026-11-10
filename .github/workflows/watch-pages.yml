@@ -1,0 +1,64 @@
+# Pushes the shareable video watch pages into the repos of leaders who have their
+# own web address. Leaders on a github.io address need nothing here: their watch
+# pages are served from bobfergusonlongevity.com/go/<short>/<video>/ and ship with
+# the normal site publish.
+#
+# Run this from the Actions tab after adding a new series, or after a leader moves
+# to their own address. Needs the LEADER_REPOS_TOKEN secret.
+name: Watch pages
+
+on:
+  workflow_dispatch:
+    inputs:
+      only:
+        description: "One leader slug, e.g. anne-christie. Leave blank for all of them."
+        required: false
+
+permissions:
+  contents: read
+
+concurrency:
+  group: watch-pages
+  cancel-in-progress: false
+
+jobs:
+  push:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+
+      - name: Build the pages
+        run: python _library-tools/build_library.py .
+
+      - name: Push each leader's pages into their own repo
+        env:
+          TOKEN: ${{ secrets.LEADER_REPOS_TOKEN }}
+          ONLY: ${{ inputs.only }}
+        run: |
+          set -euo pipefail
+          SLUGS=$(python3 _library-tools/scripts/own_domain_slugs.py "${ONLY:-}")
+          [ -n "$SLUGS" ] || { echo "No leaders with their own address matched."; exit 0; }
+          for SLUG in $SLUGS; do
+            echo "::group::$SLUG"
+            if [ ! -d "_watch/$SLUG" ]; then echo "nothing staged for $SLUG"; echo "::endgroup::"; continue; fi
+            rm -rf work
+            if ! git clone -q --depth 1 "https://x-access-token:$TOKEN@github.com/bobfairfield/$SLUG-landing.git" work; then
+              echo "could not clone $SLUG-landing"; echo "::endgroup::"; continue
+            fi
+            cp -r "_watch/$SLUG/." work/
+            cd work
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add -A
+            if git diff --cached --quiet; then
+              echo "no changes for $SLUG"
+            else
+              git commit -q -m "Add shareable video watch pages"
+              for i in 1 2 3; do git pull --rebase -q && git push -q && break; sleep 5; done
+              echo "pushed $SLUG"
+            fi
+            cd ..
+            echo "::endgroup::"
+          done

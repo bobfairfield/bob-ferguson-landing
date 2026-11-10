@@ -64,13 +64,23 @@ jobs:
             cp "_library-tools/inbox/$SLUG/"* "library/$SLUG/tools/"
           fi
           python _library-tools/build_library.py .
+      - name: Stage this leader's watch pages into their repo
+        run: |
+          SLUG="${REPO_SLUG%-landing}"
+          # Only leaders on their own address host their own watch pages. Everyone
+          # else is served from bobfergusonlongevity.com/go/<short>/<video>/.
+          if [ -d "_watch/$SLUG" ]; then
+            cp -r "_watch/$SLUG/." leader-repo/
+            echo "staged watch pages for $SLUG"
+          fi
+
       - name: Publish videos to the leader's repo
         working-directory: leader-repo
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add library-videos
-          git commit -m "Add Sharing Library videos" || echo "No video changes"
+          git add -A
+          git commit -m "Add Sharing Library videos and watch pages" || echo "No changes"
           for i in 1 2 3; do git pull --rebase -q && git push && break; sleep 5; done
       - name: Publish library page
         run: |
