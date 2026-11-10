@@ -17,8 +17,7 @@ FOOT_CARET = "^In a two-month study, Vivix+ increased VO2 max by 2.6 to 3.8 mL/(
 
 CAPTIONS = {
  "series-01": {
-  "feed": "What if you could add 3.2 points to your VO₂ max without exercise?*\n\nIn a two-month study, Vivix+™ increased VO₂ max by 2.6 to 3.8 mL/(kg·min)^, which is equivalent to reversing 8 years of cellular aging on average^. VO₂ max is one of the strongest predictors of longevity.\n\nSee the full story: {link}\n\n" + FOOT_STAR + "\n" + FOOT_CARET,
-  "reel": "The only longevity supplement shown to increase VO₂ max without exercise*. +3.2 points. 8 years of cellular aging^. Watch to the end, then see the details at {link}\n\n" + FOOT_STAR + "\n" + FOOT_CARET,
+  "reel":"The only longevity supplement shown to increase VO₂ max without exercise*. +3.2 points. 8 years of cellular aging^. Watch to the end, then see the details at {link}\n\n" + FOOT_STAR + "\n" + FOOT_CARET,
   "story": "{link}",
  }
 }
@@ -29,6 +28,40 @@ CAPTIONS["series-02"] = {
   "reel": "One happy lady's story, in her own words. Watch to the end, then see the details at {link}\n\n" + FOOT_STAR + "\n" + FOOT_STORY,
   "story": "{link}",
 }
+
+HOME = "https://bobfergusonlongevity.com"
+PLAUSIBLE = '<script async src="https://plausible.io/js/pa-a3jZtwKU4Lx7RIBy_e41c.js"></script>\n<script>window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};plausible.init()</script>'
+
+
+def own_domain(p):
+    """True when the leader's landing page sits on their own address, not github.io."""
+    return "github.io" not in p["landing_url"]
+
+
+def watch_base(p):
+    """Where this leader's watch pages live, as a full address ending in a slash."""
+    if own_domain(p):
+        return p["landing_url"]
+    return f"{HOME}/go/{p['short_slug']}/"
+
+
+def watch_url(p, s):
+    return watch_base(p) + s["watch_slug"] + "/"
+
+
+def video_url(p, s):
+    if p.get("video_base"):
+        return p["video_base"] + s["id"] + "/reel.mp4"
+    return f"{HOME}/library/{p['slug']}/{s['id']}/reel.mp4"
+
+
+def poster_url(s):
+    return f"{HOME}/library/shared/" + s.get("poster", "poster-reel.jpg")
+
+
+def preview_url(s):
+    return f"{HOME}/previews/{s['watch_slug']}.jpg"
+
 
 CSS = """
 :root{--wine:#4F1026;--wine2:#6C1030;--gold:#C6974F;--cream:#F3EEE0;--card:#FBF8F1;--sage:#5B7A63;--ink:#3a1a26}
@@ -71,7 +104,8 @@ async function copyText(t, btn){
   const old = btn.textContent;
   try{ await navigator.clipboard.writeText(t); }
   catch(e){ const ta=document.createElement('textarea'); ta.value=t; ta.style.position='fixed'; ta.style.opacity='0'; document.body.appendChild(ta); ta.focus(); ta.select(); try{document.execCommand('copy')}catch(_){}; document.body.removeChild(ta); }
-  btn.textContent = 'Copied! Now paste it into Facebook'; setTimeout(()=>btn.textContent=old, 3500);
+  btn.textContent = btn.dataset.plain ? 'Copied! Now paste it into your email or text' : 'Copied! Now paste it into Facebook';
+  setTimeout(()=>btn.textContent=old, 3500);
 }
 async function saveShare(url, name, statusId, btn){
   const st = document.getElementById(statusId); st.style.display='block';
@@ -105,6 +139,14 @@ function toggleCap(id, btn){ const el=document.getElementById(id); const show = 
         + (it.caption ? '<button class="btn alt" data-act="copy" data-i="'+si+'-'+ii+'">'+(it.kind==='story'?'2. Copy my link for the story':'2. Copy the caption')+'</button><button class="btn alt small" data-act="cap" data-i="'+si+'-'+ii+'">'+(it.kind==='story'?'Show me the link and words':'Show me the caption')+'</button><div class="cap" id="cap-'+id+'"></div>' : '')
         + '</div>';
     });
+    if(s.watch){
+      h += '<div class="fmt"><h3>Send it in an email or a text</h3>'
+        + '<p class="note">Facebook is not the only way. This link opens a page that <b>plays the video</b> and has <b>your order button</b> right under it. Paste it into an email, a text, or a message. Nothing to save, nothing to attach.</p>'
+        + '<div class="linkbox">'+s.watch+'</div>'
+        + '<button class="btn alt" data-copy="'+s.watch+'" data-plain="1">Copy a link to the video</button>'
+        + '<a class="btn alt small" href="'+s.watch+'" target="_blank" rel="noopener">See what they will see</a>'
+        + '</div>';
+    }
     sec.innerHTML = h; root.appendChild(sec);
   });
   document.addEventListener('click', e => {
@@ -143,20 +185,84 @@ def tools_section(p):
         out += '</div>'
     return out + '</section>'
 
+WATCH_CSS = """
+:root{--wine:#4F1026;--gold:#C6974F;--cream:#F3EEE0;--card:#FBF8F1;--ink:#3a1a26}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:Calibri,Carlito,"Segoe UI",Arial,sans-serif;font-size:20px;line-height:1.5}
+h1{font-family:Cambria,Caladea,Georgia,serif;color:var(--wine);line-height:1.2;margin:0 0 .3em;font-size:30px}
+.wrap{max-width:560px;margin:0 auto;padding:22px 18px 50px}
+.kicker{letter-spacing:.18em;text-transform:uppercase;font-size:13px;color:var(--gold);font-weight:700;margin:0 0 10px}
+video{width:100%;border-radius:16px;background:#2a0a16;display:block;max-height:76vh}
+.btn{display:block;width:100%;min-height:60px;border:0;border-radius:14px;background:var(--wine);color:#fff;font:700 21px Calibri,Carlito,Arial,sans-serif;padding:16px 18px;margin:16px 0 0;text-align:center;text-decoration:none}
+.btn.alt{background:#fff;color:var(--wine);box-shadow:inset 0 0 0 2px var(--wine);min-height:50px;font-size:18px}
+.by{font-size:18px;color:#6b4a56;margin:14px 0 0}
+.fine{font-size:14px;color:#6b4a56;margin-top:26px}
+"""
+
+
+def footnotes(s):
+    tail = FOOT_CARET if s["id"] == "series-01" else FOOT_STORY
+    return FOOT_STAR + "<br>" + tail
+
+
+def watch_page(p, s):
+    """A page that plays one video and sends the viewer to this leader's order page."""
+    name = html.escape(p["display_name"])
+    title = html.escape(s["share_title"])
+    desc = html.escape(s["share_desc"])
+    order = html.escape(p["landing_url"] + "#order")
+    landing = html.escape(p["landing_url"])
+    canon = html.escape(watch_url(p, s))
+    ev = json.dumps("Watch: " + s["share_title"])
+    evo = json.dumps("Click: Watch Order")
+    return f"""<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{title}, shared by {name}</title>
+<meta name="description" content="{desc}">
+<link rel="canonical" href="{canon}">
+<meta property="og:type" content="video.other">
+<meta property="og:title" content="{title}, shared by {name}">
+<meta property="og:description" content="{desc}">
+<meta property="og:url" content="{canon}">
+<meta property="og:image" content="{html.escape(preview_url(s))}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{title}, shared by {name}">
+<meta name="twitter:description" content="{desc}">
+<meta name="twitter:image" content="{html.escape(preview_url(s))}">
+<style>{WATCH_CSS}</style>
+{PLAUSIBLE}
+</head>
+<body><div class="wrap">
+<div class="kicker">Bob Ferguson Longevity</div>
+<h1>{title}</h1>
+<video controls playsinline preload="metadata" poster="{html.escape(poster_url(s))}" src="{html.escape(video_url(p, s))}"></video>
+<p class="by">Shared by {name}.</p>
+<a class="btn" id="order" href="{order}">See the details and order</a>
+<a class="btn alt" href="{landing}">Learn more first</a>
+<p class="fine">{footnotes(s)}</p>
+</div>
+<script>
+try{{ window.plausible && window.plausible({ev}); }}catch(e){{}}
+document.getElementById('order').addEventListener('click', function(){{ try{{ window.plausible && window.plausible({evo}); }}catch(e){{}} }});
+</script>
+</body></html>"""
+
+
 def page(p):
     link = p["link_url"]
     items_by_series = []
     for s in series:
         caps = CAPTIONS[s["id"]]
         base = (p["video_base"] + f"{s['id']}/") if p.get("video_base") else f"{s['id']}/"
-        items = []
-        if "feed" in caps:
-            items.append({"kind":"feed","label":"Facebook Post","help":"For your regular Facebook timeline or page. This video is tall, so it fills more of the screen.","src":base+"feed.mp4","filename":f"{s['id']}-facebook-post.mp4","poster":"../shared/poster-feed.jpg","caption":caps["feed"].replace("{link}", link)})
-        items += [
+        items = [
           {"kind":"reel","label":"Facebook Reel","help":"For Facebook Reels. In Facebook tap Create, then Reel, then choose this video.","src":base+"reel.mp4","filename":f"{s['id']}-facebook-reel.mp4","poster":"../shared/"+s.get("poster","poster-reel.jpg"),"caption":caps["reel"].replace("{link}", link)},
           {"kind":"story","label":"Facebook Story","help":"For Facebook Stories. In Facebook tap Create, then Story, then choose this video. Add the link with the Link sticker.","src":base+"reel.mp4","filename":f"{s['id']}-facebook-story.mp4","poster":"../shared/"+s.get("poster","poster-reel.jpg"),"caption":"Link for the sticker:\n"+link+"\n\nWords you can add on the story:\n"+STORY_NOTE[s["id"]]+"\n\n"+FOOT_STAR},
         ]
-        items_by_series.append({"id":s["id"],"title":s["title"],"added":s["added"],"blurb":s["blurb"],"items":items})
+        items_by_series.append({"id":s["id"],"title":s["title"],"added":s["added"],"blurb":s["blurb"],"items":items,"watch":watch_url(p, s)})
     data = {"series": items_by_series}
     short_note = ""
     if p.get("short_slug"):
@@ -179,7 +285,8 @@ def page(p):
 <li><b>Tap "Save or share this video"</b> under the video you want. Choose <b>Save Video</b> so it goes into your Photos.</li>
 <li><b>Tap "Copy the caption."</b> The words you will post are copied for you.</li>
 <li><b>Open Facebook</b> and start a new post, reel or story. Pick your saved video, then <b>press and hold in the text box and tap Paste.</b></li>
-</ol></section>
+</ol>
+<p class="note">Not posting on Facebook? Under each video there is <b>"Copy a link to the video."</b> That link plays the video on its own page with your order button under it, so it works in an email or a text.</p></section>
 
 <div id="series"></div>
 
@@ -188,7 +295,7 @@ def page(p):
 <section class="card"><h2>Your links</h2>
 <p class="note">This is where people go to learn and order. Orders credit you.</p>
 <div class="linkbox">{html.escape(link)}</div>
-<button class="btn alt" data-copy="{html.escape(link)}">Copy my link</button>
+<button class="btn alt" data-copy="{html.escape(link)}" data-plain="1">Copy my link</button>
 {short_note}
 </section>
 
@@ -196,6 +303,7 @@ def page(p):
 <table>
 <tr><td>This page</td><td>Your videos and captions. Come back here any time you want to post.</td></tr>
 <tr><td>Your landing page</td><td>The page your link opens. Customers learn about Vivix+&trade; and order from it.</td></tr>
+<tr><td>A link to the video</td><td>For email and texting. It opens a page that plays the video and has your order button under it.</td></tr>
 <tr><td>Your other tools</td><td>The checklist, tracker, business cards and article. They are lower on this page.</td></tr>
 <tr><td>An email from Bob</td><td>Arrives whenever something new is added. Tap the button in it to open this page.</td></tr>
 </table>
@@ -228,10 +336,23 @@ def redirect(p):
 </head><body style="font-family:Calibri,Arial,sans-serif;background:#F3EEE0;color:#4F1026;padding:30px;font-size:20px">
 <p>Taking you to {name}'s page. If nothing happens, <a href="{t}">tap here</a>.</p></body></html>"""
 
+def write(path, text):
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    open(path, "w", encoding="utf-8").write(text)
+
+
+watch_count = 0
 for p in people:
-    d = os.path.join(OUT, "library", p["slug"]); os.makedirs(d, exist_ok=True)
-    open(os.path.join(d, "index.html"), "w", encoding="utf-8").write(page(p))
+    write(os.path.join(OUT, "library", p["slug"], "index.html"), page(p))
     if p.get("short_slug"):
-        d2 = os.path.join(OUT, "go", p["short_slug"]); os.makedirs(d2, exist_ok=True)
-        open(os.path.join(d2, "index.html"), "w", encoding="utf-8").write(redirect(p))
-print("built", len(people))
+        write(os.path.join(OUT, "go", p["short_slug"], "index.html"), redirect(p))
+    # Watch pages. Leaders on their own address get theirs staged for their own repo,
+    # everyone else gets theirs served from here under their short link.
+    for s in series:
+        if own_domain(p):
+            dest = os.path.join(OUT, "_watch", p["slug"], s["watch_slug"], "index.html")
+        else:
+            dest = os.path.join(OUT, "go", p["short_slug"], s["watch_slug"], "index.html")
+        write(dest, watch_page(p, s))
+        watch_count += 1
+print("built", len(people), "libraries and", watch_count, "watch pages")
