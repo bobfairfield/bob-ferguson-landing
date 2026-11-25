@@ -23,6 +23,9 @@ ONLY  = os.environ.get("ONLY", "").strip()
 SKIP  = {x.strip() for x in os.environ.get("SKIP", "").split(",") if x.strip()}
 OWNER = "bobfairfield"
 
+# Toni's repo was created by hand before the <slug>-landing convention existed.
+REPO_OVERRIDES = {"toni-parker": "Toni-Parker"}
+
 TOOLS    = "_library-tools"
 TEMPLATE = open(os.path.join(TOOLS, "pathway", "template.html"), encoding="utf-8").read()
 PEOPLE   = json.load(open(os.path.join(TOOLS, "participants.json"), encoding="utf-8"))
@@ -40,6 +43,19 @@ def api(method, path, body=None):
         return e.code, {}
 
 
+def api_raw(path):
+    """Raw file contents. The JSON contents API returns an empty body for files
+    over 1MB, and several landing pages are larger than that, so read them raw."""
+    req = urllib.request.Request("https://api.github.com" + path)
+    req.add_header("Authorization", "Bearer " + TOKEN)
+    req.add_header("Accept", "application/vnd.github.raw")
+    try:
+        with urllib.request.urlopen(req, timeout=60) as r:
+            return r.status, r.read().decode("utf-8", "replace")
+    except urllib.error.HTTPError as e:
+        return e.code, None
+
+
 def esc(t):
     return (t.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;"))
 
@@ -54,10 +70,7 @@ def pretty_phone(raw):
 
 def read_landing(repo):
     """Their landing page, for the brand name and the phone number on it."""
-    code, f = api("GET", f"/repos/{OWNER}/{repo}/contents/index.html")
-    if code != 200:
-        return code, None
-    return code, base64.b64decode(f["content"]).decode("utf-8", "replace")
+    return api_raw(f"/repos/{OWNER}/{repo}/contents/index.html")
 
 
 def brand_from(html, fallback):
@@ -122,7 +135,7 @@ for p in PEOPLE:
     if slug in SKIP:
         print(f"skip  {slug}: in SKIP"); skipped += 1; continue
 
-    repo = slug + "-landing"
+    repo = REPO_OVERRIDES.get(slug, slug + "-landing")
     code, html = read_landing(repo)
     if code == 404:
         print(f"skip  {slug}: no landing page repo"); skipped += 1; continue
