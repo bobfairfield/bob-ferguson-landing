@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Your Pathway</title>
+<style>
+:root{
+  --wine:#4F1026; --wine2:#6C1030; --card:#7A2E44;
+  --gold:#C6974F; --gold-l:#DCC190;
+  --cream:#F3EEE0; --cream2:#F7F3EA; --cream3:#EFE8D8;
+  --sage-pale:#D6DFD9; --sage:#5B7A63; --sage-d:#3E5A48; --forest:#1E3327;
+  --taupe:#B6A79C; --taupe2:#A79A85; --taupe-d:#8A7268;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  background:var(--cream2);
+  color:#2A2320;
+  font-family:Calibri,"Carlito","Segoe UI",sans-serif;
+  font-size:18px; line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,.serif{font-family:Cambria,"Caladea",Georgia,serif;font-weight:400}
+.wrap{max-width:760px;margin:0 auto;padding:28px 22px 80px}
+.topline{font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--taupe-d);margin:0 0 10px}
+h1{font-size:40px;line-height:1.15;color:var(--wine);margin:0 0 16px}
+h2{font-size:27px;color:var(--wine);margin:0 0 12px}
+h3{font-size:21px;color:var(--wine);margin:0 0 8px}
+p{margin:0 0 16px}
+.lead{font-size:20px}
+.muted{color:var(--taupe-d)}
+.small{font-size:15px}
+.card{background:var(--cream);border-radius:14px;padding:26px 24px;margin:0 0 20px}
+.card.soft{background:var(--cream3)}
+.card.sage{background:var(--sage-pale)}
+.btn{
+  display:inline-block;border:0;cursor:pointer;
+  background:var(--wine);color:var(--cream2);
+  font-family:Calibri,"Carlito",sans-serif;font-size:18px;
+  padding:14px 30px;border-radius:999px;text-decoration:none;
+}
+.btn:hover{background:var(--wine2)}
+.btn.ghost{background:transparent;color:var(--wine);box-shadow:inset 0 0 0 1px var(--taupe)}
+.btn.ghost:hover{background:var(--cream3)}
+.btn[disabled]{opacity:.35;cursor:default}
+.btnrow{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-top:8px}
+.progress{height:4px;background:var(--cream3);border-radius:999px;overflow:hidden;margin:0 0 6px}
+.progress span{display:block;height:100%;background:var(--gold);width:0;transition:width .25s ease}
+.step{font-size:14px;color:var(--taupe-d);letter-spacing:.06em;margin:0 0 26px}
+.q{font-size:26px;font-family:Cambria,Georgia,serif;color:var(--wine);margin:0 0 6px;line-height:1.25}
+.qhint{color:var(--taupe-d);font-size:16px;margin:0 0 22px}
+.opts{display:flex;flex-direction:column;gap:10px;margin:0 0 26px}
+.opt{
+  background:var(--cream);border:0;border-radius:12px;text-align:left;
+  padding:16px 18px;font-size:18px;font-family:inherit;color:#2A2320;cursor:pointer;
+  line-height:1.4;transition:background .12s ease;
+}
+.opt:hover{background:var(--cream3)}
+.opt.sel{background:var(--card);color:var(--cream2)}
+label.f{display:block;font-size:15px;color:var(--taupe-d);margin:0 0 6px}
+input.f,textarea.f{
+  width:100%;background:var(--cream2);border:0;border-radius:10px;
+  padding:13px 14px;font-family:inherit;font-size:17px;color:#2A2320;
+  box-shadow:inset 0 0 0 1px var(--cream3);
+}
+input.f:focus,textarea.f:focus{outline:none;box-shadow:inset 0 0 0 1px var(--taupe)}
+.fieldset{margin:0 0 18px}
+.badge{
+  display:inline-block;background:var(--sage-pale);color:var(--sage-d);
+  font-size:14px;letter-spacing:.04em;padding:6px 14px;border-radius:999px;margin:0 8px 8px 0;
+}
+.pathcard{background:var(--cream);border-radius:16px;padding:30px 26px;margin:0 0 22px}
+.pathname{font-family:Cambria,Georgia,serif;font-size:34px;color:var(--wine);margin:6px 0 14px;line-height:1.15}
+.week{display:flex;gap:16px;padding:16px 0;border-top:1px solid var(--cream3)}
+.week:first-of-type{border-top:0}
+.wk{flex:0 0 74px;font-size:14px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);padding-top:3px}
+.week p{margin:0}
+.flag{display:flex;gap:14px;margin:0 0 14px}
+.flag .k{flex:0 0 132px;font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:var(--taupe-d);padding-top:3px}
+.flag p{margin:0}
+details{background:var(--cream3);border-radius:14px;padding:18px 22px;margin:0 0 20px}
+details summary{cursor:pointer;font-family:Cambria,Georgia,serif;font-size:21px;color:var(--wine);list-style:none}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:" +";color:var(--gold)}
+details[open] summary::after{content:" \2013"}
+details .inner{padding-top:16px}
+.footer{background:var(--wine);color:var(--cream2);margin-top:54px;padding:38px 22px 44px}
+.footer .inner{max-width:760px;margin:0 auto}
+.footer p{margin:0 0 8px;font-size:16px;color:#E8DED0}
+.footer .n{font-family:Cambria,Georgia,serif;font-size:21px;color:var(--gold-l);margin-bottom:4px}
+.hide{display:none}
+.toast{
+  position:fixed;left:50%;transform:translateX(-50%);bottom:26px;
+  background:var(--forest);color:var(--cream2);padding:12px 22px;border-radius:999px;
+  font-size:16px;opacity:0;pointer-events:none;transition:opacity .2s ease;
+}
+.toast.on{opacity:1}
+@media (max-width:560px){
+  h1{font-size:32px} .q{font-size:22px} .pathname{font-size:28px}
+  .wrap{padding:22px 18px 70px}
+  .flag{display:block} .flag .k{margin-bottom:4px}
+  .week{display:block} .wk{margin-bottom:6px}
+}
+@media print{
+  .noprint{display:none!important}
+  body{background:#fff} .card,.pathcard,details{background:#fff}
+  .footer{background:#fff;color:#4F1026} .footer p{color:#4F1026}
+}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <!-- INTRO -->
+  <section id="intro">
+    <p class="topline">{{NAME}}</p>
+    <h1>Your Pathway</h1>
+    <p class="lead">Every new Ambassador starts from a different place. Different hours, different people around them, different reasons for saying yes.</p>
+    <p>This takes about four minutes. At the end you get a starting plan built for your situation, not a generic one, along with the first few things worth doing and the parts that can wait.</p>
+    <div class="card sage">
+      <p style="margin:0"><strong>There is no score and no wrong answer here.</strong> The honest answer gives you a plan that fits. A flattering answer gives you a plan you will quietly abandon in three weeks.</p>
+    </div>
+    <div class="btnrow"><button class="btn" onclick="start()">Begin</button></div>
+  </section>
+
+  <!-- QUESTIONS -->
+  <section id="quiz" class="hide">
+    <div class="progress"><span id="bar"></span></div>
+    <p class="step" id="stepLabel"></p>
+    <p class="q" id="qText"></p>
+    <p class="qhint" id="qHint"></p>
+    <div class="opts" id="opts"></div>
+    <div class="btnrow"><button class="btn ghost" id="backBtn" onclick="back()">Back</button></div>
+  </section>
+
+  <!-- DETAILS -->
+  <section id="details" class="hide">
+    <div class="progress"><span style="width:100%"></span></div>
+    <p class="step">Last step</p>
+    <h2>Where to send it</h2>
+    <p>Your plan appears on this screen either way. These let you keep a copy and let whoever sponsored you know how to help.</p>
+    <div class="card">
+      <div class="fieldset"><label class="f" for="nm">Your name</label><input class="f" id="nm" type="text" autocomplete="name"></div>
+      <div class="fieldset"><label class="f" for="em">Your email</label><input class="f" id="em" type="email" autocomplete="email"></div>
+      <div class="fieldset"><label class="f" for="sp">Your sponsor, so they can help</label><input class="f" id="sp" type="email" value="{{EMAIL}}"></div>
+      <div class="fieldset"><label class="f" for="nt">Anything about your situation worth knowing (optional)</label><textarea class="f" id="nt" rows="3"></textarea></div>
+    </div>
+    <div class="btnrow">
+      <button class="btn" onclick="finish()">See my pathway</button>
+      <button class="btn ghost" onclick="back()">Back</button>
+    </div>
+  </section>
+
+  <!-- RESULTS -->
+  <section id="result" class="hide">
+    <p class="topline" id="rName">Your pathway</p>
+    <div class="pathcard">
+      <p class="small muted" style="margin:0">Starting pathway</p>
+      <p class="pathname" id="pName"></p>
+      <p id="pWhy" style="margin:0 0 18px"></p>
+      <div id="pBadges"></div>
+    </div>
+
+    <div class="card soft">
+      <h3>What stands out</h3>
+      <div id="pStrengths"></div>
+    </div>
+
+    <div class="card">
+      <h3 id="planHead">Your first 30 days</h3>
+      <p class="muted small" id="planPace"></p>
+      <div id="pPlan"></div>
+    </div>
+
+    <div class="card sage">
+      <h3>Where to read next</h3>
+      <p id="pModules"></p>
+      <p style="margin:0"><a href="{{START_URL}}" style="color:var(--wine)">Open the Ambassador guide</a></p>
+    </div>
+
+    <details>
+      <summary>For your sponsor</summary>
+      <div class="inner">
+        <p class="small muted">This part is written for whoever is coaching you. You are welcome to read it.</p>
+        <div id="pCoach"></div>
+      </div>
+    </details>
+
+    <div class="card soft">
+      <h3>This is a starting point</h3>
+      <p style="margin:0">Pathways are not ceilings. Plenty of people begin by sharing a product with a few friends and decide six months later to build something larger. When your situation changes, you might enjoy taking this again and getting a plan that matches the new version of your life.</p>
+    </div>
+
+    <div class="card">
+      <h3>Questions are welcome</h3>
+      <p style="margin:0">{{HELP_LINE}}</p>
+    </div>
+
+    <div class="btnrow noprint">
+      <button class="btn" onclick="emailIt()">Email this to me</button>
+      <button class="btn ghost" onclick="copyIt()">Copy results</button>
+      <button class="btn ghost" onclick="window.print()">Print or save as PDF</button>
+      <button class="btn ghost" onclick="again()">Start over</button>
+    </div>
+  </section>
+
+</div>
+
+<div class="footer">
+  <div class="inner">
+    <p class="n">{{BRAND}}</p>
+    <p>Questions about your plan are welcome any time. A short conversation usually saves a month of guessing.</p>
+    <p class="small" style="margin-top:14px;color:#C6B8A6">{{NAME}}, Independent Shaklee Ambassador</p>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+/* ============================ QUESTIONS ============================ */
+/* Each option carries scoring keys. Behavioral framing throughout:
+   questions ask what happened, not what the person intends. */
+
+var Q = [
+ { id:"motive", t:"A year from now, what would make this worth having started?",
+   h:"Pick the one closest to true today. It can change later.",
+   o:[
+    {l:"My own products paid for, and a little left over", v:"products"},
+    {l:"A few hundred dollars a month on top of what I earn now", v:"few"},
+    {l:"A real second income, a thousand a month or more", v:"income"},
+    {l:"Something sizable that keeps paying after I slow down", v:"legacy"},
+    {l:"Better results for people I already work with or care for", v:"serve"}
+   ]},
+
+ { id:"hours", t:"Think about last week specifically. How many hours were genuinely unscheduled?",
+   h:"Not hours you hoped to have. Hours that were actually free.",
+   o:[{l:"Two or fewer",v:0},{l:"Three to five",v:1},{l:"Six to ten",v:2},{l:"More than ten",v:3}]},
+
+ { id:"rhythm", t:"How predictable are those free hours from week to week?",
+   h:"Predictability matters more than quantity for building anything.",
+   o:[{l:"Close to the same hours every week",v:2},{l:"Some weeks are good, some are gone",v:1},{l:"Almost impossible to predict",v:0}]},
+
+ { id:"tells", t:"In the past month, how many people did you tell about something you liked?",
+   h:"Anything at all. A book, a restaurant, a tool, a show.",
+   o:[{l:"One or none",v:0},{l:"Two to five",v:1},{l:"Six to fifteen",v:2},{l:"More than fifteen",v:3}]},
+
+ { id:"reach", t:"How many people could you text right now who would reply the same day?",
+   h:"Your real warm reach, not a contact list.",
+   o:[{l:"Fewer than ten",v:0},{l:"Ten to thirty",v:1},{l:"Thirty to a hundred",v:2},{l:"More than a hundred",v:3}]},
+
+ { id:"local", t:"Of those people, how many live close enough to meet for coffee?",
+   h:"Within a half hour drive, roughly.",
+   o:[{l:"Almost none",v:0},{l:"A handful",v:1},{l:"About half",v:2},{l:"Most of them",v:3}]},
+
+ { id:"audience", t:"Is there already a group of people who look to you on health or wellbeing?",
+   h:"Clients, students, patients, a class, a congregation, a following.",
+   o:[{l:"No, not really",v:0},{l:"Informally. Friends ask me things",v:1},{l:"Yes, clients or students",v:2},{l:"Yes, and I see most of them every week",v:3}]},
+
+ { id:"learned", t:"When did you last spend two hundred dollars or more to learn or improve something?",
+   h:"A course, a coach, equipment, a certification, a trip to train.",
+   o:[{l:"Within the past three months",v:3},{l:"Sometime in the past year",v:2},{l:"A few years back",v:1},{l:"I cannot recall doing that",v:0}]},
+
+ { id:"spend", t:"What monthly amount on your own products, samples, and tools feels comfortable?",
+   h:"Comfortable, not heroic. The number you would not resent in month four.",
+   o:[{l:"Under a hundred dollars",v:0},{l:"A hundred to two hundred",v:1},{l:"Two hundred to four hundred",v:2},{l:"Four hundred or more",v:3}]},
+
+ { id:"through", t:"The last time you started something that took steps over several weeks, what happened?",
+   h:"Think of a real example. A class, a renovation, a training program.",
+   o:[{l:"I finished it",v:3},{l:"I finished most of it",v:2},{l:"I started strong and faded",v:1},{l:"I did not get far",v:0}]},
+
+ { id:"mode", t:"Which of these feels easiest to you?",
+   h:"Easiest, not most impressive.",
+   o:[
+    {l:"Sitting with one person face to face",v:"inperson"},
+    {l:"One person on the phone or on video",v:"video"},
+    {l:"A small group or a class",v:"group"},
+    {l:"Writing. Text, email, posts",v:"written"}
+   ]},
+
+ { id:"groupcomf", t:"How do you feel about walking five to ten people through something?",
+   h:"",
+   o:[{l:"Energized by it",v:3},{l:"Fine, with a little preparation",v:2},{l:"I would rather not",v:1},{l:"I avoid it",v:0}]},
+
+ { id:"systems", t:"Setting up your own web page, with step by step instructions provided?",
+   h:"",
+   o:[{l:"I would enjoy that",v:3},{l:"I would get through it with a little help",v:2},{l:"I would rather someone did it for me",v:1},{l:"I would skip it",v:0}]},
+
+ { id:"unprompted", t:"When you believe in something, how does it usually come up?",
+   h:"",
+   o:[{l:"I bring it up without being asked",v:3},{l:"I mention it when it is relevant",v:2},{l:"I wait until someone asks",v:1},{l:"It rarely comes up at all",v:0}]}
+];
+
+/* ============================ STATE ============================ */
+var i = 0, A = {}, R = null;
+var el = function(id){ return document.getElementById(id); };
+
+function show(id){
+  ["intro","quiz","details","result"].forEach(function(s){ el(s).classList.add("hide"); });
+  el(id).classList.remove("hide");
+  window.scrollTo(0,0);
+}
+function start(){ i = 0; show("quiz"); render(); }
+function again(){ i = 0; A = {}; R = null; show("intro"); }
+
+function render(){
+  var q = Q[i];
+  el("bar").style.width = ((i)/(Q.length+1)*100) + "%";
+  el("stepLabel").textContent = "Question " + (i+1) + " of " + Q.length;
+  el("qText").textContent = q.t;
+  el("qHint").textContent = q.h || "";
+  el("qHint").style.display = q.h ? "block" : "none";
+  var box = el("opts"); box.innerHTML = "";
+  q.o.forEach(function(op){
+    var b = document.createElement("button");
+    b.className = "opt" + (A[q.id] === op.v ? " sel" : "");
+    b.textContent = op.l;
+    b.onclick = function(){ pick(q.id, op.v); };
+    box.appendChild(b);
+  });
+  el("backBtn").disabled = (i === 0);
+}
+function pick(id, v){
+  A[id] = v;
+  if (i < Q.length - 1){ i++; render(); } else { show("details"); }
+}
+function back(){
+  if (!el("details").classList.contains("hide")){ show("quiz"); render(); return; }
+  if (i > 0){ i--; render(); } else { show("intro"); }
+}
+
+/* ============================ SCORING ============================ */
+function score(){
+  var n = function(k){ return typeof A[k] === "number" ? A[k] : 0; };
+
+  var capacity  = n("hours") + n("rhythm") + n("spend") + n("learned") + n("through"); // 0-14
+  var sharing   = n("tells") + n("reach") + n("unprompted");                            // 0-9
+  var community = n("local") + n("audience") + n("groupcomf");                          // 0-9
+  var motive    = A.motive;
+
+  var path;
+  if (capacity <= 5 || motive === "products") path = "sharer";
+  else if (capacity >= 10 && (motive === "income" || motive === "legacy") && n("systems") >= 2) path = "serious";
+  else if (community >= 6 && n("audience") >= 2) path = "community";
+  else if (motive === "serve" && n("audience") >= 2) path = "community";
+  else path = "part";
+
+  /* modifiers describe method, independent of pace */
+  var mods = [];
+  mods.push(n("local") >= 2 ? "Local first" : "Works at a distance");
+  if (n("audience") >= 2) mods.push("Has an audience already");
+  else if (n("reach") >= 2) mods.push("Strong warm list");
+  else mods.push("Building reach from scratch");
+  mods.push(A.mode === "written" ? "Writes more easily than talks" : "Talks more easily than writes");
+  if (n("groupcomf") >= 2) mods.push("Group ready");
+  else mods.push("One to one");
+  if (n("systems") >= 3) mods.push("Will set up their own tools");
+  else if (n("systems") <= 1) mods.push("Needs a hand with setup");
+
+  return { capacity:capacity, sharing:sharing, community:community, path:path, mods:mods, n:n };
+}
+
+var PACE = ["about two hours a week","three to five hours a week","six to ten hours a week","ten or more hours a week"];
+
+/* ============================ CONTENT ============================ */
+var PATHS = {
+ sharer: {
+  name:"Product Sharer",
+  why:"Your plan starts with you using the product well and telling a small number of people about it honestly. No team, no recruiting language, nothing to memorize. This is the most common place to begin and plenty of people are happy to stay here for a long time.",
+  plan:[
+   ["Week 1","Get yourself on the product and finish the simple business setup, which means your storefront handle and your banking details. Ask your sponsor to sit with you for fifteen minutes and finish it rather than guessing at it."],
+   ["Week 2","Write down five people who already talk to you about feeling tired, sore, or older than they would like. Just the names. Nothing else this week."],
+   ["Week 3","Send one of those five a single video with one sentence about why you thought of them. One person, one video. Then do it again two days later."],
+   ["Week 4","Walk one person through the landing page while you are both looking at it, and let them choose. Your only goal for the month is one person who orders and feels good about it."]
+  ],
+  modules:"In the Ambassador guide: Before you do anything else, Start with the why, and The products you will share. The section on how you earn can wait until someone asks you a question you cannot answer.",
+  coach:{
+   lead:"Treat this person as a customer who might become a builder, never as a recruit.",
+   fail:"The fastest way to lose them is team language and volume talk in the first month. The second fastest is handing them the whole guide at once.",
+   first:"First conversation: finish their business setup together on a screen share, then help them write their five names. End the call there.",
+   hold:"Hold back: the compensation plan, PGV, rank advancement, their own landing page, anything with a deadline attached."
+  }
+ },
+ part: {
+  name:"Part Time Builder",
+  why:"You have real hours, real reach, and a reason to do this that money can measure. Your plan runs the standard recipe at a pace you can actually keep, with the first sponsored Ambassador as the thing you are aiming at rather than a vague hope.",
+  plan:[
+   ["Week 1","Finish your business setup with your sponsor, get on the product yourself, and request your own landing page. Having your own page early changes how you talk about this."],
+   ["Week 2","Build a list of twenty five names. Mark the five most likely to care and the five who already ask you health questions. Learn the comp plan far enough to explain how a member saves money and how you get paid once."],
+   ["Week 3","Walk three people through your landing page, one at a time, while you are both looking at it. Say less than feels natural and let the videos work."],
+   ["Week 4","Walk through three more. With anyone who gets interested in the business side, play the opportunity video and talk about checking out as an Ambassador rather than as a member. Aim for one Ambassador and three members in your first ninety days."]
+  ],
+  modules:"In the Ambassador guide: Before you do anything else, How you earn in three levels, Your tool: one page one kit, and Walk someone through it. How you earn matters most for you, since it is what makes your own numbers make sense.",
+  coach:{
+   lead:"This is your most coachable profile and the easiest to lose to drift.",
+   fail:"Likely failure mode is a strong three weeks followed by silence once the easy names run out. Watch for week four going quiet.",
+   first:"First conversation: setup plus landing page request, then book a standing weekly fifteen minute check in. The standing slot is what keeps this one alive.",
+   hold:"Hold back: advanced rank strategy, big event pushes, and any suggestion that they go faster than their stated hours."
+  }
+ },
+ community: {
+  name:"Community Builder",
+  why:"You already have people who listen to you, and most of them are close enough to sit with. That changes the method entirely. Your plan uses groups and your existing standing rather than a list of individual names, which is both faster and less awkward.",
+  plan:[
+   ["Week 1","Finish your business setup and get on the product yourself. Your own experience is the thing your group will ask about first, so start it now rather than later."],
+   ["Week 2","Request your own landing page. Pick the single group you already see most often and choose a date to walk them through it together, one date, on the calendar."],
+   ["Week 3","Run that first walk through with five to ten people. Play the three short videos, stay quiet while they watch, then answer what comes up. Let the ones who are ready order in the room."],
+   ["Week 4","Follow up one to one with everyone who came, and ask the two most enthusiastic whether they would like their own page. Your first Ambassadors usually come out of that question."]
+  ],
+  modules:"In the Ambassador guide: Your tool: one page one kit, Walk someone through it, and How this grows, community not a list. That last section sits closer to your situation than any general sharing material.",
+  coach:{
+   lead:"This person's existing standing is the asset. Protect it.",
+   fail:"Likely failure mode is damaging credibility by moving too commercially too early with people who trust them professionally. The result is a freeze that is hard to reverse.",
+   first:"First conversation: help them pick one group and set one date. A date on the calendar is the whole first call.",
+   hold:"Hold back: pressure to monetize the whole audience at once, and scripts that sound nothing like how they normally speak to these people."
+  }
+ },
+ serious: {
+  name:"Serious Builder",
+  why:"You have the hours, the follow through, and a reason that goes past pocket money. Your plan moves faster and goes deeper into the structure, because you will need the comp plan and the system itself, not just product conversations.",
+  plan:[
+   ["Week 1","Finish business setup, get on the product, and request your own landing page and kit the same week. Read the comp plan section properly rather than skimming it."],
+   ["Week 2","Build a list of fifty names in three groups: likely members, likely builders, and people with their own audience. Walk through the landing page with four people."],
+   ["Week 3","Walk through with six more. For anyone business minded, play the opportunity video and talk through checking out as an Ambassador. Book a coaching call with your upline and bring specific questions."],
+   ["Week 4","Sponsor your first Ambassador and walk them through their own setup yourself, start to finish. Doing it once properly is what makes you able to teach it. Target for ninety days: three Ambassadors, each with their own page, plus steady personal volume."]
+  ],
+  modules:"The whole Ambassador guide. Make your own page and Two simple tools, the checklist and the tracker, both matter before week two.",
+  coach:{
+   lead:"Give this person depth and access. They will outrun generic material fast.",
+   fail:"Likely failure mode is building everything personally and teaching nobody, which caps them at their own hours. Watch for a growing customer list and no sponsored Ambassadors.",
+   first:"First conversation: comp plan in real numbers using their own goal, then landing page and kit the same week. Set a weekly call, not a monthly one.",
+   hold:"Hold back: nothing much. Do insist they hand the process to their first Ambassador instead of running it for them."
+  }
+ }
+};
+
+function strengths(s){
+  var out = [], n = s.n;
+  if (n("tells") >= 2) out.push("You already talk to people about things you like. That instinct is most of this business and it cannot be taught.");
+  if (n("reach") >= 2) out.push("You have real warm reach, which means you are not starting from a cold list.");
+  if (n("audience") >= 2) out.push("A group of people already looks to you on health. That is worth more than any amount of technique.");
+  if (n("through") >= 2) out.push("You finish what you start. That is the single strongest predictor of how this goes.");
+  if (n("learned") >= 2) out.push("You have recently invested in learning something. People who do that tend to follow a recipe long enough for it to work.");
+  if (n("rhythm") >= 2) out.push("Your free hours are predictable, which matters more than how many of them there are.");
+  if (n("groupcomf") >= 2) out.push("You are comfortable in front of a small group, which lets you reach ten people in the time most people reach one.");
+  if (n("systems") >= 3) out.push("You will happily set up your own tools, so nothing has to wait on someone else.");
+  if (A.mode === "written") out.push("You write more easily than you talk, which suits a quieter approach built on messages and posts rather than calls.");
+  if (out.length === 0) out.push("You answered honestly rather than impressively, which is the trait that makes a plan work at all.");
+  return out.slice(0,4);
+}
+
+/* ============================ RESULTS ============================ */
+function finish(){
+  var s = score();
+  R = s;
+  var P = PATHS[s.path];
+  var nm = el("nm").value.trim();
+
+  el("rName").textContent = nm ? (nm + ", here is your pathway") : "Your pathway";
+  el("pName").textContent = P.name;
+  el("pWhy").textContent = P.why;
+
+  el("pBadges").innerHTML = s.mods.map(function(m){
+    return '<span class="badge">' + m + '</span>';
+  }).join("");
+
+  var st = strengths(s);
+  el("pStrengths").innerHTML = st.map(function(t,k){
+    var last = (k === st.length - 1) ? " style=\"margin-bottom:0\"" : "";
+    return "<p" + last + ">" + t + "</p>";
+  }).join("");
+
+  el("planPace").textContent = "Paced for " + PACE[s.n("hours")] + ".";
+  el("pPlan").innerHTML = P.plan.map(function(w){
+    return '<div class="week"><div class="wk">' + w[0] + '</div><p>' + w[1] + '</p></div>';
+  }).join("");
+
+  el("pModules").textContent = P.modules;
+
+  el("pCoach").innerHTML =
+    '<div class="flag"><div class="k">Read on them</div><p>' + P.coach.lead + '</p></div>' +
+    '<div class="flag"><div class="k">Failure mode</div><p>' + P.coach.fail + '</p></div>' +
+    '<div class="flag"><div class="k">First call</div><p>' + P.coach.first + '</p></div>' +
+    '<div class="flag"><div class="k">Hold back</div><p>' + P.coach.hold + '</p></div>' +
+    '<div class="flag" style="margin-bottom:0"><div class="k">Signals</div><p>Capacity ' + s.capacity + ' of 14. Sharing instinct ' + s.sharing + ' of 9. Community position ' + s.community + ' of 9.</p></div>';
+
+  show("result");
+}
+
+/* ============================ EXPORT ============================ */
+function asText(){
+  var s = R, P = PATHS[s.path];
+  var nm = el("nm").value.trim(), em = el("em").value.trim(), nt = el("nt").value.trim();
+  var L = [];
+  L.push("YOUR PATHWAY");
+  if (nm) L.push("Name: " + nm);
+  if (em) L.push("Email: " + em);
+  L.push("");
+  L.push("PATHWAY: " + P.name);
+  L.push(P.why);
+  L.push("");
+  L.push("PROFILE: " + s.mods.join(", "));
+  L.push("Capacity " + s.capacity + "/14, sharing instinct " + s.sharing + "/9, community position " + s.community + "/9");
+  L.push("");
+  L.push("WHAT STANDS OUT");
+  strengths(s).forEach(function(t){ L.push("- " + t); });
+  L.push("");
+  L.push("FIRST 30 DAYS, paced for " + PACE[s.n("hours")]);
+  P.plan.forEach(function(w){ L.push(w[0] + ": " + w[1]); });
+  L.push("");
+  L.push("WHERE TO READ NEXT");
+  L.push(P.modules);
+  L.push("");
+  L.push("FOR THE SPONSOR");
+  L.push("Read on them: " + P.coach.lead);
+  L.push("Failure mode: " + P.coach.fail);
+  L.push("First call: " + P.coach.first);
+  L.push("Hold back: " + P.coach.hold);
+  if (nt){ L.push(""); L.push("THEIR NOTE: " + nt); }
+  L.push("");
+  L.push("ANSWERS");
+  Q.forEach(function(q){ L.push(q.t + " => " + label(q) ); });
+  return L.join("\n");
+}
+function label(q){
+  var v = A[q.id], hit = "";
+  q.o.forEach(function(op){ if (op.v === v) hit = op.l; });
+  return hit;
+}
+function toast(m){
+  var t = el("toast"); t.textContent = m; t.classList.add("on");
+  setTimeout(function(){ t.classList.remove("on"); }, 2200);
+}
+function copyIt(){
+  var txt = asText();
+  if (navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(txt).then(function(){ toast("Copied"); },function(){ fallback(txt); });
+  } else { fallback(txt); }
+}
+function fallback(txt){
+  var a = document.createElement("textarea");
+  a.value = txt; document.body.appendChild(a); a.select();
+  try{ document.execCommand("copy"); toast("Copied"); }catch(e){ toast("Press and hold to copy"); }
+  document.body.removeChild(a);
+}
+function emailIt(){
+  var em = el("em").value.trim(), sp = el("sp").value.trim();
+  var nm = el("nm").value.trim();
+  var to = em || "";
+  var cc = sp ? ("?cc=" + encodeURIComponent(sp) + "&") : "?";
+  var sub = encodeURIComponent("Pathway results" + (nm ? " for " + nm : ""));
+  var body = encodeURIComponent(asText());
+  window.location.href = "mailto:" + encodeURIComponent(to) + cc + "subject=" + sub + "&body=" + body;
+}
+</script>
+</body>
+</html>

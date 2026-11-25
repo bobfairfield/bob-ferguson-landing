@@ -1,0 +1,42 @@
+# Writes each participant's own copy of the Pathway diagnostic into their repo,
+# at <their address>/pathway/. Leaders on a github.io address and leaders on
+# their own address are handled the same way, since both have their own repo.
+#
+# Run this from the Actions tab. Leave "dry run" on true the first time to see
+# who would change. Needs the LEADER_REPOS_TOKEN secret.
+name: Leader pathway pages
+
+on:
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Dry run (true = report only, false = write the pages)"
+        default: "true"
+      only:
+        description: "One leader slug, e.g. joe-weaver. Leave blank for all of them."
+        required: false
+      skip:
+        description: "Slugs to leave out, comma separated. Default skips the test entry."
+        default: "bob-leader"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: leader-pathway
+  cancel-in-progress: false
+
+jobs:
+  push:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - name: Write each participant's pathway page
+        env:
+          LEADER_REPOS_TOKEN: ${{ secrets.LEADER_REPOS_TOKEN }}
+          DRY_RUN: ${{ inputs.dry_run }}
+          ONLY: ${{ inputs.only }}
+          SKIP: ${{ inputs.skip }}
+        run: python3 .github/scripts/push_pathway.py
